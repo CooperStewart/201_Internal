@@ -14,7 +14,7 @@ namespace Dodge_example
     {
         Graphics g; //declare a graphics object called g
                     // declare space for an array of 7 objects called planet 
-        Planet[] planet = new Planet[7];
+        Titan[] planet = new Titan[7];
         Random yspeed = new Random();
         Spaceship spaceship = new Spaceship();
         bool left, right;
@@ -28,7 +28,7 @@ namespace Dodge_example
             {
                 int x = 10 + (i * 75);
 
-                planet[i] = new Planet(x);
+                planet[i] = new Titan(x);
                
 
             }
@@ -69,7 +69,7 @@ namespace Dodge_example
             for (int i = 0; i < 7; i++)
             {
                 planet[i].MovePlanet();
-                if (spaceship.spaceRec.IntersectsWith(planet[i].planetRec))
+                if (spaceship.spaceRec.IntersectsWith(planet[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     planet[i].y = 30; // set  y value of planetRec
@@ -112,7 +112,7 @@ namespace Dodge_example
             }
             if (left) // if left arrow key pressed
             {
-                move = "left";
+                move = "up";
                 spaceship.MoveSpaceship(move);
             }
 

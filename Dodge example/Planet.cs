@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Dodge_example
 {
-    class Planet
+    class Titan 
     {
         // declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
         public Image planetImage;//variable for the planet's image
 
-        public Rectangle planetRec;//variable for a rectangle to place our image in
+        public Rectangle titanrec;//variable for a rectangle to place our image in
         public int score;
         //Create a constructor (initialises the values of the fields)
-        public Planet(int spacing)
+        public Titan(int spacing)
         {
             x = spacing;
             y = 10;
@@ -23,19 +23,19 @@ namespace Dodge_example
             height = 20;
             //planetImage contains the plane1.png image
             planetImage = Properties.Resources.planet1;
-            planetRec = new Rectangle(x, y, width, height);
+            titanrec = new Rectangle(x, y, width, height);
         }
 
         // Methods for the Planet class
         public void DrawPlanet(Graphics g)
         {
-            g.DrawImage(planetImage, planetRec);
-            planetRec = new Rectangle(x, y, width, height);
+            g.DrawImage(planetImage, titanrec);
+            titanrec = new Rectangle(x, y, width, height);
         }
         public void MovePlanet()
         {
 
-            planetRec.Location = new Point(x, y);
+            titanrec.Location = new Point(y, +x);
         }
 
     }

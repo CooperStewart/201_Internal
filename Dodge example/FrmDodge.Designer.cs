@@ -125,7 +125,7 @@
             // 
             // TmrPlanet
             // 
-            this.TmrPlanet.Interval = 10;
+            this.TmrPlanet.Interval = 1;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
             // 
             // contextMenuStrip1
@@ -135,7 +135,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 5;
+            this.TmrShip.Interval = 1;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // MnuStart
