@@ -19,7 +19,7 @@ namespace Dodge_example
         public Spaceship()
         {
             x = 10;
-            y = 360;
+            y = 150;
             width = 40;
             height = 40;
             spaceship = Properties.Resources.alien1;
@@ -32,8 +32,7 @@ namespace Dodge_example
             g.DrawImage(spaceship, spaceRec);
         }
 
-
-
+       
         public void MoveSpaceship(string move)
         {
             spaceRec.Location = new Point(x, y);
@@ -69,8 +68,33 @@ namespace Dodge_example
                 }
 
             }
+            if (move == "up")
+            {
+                if (spaceRec.Location.Y < 12)
+                {
+                    y = 10;
+                    spaceRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    y -= 5;
+                    spaceRec.Location = new Point(x, y);
+                }
+            }
+            if (move == "down")
+            {
+                if (spaceRec.Location.Y > 400)
+                {
+                    y = 399;
+                    spaceRec.Location = new Point(x, y);
+                }
+                else
+                {
+                    y += 7;
+                    spaceRec.Location = new Point(x, y);
+                }
 
-
+            }
         }
 
     }

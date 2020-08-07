@@ -17,7 +17,7 @@ namespace Dodge_example
         Titan[] planet = new Titan[7];
         Random yspeed = new Random();
         Spaceship spaceship = new Spaceship();
-        bool left, right;
+        bool left, right, up, down;
         string move;
         int score, lives;
 
@@ -99,6 +99,7 @@ namespace Dodge_example
         {
             if (e.KeyData == Keys.Left) { left = true; }
             if (e.KeyData == Keys.Right) { right = true; }
+            if (e.KeyData == Keys.Space) { up = true; }
 
 
         }
@@ -112,10 +113,27 @@ namespace Dodge_example
             }
             if (left) // if left arrow key pressed
             {
+                move = "left";
+                spaceship.MoveSpaceship(move);
+            }
+            if (up)
+            {
                 move = "up";
                 spaceship.MoveSpaceship(move);
             }
-
+            if (down)
+            {
+                move = "down";
+                spaceship.MoveSpaceship(move);
+            }
+            if (spaceship.spaceRec.Location.Y > 399)
+            {
+                down = false;
+            }
+            if (spaceship.spaceRec.Location.Y < 150)
+            {
+                up = false;
+            }
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,6 +157,7 @@ namespace Dodge_example
         {
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
+            if (e.KeyData == Keys.Space) { down = true; up = false; }
 
         }
 

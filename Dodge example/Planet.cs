@@ -35,7 +35,7 @@ namespace Dodge_example
         public void MovePlanet()
         {
 
-            titanrec.Location = new Point(y, +x);
+            titanrec.Location = new Point(y, x -10);
         }
 
     }
