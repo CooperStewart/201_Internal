@@ -88,5 +88,14 @@
   <ItemGroup>
     <None Include="Resources\planet1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\yeah.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lmao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titan temp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

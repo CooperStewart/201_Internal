@@ -20,8 +20,8 @@ namespace Dodge_example
         {
             x = 10;
             y = 150;
-            width = 40;
-            height = 40;
+            width = 80;
+            height = 80;
             spaceship = Properties.Resources.alien1;
             spaceRec = new Rectangle(x, y, width, height);
         }
@@ -83,9 +83,9 @@ namespace Dodge_example
             }
             if (move == "down")
             {
-                if (spaceRec.Location.Y > 400)
+                if (spaceRec.Location.Y > 390)
                 {
-                    y = 399;
+                    y = 389;
                     spaceRec.Location = new Point(x, y);
                 }
                 else

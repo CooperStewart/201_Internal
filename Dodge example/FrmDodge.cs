@@ -38,6 +38,7 @@ namespace Dodge_example
 
         private void FrmDodge_Load(object sender, EventArgs e)
         {
+
             MessageBox.Show("Use the left and right arrow keys to move the spaceship. \n Don't get hit by the planets! \n Every planet that gets past scores a point. \n If a planet hits a spaceship a life is lost! \n \n Enter your Name press tab and enter the number of lives \n Click Start to begin", "Game Instructions");
             txtName.Focus();
 
@@ -45,10 +46,11 @@ namespace Dodge_example
 
         private void PnlGame_Paint(object sender, PaintEventArgs e)
         {
+
             //get the graphics used to paint on the panel control
             g = e.Graphics;
             //call the Planet class's DrawPlanet method to draw the image planet1 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 1; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 20);
@@ -127,7 +129,7 @@ namespace Dodge_example
                 spaceship.MoveSpaceship(move);
                 up = false;
             }
-            if (spaceship.spaceRec.Location.Y > 399)
+            if (spaceship.spaceRec.Location.Y > 389)
             {
                 down = false;
             }

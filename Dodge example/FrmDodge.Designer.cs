@@ -49,6 +49,7 @@
             // 
             // PnlGame
             // 
+            this.PnlGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.PnlGame.Controls.Add(this.txtLives);
             this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.lblScore);
@@ -126,7 +127,7 @@
             // 
             // TmrPlanet
             // 
-            this.TmrPlanet.Interval = 1;
+            this.TmrPlanet.Interval = 5;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
             // 
             // contextMenuStrip1
@@ -136,7 +137,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 1;
+            this.TmrShip.Interval = 5;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // MnuStart
