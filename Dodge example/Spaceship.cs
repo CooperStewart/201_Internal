@@ -77,7 +77,7 @@ namespace Dodge_example
                 }
                 else
                 {
-                    y -= 5;
+                    y -= 10;
                     spaceRec.Location = new Point(x, y);
                 }
             }

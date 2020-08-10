@@ -125,6 +125,7 @@ namespace Dodge_example
             {
                 move = "down";
                 spaceship.MoveSpaceship(move);
+                up = false;
             }
             if (spaceship.spaceRec.Location.Y > 399)
             {
@@ -133,7 +134,10 @@ namespace Dodge_example
             if (spaceship.spaceRec.Location.Y < 150)
             {
                 up = false;
+                down = true;
             }
+
+          
         }
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
