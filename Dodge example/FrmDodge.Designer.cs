@@ -93,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(274, 152);
+            this.label2.Location = new System.Drawing.Point(428, 390);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -110,7 +110,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(334, 91);
+            this.label1.Location = new System.Drawing.Point(321, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -127,7 +127,7 @@
             // 
             // TmrPlanet
             // 
-            this.TmrPlanet.Interval = 5;
+            this.TmrPlanet.Interval = 50;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
             // 
             // contextMenuStrip1
@@ -137,7 +137,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 5;
+            this.TmrShip.Interval = 50;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // MnuStart

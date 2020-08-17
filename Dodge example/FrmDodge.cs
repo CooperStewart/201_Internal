@@ -26,7 +26,7 @@ namespace Dodge_example
             InitializeComponent();
             for (int i = 0; i < 7; i++)
             {
-                int x = 10 + (i * 75);
+                int x = 350 + (i * 75);
 
                 planet[i] = new Titan(x);
                
@@ -53,7 +53,7 @@ namespace Dodge_example
             for (int i = 0; i < 1; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(5, 20);
+                int rndmspeed = yspeed.Next(20, 30);
                 planet[i].y += rndmspeed;
 
                 //call the Planet class's drawPlanet method to draw the images
@@ -67,14 +67,13 @@ namespace Dodge_example
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
 
-
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 1; i++)
             {
                 planet[i].MovePlanet();
                 if (spaceship.spaceRec.IntersectsWith(planet[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-                    planet[i].y = 30; // set  y value of planetRec
+                   
                     lives -= 1;// lose a life
                     txtLives.Text = lives.ToString();// display number of lives
                     CheckLives();
