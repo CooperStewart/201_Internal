@@ -70,15 +70,7 @@ namespace Dodge_example
             for (int i = 0; i < 1; i++)
             {
                 planet[i].MovePlanet();
-                if (spaceship.spaceRec.IntersectsWith(planet[i].titanrec))
-                {
-                    //reset planet[i] back to top of panel
-                   
-                    lives -= 1;// lose a life
-                    txtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
-                }
-
+              
 
                 //if a planet reaches the bottom of the Game Area reposition it at the top
                 if (planet[i].y >= PnlGame.Height)
@@ -101,6 +93,7 @@ namespace Dodge_example
             if (e.KeyData == Keys.Left) { left = true; }
             if (e.KeyData == Keys.Right) { right = true; }
             if (e.KeyData == Keys.Space) { up = true; }
+            if (e.KeyData == Keys.Up) { up = true; }
 
 
         }
@@ -141,6 +134,38 @@ namespace Dodge_example
           
         }
 
+        private void tmrColosion_Tick(object sender, EventArgs e)
+        {
+
+            for (int i = 0; i < 1; i++)
+            {
+                planet[i].MovePlanet();
+                if (spaceship.spaceRec.IntersectsWith(planet[i].titanrec))
+                {
+                    //reset planet[i] back to top of panel
+
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+
+
+                //if a planet reaches the bottom of the Game Area reposition it at the top
+                if (planet[i].y >= PnlGame.Height)
+                {
+                    score += 1;//update the score
+                    lblScore.Text = score.ToString();// display score
+
+                    planet[i].y = 30;
+                }
+
+
+
+            }
+            PnlGame.Invalidate();//makes the paint event fire to redraw the panel
+
+        }
+
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
             score = 0;
@@ -148,13 +173,14 @@ namespace Dodge_example
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             TmrPlanet.Enabled = true;
             TmrShip.Enabled = true;
-
+            tmrColosion.Enabled = true;
         }
 
         private void MnuStop_Click(object sender, EventArgs e)
         {
             TmrShip.Enabled = false;
             TmrPlanet.Enabled = false;
+            tmrColosion.Enabled = false;
 
         }
 
@@ -171,6 +197,7 @@ namespace Dodge_example
         {
             if (lives == 0)
             {
+                tmrColosion.Enabled = false;
                 TmrPlanet.Enabled = false;
                 TmrShip.Enabled = false;
                 MessageBox.Show("Game Over");

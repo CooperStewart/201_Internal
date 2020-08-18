@@ -43,6 +43,7 @@
             this.MnuStart = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmrColosion = new System.Windows.Forms.Timer(this.components);
             this.PnlGame.SuspendLayout();
             this.MnuStart.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +51,7 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PnlGame.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
             this.PnlGame.Controls.Add(this.txtLives);
             this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.lblScore);
@@ -127,7 +129,7 @@
             // 
             // TmrPlanet
             // 
-            this.TmrPlanet.Interval = 50;
+            this.TmrPlanet.Interval = 25;
             this.TmrPlanet.Tick += new System.EventHandler(this.TmrPlanet_Tick);
             // 
             // contextMenuStrip1
@@ -137,7 +139,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 50;
+            this.TmrShip.Interval = 25;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // MnuStart
@@ -164,6 +166,11 @@
             this.MnuStop.Size = new System.Drawing.Size(43, 20);
             this.MnuStop.Text = "Stop";
             this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
+            // 
+            // tmrColosion
+            // 
+            this.tmrColosion.Interval = 500;
+            this.tmrColosion.Tick += new System.EventHandler(this.tmrColosion_Tick);
             // 
             // FrmDodge
             // 
@@ -203,6 +210,7 @@
         private System.Windows.Forms.MenuStrip MnuStart;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuStop;
+        private System.Windows.Forms.Timer tmrColosion;
     }
 }
 

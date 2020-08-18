@@ -83,6 +83,16 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap damien_hausson_promo_bg_low_copie {
+            get {
+                object obj = ResourceManager.GetObject("damien-hausson-promo-bg-low-copie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap planet1 {
             get {
                 object obj = ResourceManager.GetObject("planet1", resourceCulture);
