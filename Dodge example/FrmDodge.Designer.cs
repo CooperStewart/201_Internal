@@ -138,7 +138,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 50;
+            this.TmrShip.Interval = 5;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // MnuStart

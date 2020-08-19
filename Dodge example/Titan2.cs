@@ -20,7 +20,7 @@ namespace Dodge_example
             x = spacing;
             y = 180;
             width = 150;
-            height = 280;
+            height = 180;
             //planetImage contains the plane1.png image
             planetImage = Properties.Resources.planet1;
             titanrec = new Rectangle(x, y, width, height);

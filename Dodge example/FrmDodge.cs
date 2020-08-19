@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Reflection;
 namespace Dodge_example
 {
     public partial class FrmDodge : Form
     {
+      
+
+
+
         Graphics g; //declare a graphics object called g
                     // declare space for an array of 7 objects called planet 
         Titan[] titan = new Titan[7];
@@ -22,18 +26,24 @@ namespace Dodge_example
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
         string move;
-        protected virtual bool DoubleBuffered { get; set; }
 
         int score, lives, stop;
         public FrmDodge()
         {
             InitializeComponent();
+
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlGame, new object[] { true });
+
+
+
             for (int i = 0; i < 7; i++)
             {
                 int x = 200 + (i * 75);
+                int x2 = 330 + (i * 75);
+
 
                 titan[i] = new Titan(x);
-                titan2[i] = new Titan2(x);
+                titan2[i] = new Titan2(x2);
 
 
 
@@ -182,7 +192,7 @@ namespace Dodge_example
             {
                 down = false;
             }
-            if (spaceship.spaceRec.Location.Y < 150)
+            if (spaceship.spaceRec.Location.Y < 50)
             {
                 up = false;
                 down = true;
@@ -262,6 +272,8 @@ namespace Dodge_example
             }
 
         }
+
+      
 
     }
 }

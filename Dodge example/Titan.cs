@@ -17,6 +17,7 @@ namespace Dodge_example
         //Create a constructor (initialises the values of the fields)
         public Titan(int spacing)
         {
+
             x = spacing;
             y = 380;
             width = 350;
@@ -45,7 +46,7 @@ namespace Dodge_example
         }
         public void ChangeSprite2()
         {
-            titanImage = Properties.Resources.titan2;
+            titanImage = Properties.Resources.titan3;
 
         }
 

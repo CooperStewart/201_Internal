@@ -103,16 +103,6 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap IMG_1447 {
-            get {
-                object obj = ResourceManager.GetObject("IMG_1447", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap IMG_1447__1_ {
             get {
                 object obj = ResourceManager.GetObject("IMG_1447__1_", resourceCulture);
@@ -166,6 +156,16 @@ namespace Dodge_example.Properties {
         public static System.Drawing.Bitmap titan2 {
             get {
                 object obj = ResourceManager.GetObject("titan2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titan3 {
+            get {
+                object obj = ResourceManager.GetObject("titan3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
