@@ -14,8 +14,11 @@ namespace Dodge_example
     {
         Graphics g; //declare a graphics object called g
                     // declare space for an array of 7 objects called planet 
-        Titan[] planet = new Titan[7];
+        Titan[] titan = new Titan[7];
+        Titan2[] titan2 = new Titan2[7];
+
         Random yspeed = new Random();
+        Random xloc = new Random();
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
         string move;
@@ -29,8 +32,10 @@ namespace Dodge_example
             {
                 int x = 200 + (i * 75);
 
-                planet[i] = new Titan(x);
-               
+                titan[i] = new Titan(x);
+                titan2[i] = new Titan2(x);
+
+
 
             }
 
@@ -55,24 +60,32 @@ namespace Dodge_example
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10);
+                titan2[i].y += 15;
+
                 if (stop < 10)
                 {
-                    planet[i].y += rndmspeed;
+                    titan[i].y += rndmspeed;
+
 
                 }
                 else {
-                    planet[i].ChangeSprite();
+                    titan[i].ChangeSprite();
+
                 }
 
-                if(stop == 20)
+                if (stop == 20)
                 {
                     stop = 0;
-                    planet[i].ChangeSprite2();
+                    titan[i].ChangeSprite2();
+                    titan2[i].ChangeSprite2();
+
 
 
                 }
                 //call the Planet class's drawPlanet method to draw the images
-                planet[i].DrawPlanet(g);
+                titan[i].DrawPlanet(g);
+                titan2[i].DrawTitan2(g);
+
 
             }
 
@@ -86,18 +99,45 @@ namespace Dodge_example
           
             for (int i = 0; i < 1; i++)
             {
-                planet[i].MovePlanet();
-              
+                titan[i].MovePlanet();
+                titan2[i].MoveTitan2();
 
+
+                int rndmloc = xloc.Next(-100, 0);
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (planet[i].y >= PnlGame.Height)
+                if (titan[i].y >= PnlGame.Height)
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
 
-                    planet[i].y = 30;
+                    titan[i].y = -100;
                 }
+                if (titan2[i].y >= PnlGame.Height)
+                {
+                    score += 1;//update the score
+                    lblScore.Text = score.ToString();// display score
 
+                    titan2[i].y = -100;
+                }
+                titan[i].MovePlanet();
+                titan2[i].MoveTitan2();
+
+                if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
+                {
+                    //reset planet[i] back to top of panel
+
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
+                if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
+                {
+                    //reset planet[i] back to top of panel
+
+                    lives -= 1;// lose a life
+                    txtLives.Text = lives.ToString();// display number of lives
+                    CheckLives();
+                }
 
 
             }
@@ -156,8 +196,8 @@ namespace Dodge_example
 
             for (int i = 0; i < 1; i++)
             {
-                planet[i].MovePlanet();
-                if (spaceship.spaceRec.IntersectsWith(planet[i].titanrec))
+                titan[i].MovePlanet();
+                if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
 
@@ -168,12 +208,12 @@ namespace Dodge_example
 
 
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (planet[i].y >= PnlGame.Height)
+                if (titan[i].y >= PnlGame.Height)
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
 
-                    planet[i].y = 30;
+                    titan[i].y = 30;
                 }
 
 
