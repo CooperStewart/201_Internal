@@ -19,14 +19,15 @@ namespace Dodge_example
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
         string move;
-        int score, lives;
+        protected virtual bool DoubleBuffered { get; set; }
 
+        int score, lives, stop;
         public FrmDodge()
         {
             InitializeComponent();
             for (int i = 0; i < 7; i++)
             {
-                int x = 350 + (i * 75);
+                int x = 200 + (i * 75);
 
                 planet[i] = new Titan(x);
                
@@ -53,9 +54,23 @@ namespace Dodge_example
             for (int i = 0; i < 1; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(20, 30);
-                planet[i].y += rndmspeed;
+                int rndmspeed = yspeed.Next(5, 10);
+                if (stop < 10)
+                {
+                    planet[i].y += rndmspeed;
 
+                }
+                else {
+                    planet[i].ChangeSprite();
+                }
+
+                if(stop == 20)
+                {
+                    stop = 0;
+                    planet[i].ChangeSprite2();
+
+
+                }
                 //call the Planet class's drawPlanet method to draw the images
                 planet[i].DrawPlanet(g);
 
@@ -66,7 +81,9 @@ namespace Dodge_example
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
+            stop += 1;
 
+          
             for (int i = 0; i < 1; i++)
             {
                 planet[i].MovePlanet();
@@ -173,7 +190,7 @@ namespace Dodge_example
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             TmrPlanet.Enabled = true;
             TmrShip.Enabled = true;
-            tmrColosion.Enabled = true;
+        
         }
 
         private void MnuStop_Click(object sender, EventArgs e)

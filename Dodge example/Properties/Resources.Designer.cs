@@ -22,7 +22,7 @@ namespace Dodge_example.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Dodge_example.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Dodge_example.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace Dodge_example.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alien1 {
+        public static System.Drawing.Bitmap alien1 {
             get {
                 object obj = ResourceManager.GetObject("alien1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap alien2 {
+        public static System.Drawing.Bitmap alien2 {
             get {
                 object obj = ResourceManager.GetObject("alien2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,9 +81,19 @@ namespace Dodge_example.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Counter_Attack_Mankind_8_Bit__Attack_on_Titan_OST {
+            get {
+                object obj = ResourceManager.GetObject("Counter_Attack_Mankind_8_Bit__Attack_on_Titan_OST", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap damien_hausson_promo_bg_low_copie {
+        public static System.Drawing.Bitmap damien_hausson_promo_bg_low_copie {
             get {
                 object obj = ResourceManager.GetObject("damien-hausson-promo-bg-low-copie", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +103,27 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap planet1 {
+        public static System.Drawing.Bitmap IMG_1447 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_1447", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap IMG_1447__1_ {
+            get {
+                object obj = ResourceManager.GetObject("IMG_1447__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap planet1 {
             get {
                 object obj = ResourceManager.GetObject("planet1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +133,7 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap planet2 {
+        public static System.Drawing.Bitmap planet2 {
             get {
                 object obj = ResourceManager.GetObject("planet2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,9 +143,29 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap planet3 {
+        public static System.Drawing.Bitmap planet3 {
             get {
                 object obj = ResourceManager.GetObject("planet3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titan {
+            get {
+                object obj = ResourceManager.GetObject("titan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titan2 {
+            get {
+                object obj = ResourceManager.GetObject("titan2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

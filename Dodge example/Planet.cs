@@ -19,16 +19,17 @@ namespace Dodge_example
         {
             x = spacing;
             y = 380;
-            width = 140;
-            height = 180;
+            width = 350;
+            height = 280;
             //planetImage contains the plane1.png image
-            planetImage = Properties.Resources.planet1;
+            planetImage = Properties.Resources.titan2;
             titanrec = new Rectangle(x, y, width, height);
         }
 
         // Methods for the Planet class
         public void DrawPlanet(Graphics g)
         {
+
             g.DrawImage(planetImage, titanrec);
             titanrec = new Rectangle(x, y, width, height);
         }
@@ -36,6 +37,16 @@ namespace Dodge_example
         {
 
             titanrec.Location = new Point(y, x -10);
+        }
+        public void ChangeSprite()
+        {
+            planetImage = Properties.Resources.titan;
+
+        }
+        public void ChangeSprite2()
+        {
+            planetImage = Properties.Resources.titan2;
+
         }
 
     }
