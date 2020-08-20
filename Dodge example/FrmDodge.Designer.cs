@@ -69,9 +69,9 @@
             this.txtLives.AutoSize = true;
             this.txtLives.Location = new System.Drawing.Point(329, 245);
             this.txtLives.Name = "txtLives";
-            this.txtLives.Size = new System.Drawing.Size(13, 13);
+            this.txtLives.Size = new System.Drawing.Size(31, 13);
             this.txtLives.TabIndex = 2;
-            this.txtLives.Text = "5";
+            this.txtLives.Text = "1000";
             // 
             // label3
             // 

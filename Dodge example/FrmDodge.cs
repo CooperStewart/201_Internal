@@ -69,7 +69,7 @@ namespace Dodge_example
             for (int i = 0; i < 1; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(5, 10);
+                int rndmspeed = yspeed.Next(5, 10)+ score/10;
                 titan2[i].y += 15;
 
                 if (stop < 10)
