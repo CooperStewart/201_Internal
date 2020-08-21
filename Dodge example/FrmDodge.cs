@@ -135,7 +135,7 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-
+                    titan[i].y = 0;
                     lives -= 1;// lose a life
                     txtLives.Text = lives.ToString();// display number of lives
                     CheckLives();
@@ -143,6 +143,7 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
+                    titan2[i].y = 0;
 
                     lives -= 1;// lose a life
                     txtLives.Text = lives.ToString();// display number of lives
@@ -224,6 +225,23 @@ namespace Dodge_example
         private void MnuStart_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            startscreen.Visible = false;
+
+            score = 0;
+            lblScore.Text = score.ToString();
+            lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
+            lbljump.Visible = false;
+            TmrPlanet.Enabled = true;
+            TmrShip.Enabled = true;
+
+        }
+
+        private void lblstart_MouseHover(object sender, EventArgs e)
+        {
         }
 
         private void tmrColosion_Tick(object sender, EventArgs e)
