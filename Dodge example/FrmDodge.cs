@@ -55,8 +55,8 @@ namespace Dodge_example
         private void FrmDodge_Load(object sender, EventArgs e)
         {
 
-            MessageBox.Show("Use the left and right arrow keys to move the spaceship. \n Don't get hit by the planets! \n Every planet that gets past scores a point. \n If a planet hits a spaceship a life is lost! \n \n Enter your Name press tab and enter the number of lives \n Click Start to begin", "Game Instructions");
-            txtName.Focus();
+           
+            lbljump.Visible = true;
 
         }
 
@@ -105,7 +105,7 @@ namespace Dodge_example
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
             stop += 1;
-
+            healthbar.Width = lives;
           
             for (int i = 0; i < 1; i++)
             {
@@ -201,6 +201,31 @@ namespace Dodge_example
           
         }
 
+        private void txtLives_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void healthbar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tmrhelp_Tick(object sender, EventArgs e)
+        {
+            if (up == true)
+            {
+                lbljump.Visible=false;
+                TmrPlanet.Enabled = true;
+                TmrShip.Enabled = true;
+            }
+        }
+
+        private void MnuStart_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
         private void tmrColosion_Tick(object sender, EventArgs e)
         {
 
@@ -238,8 +263,7 @@ namespace Dodge_example
             score = 0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
-            TmrPlanet.Enabled = true;
-            TmrShip.Enabled = true;
+            
         
         }
 

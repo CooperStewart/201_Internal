@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.healthbar = new System.Windows.Forms.PictureBox();
             this.txtLives = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
@@ -37,6 +38,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PlanetDodge = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
@@ -44,13 +46,19 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrColosion = new System.Windows.Forms.Timer(this.components);
+            this.lbljump = new System.Windows.Forms.Label();
+            this.tmrhelp = new System.Windows.Forms.Timer(this.components);
             this.PnlGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.MnuStart.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.PnlGame.Controls.Add(this.lbljump);
+            this.PnlGame.Controls.Add(this.healthbar);
             this.PnlGame.Controls.Add(this.txtLives);
             this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.lblScore);
@@ -58,20 +66,32 @@
             this.PnlGame.Controls.Add(this.txtName);
             this.PnlGame.Controls.Add(this.label1);
             this.PnlGame.Controls.Add(this.PlanetDodge);
+            this.PnlGame.Controls.Add(this.pictureBox2);
             this.PnlGame.Location = new System.Drawing.Point(-3, 5);
             this.PnlGame.Name = "PnlGame";
             this.PnlGame.Size = new System.Drawing.Size(635, 457);
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
+            // healthbar
+            // 
+            this.healthbar.BackColor = System.Drawing.Color.Lime;
+            this.healthbar.Location = new System.Drawing.Point(3, 434);
+            this.healthbar.Name = "healthbar";
+            this.healthbar.Size = new System.Drawing.Size(634, 20);
+            this.healthbar.TabIndex = 8;
+            this.healthbar.TabStop = false;
+            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
+            // 
             // txtLives
             // 
             this.txtLives.AutoSize = true;
-            this.txtLives.Location = new System.Drawing.Point(329, 245);
+            this.txtLives.Location = new System.Drawing.Point(600, 6);
             this.txtLives.Name = "txtLives";
-            this.txtLives.Size = new System.Drawing.Size(31, 13);
+            this.txtLives.Size = new System.Drawing.Size(25, 13);
             this.txtLives.TabIndex = 2;
-            this.txtLives.Text = "1000";
+            this.txtLives.Text = "634";
+            this.txtLives.Click += new System.EventHandler(this.txtLives_Click);
             // 
             // label3
             // 
@@ -85,7 +105,7 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(321, 200);
+            this.lblScore.Location = new System.Drawing.Point(492, 38);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(13, 13);
             this.lblScore.TabIndex = 6;
@@ -94,7 +114,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(428, 390);
+            this.label2.Location = new System.Drawing.Point(511, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -126,6 +146,15 @@
             this.PlanetDodge.TabIndex = 2;
             this.PlanetDodge.Text = "Planet Dodge";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
+            this.pictureBox2.Location = new System.Drawing.Point(0, 434);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(634, 20);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // TmrPlanet
             // 
             this.TmrPlanet.Interval = 50;
@@ -148,14 +177,16 @@
             this.MnuStop});
             this.MnuStart.Location = new System.Drawing.Point(0, 0);
             this.MnuStart.Name = "MnuStart";
-            this.MnuStart.Size = new System.Drawing.Size(634, 24);
+            this.MnuStart.Size = new System.Drawing.Size(634, 44);
             this.MnuStart.TabIndex = 2;
             this.MnuStart.Text = "menuStrip1";
+            this.MnuStart.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MnuStart_ItemClicked);
             // 
             // startToolStripMenuItem
             // 
+            this.startToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 19F);
             this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.startToolStripMenuItem.Size = new System.Drawing.Size(80, 40);
             this.startToolStripMenuItem.Text = "Start";
             this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
             // 
@@ -170,6 +201,22 @@
             // 
             this.tmrColosion.Interval = 500;
             this.tmrColosion.Tick += new System.EventHandler(this.tmrColosion_Tick);
+            // 
+            // lbljump
+            // 
+            this.lbljump.AutoSize = true;
+            this.lbljump.Font = new System.Drawing.Font("Prestige Elite Std", 18.25F, System.Drawing.FontStyle.Bold);
+            this.lbljump.Location = new System.Drawing.Point(112, 112);
+            this.lbljump.Name = "lbljump";
+            this.lbljump.Size = new System.Drawing.Size(402, 28);
+            this.lbljump.TabIndex = 10;
+            this.lbljump.Text = "Press the spacebar to jump";
+            this.lbljump.Visible = false;
+            // 
+            // tmrhelp
+            // 
+            this.tmrhelp.Enabled = true;
+            this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
             // 
             // FrmDodge
             // 
@@ -187,6 +234,8 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
             this.PnlGame.ResumeLayout(false);
             this.PnlGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.healthbar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.MnuStart.ResumeLayout(false);
             this.MnuStart.PerformLayout();
             this.ResumeLayout(false);
@@ -210,6 +259,10 @@
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MnuStop;
         private System.Windows.Forms.Timer tmrColosion;
+        private System.Windows.Forms.PictureBox healthbar;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbljump;
+        private System.Windows.Forms.Timer tmrhelp;
     }
 }
 
