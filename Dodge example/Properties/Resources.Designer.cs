@@ -173,6 +173,16 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap titan21i {
+            get {
+                object obj = ResourceManager.GetObject("titan21i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap titan22 {
             get {
                 object obj = ResourceManager.GetObject("titan22", resourceCulture);
@@ -193,6 +203,16 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap titan22i {
+            get {
+                object obj = ResourceManager.GetObject("titan22i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap titan23 {
             get {
                 object obj = ResourceManager.GetObject("titan23", resourceCulture);
@@ -203,9 +223,29 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap titan24 {
+        public static System.Drawing.Bitmap titan23i {
             get {
-                object obj = ResourceManager.GetObject("titan24", resourceCulture);
+                object obj = ResourceManager.GetObject("titan23i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titan24i {
+            get {
+                object obj = ResourceManager.GetObject("titan24i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titan2i {
+            get {
+                object obj = ResourceManager.GetObject("titan2i", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +256,16 @@ namespace Dodge_example.Properties {
         public static System.Drawing.Bitmap titan3 {
             get {
                 object obj = ResourceManager.GetObject("titan3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap titani {
+            get {
+                object obj = ResourceManager.GetObject("titani", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -19,8 +19,8 @@ namespace Dodge_example
         {
             x = spacing;
             y = 180;
-            width = 120;
-            height = 150;
+            width = 100;
+            height = 130;
             //planetImage contains the plane1.png image
             planetImage = Properties.Resources.titan21;
             titanrec = new Rectangle(x, y, width, height);
@@ -51,7 +51,7 @@ namespace Dodge_example
 
         public void ChangeSprite3()
         {
-            planetImage = Properties.Resources.titan24;
+            planetImage = Properties.Resources.titan22;
 
         }
 

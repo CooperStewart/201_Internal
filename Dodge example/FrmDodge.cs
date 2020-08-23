@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Threading;
+
 namespace Dodge_example
 {
     public partial class FrmDodge : Form
@@ -33,13 +35,14 @@ namespace Dodge_example
             InitializeComponent();
 
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, PnlGame, new object[] { true });
+            PnlGame.Size = new System.Drawing.Size(1000, 450);
 
 
 
             for (int i = 0; i < 7; i++)
             {
                 int x = 200 + (i * 75);
-                int x2 = 300 + (i * 75);
+                int x2 = 320 + (i * 75);
 
 
                 titan[i] = new Titan(x);
@@ -135,16 +138,17 @@ namespace Dodge_example
                 titan2[i].MoveTitan2();
 
 
-                int rndmloc = xloc.Next(-100, 0);
+                int rndmloc = (xloc.Next(1000, 1500))-score;
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (titan[i].y >= PnlGame.Height)
+                if (titan[i].y >= (1500-(score*10)))
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
-
-                    titan[i].y = -100;
+                    
+                        titan[i].y = -100;
+                    
                 }
-                if (titan2[i].y >= PnlGame.Height)
+                if (titan2[i].y >= (1500-(score*10)))
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score

@@ -72,7 +72,7 @@
             this.PnlGame.Controls.Add(this.pictureBox2);
             this.PnlGame.Location = new System.Drawing.Point(-3, 5);
             this.PnlGame.Name = "PnlGame";
-            this.PnlGame.Size = new System.Drawing.Size(635, 457);
+            this.PnlGame.Size = new System.Drawing.Size(986, 457);
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
@@ -82,7 +82,7 @@
             this.lblstart.BackColor = System.Drawing.Color.White;
             this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
             this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblstart.Location = new System.Drawing.Point(191, 158);
+            this.lblstart.Location = new System.Drawing.Point(362, 132);
             this.lblstart.Name = "lblstart";
             this.lblstart.Size = new System.Drawing.Size(277, 120);
             this.lblstart.TabIndex = 7;
@@ -93,9 +93,9 @@
             // startscreen
             // 
             this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(3, -5);
+            this.startscreen.Location = new System.Drawing.Point(0, -8);
             this.startscreen.Name = "startscreen";
-            this.startscreen.Size = new System.Drawing.Size(640, 462);
+            this.startscreen.Size = new System.Drawing.Size(986, 462);
             this.startscreen.TabIndex = 11;
             this.startscreen.TabStop = false;
             this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
@@ -114,9 +114,9 @@
             // healthbar
             // 
             this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(3, 434);
+            this.healthbar.Location = new System.Drawing.Point(0, 434);
             this.healthbar.Name = "healthbar";
-            this.healthbar.Size = new System.Drawing.Size(634, 20);
+            this.healthbar.Size = new System.Drawing.Size(986, 20);
             this.healthbar.TabIndex = 8;
             this.healthbar.TabStop = false;
             this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
@@ -126,9 +126,9 @@
             this.txtLives.AutoSize = true;
             this.txtLives.Location = new System.Drawing.Point(600, 6);
             this.txtLives.Name = "txtLives";
-            this.txtLives.Size = new System.Drawing.Size(25, 13);
+            this.txtLives.Size = new System.Drawing.Size(31, 13);
             this.txtLives.TabIndex = 2;
-            this.txtLives.Text = "634";
+            this.txtLives.Text = "1000";
             this.txtLives.Click += new System.EventHandler(this.txtLives_Click);
             // 
             // lblScore
@@ -180,7 +180,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
             this.pictureBox2.Location = new System.Drawing.Point(0, 434);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(634, 20);
+            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
@@ -244,7 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 461);
+            this.ClientSize = new System.Drawing.Size(984, 461);
             this.Controls.Add(this.MnuStart);
             this.Controls.Add(this.PnlGame);
             this.KeyPreview = true;
