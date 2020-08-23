@@ -27,7 +27,7 @@ namespace Dodge_example
         bool left, right, up, down;
         string move;
 
-        int score, lives, stop;
+        int score, lives, stop, stop2;
         public FrmDodge()
         {
             InitializeComponent();
@@ -39,7 +39,7 @@ namespace Dodge_example
             for (int i = 0; i < 7; i++)
             {
                 int x = 200 + (i * 75);
-                int x2 = 330 + (i * 75);
+                int x2 = 300 + (i * 75);
 
 
                 titan[i] = new Titan(x);
@@ -80,18 +80,39 @@ namespace Dodge_example
                 }
                 else {
                     titan[i].ChangeSprite();
-
                 }
 
                 if (stop == 20)
                 {
                     stop = 0;
                     titan[i].ChangeSprite2();
-                    titan2[i].ChangeSprite2();
 
 
 
                 }
+                if (stop2 <2)
+                {
+                    titan2[i].ChangeSprite4();
+
+                }
+                if (stop2 ==2)
+                { titan2[i].ChangeSprite();
+                
+                }
+
+                if (stop2 == 4)
+                {
+                    titan2[i].ChangeSprite2();
+
+                }
+
+                if (stop2 == 6)
+                {
+                    titan2[i].ChangeSprite3();
+                    stop2 = 0;
+
+                }
+
                 //call the Planet class's drawPlanet method to draw the images
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
@@ -105,6 +126,7 @@ namespace Dodge_example
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
             stop += 1;
+            stop2 += 1;
             healthbar.Width = lives;
           
             for (int i = 0; i < 1; i++)
@@ -230,7 +252,7 @@ namespace Dodge_example
         private void label3_Click(object sender, EventArgs e)
         {
             startscreen.Visible = false;
-
+            lblstart.Visible = false;
             score = 0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
@@ -242,6 +264,11 @@ namespace Dodge_example
 
         private void lblstart_MouseHover(object sender, EventArgs e)
         {
+        }
+
+        private void startscreen_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void tmrColosion_Tick(object sender, EventArgs e)

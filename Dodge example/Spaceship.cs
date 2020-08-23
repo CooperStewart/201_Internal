@@ -12,7 +12,7 @@ namespace Dodge_example
 
         public int x, y, width, height;//variables for the rectangle
         public Image spaceship;//variable for the planet's image
-
+        
         public Rectangle spaceRec;//variable for a rectangle to place our image in
 
         //Create a constructor (initialises the values of the fields)
@@ -32,6 +32,7 @@ namespace Dodge_example
             g.DrawImage(spaceship, spaceRec);
         }
 
+   
        
         public void MoveSpaceship(string move)
         {
@@ -77,7 +78,8 @@ namespace Dodge_example
                 }
                 else
                 {
-                    y -= 30;
+                    
+                    y -= (spaceRec.Location.Y / 10);
                     spaceRec.Location = new Point(x, y);
                 }
             }
@@ -90,7 +92,7 @@ namespace Dodge_example
                 }
                 else
                 {
-                    y += 31;
+                    y +=20+((spaceRec.Location.Y/100)*5);
                     spaceRec.Location = new Point(x, y);
                 }
 

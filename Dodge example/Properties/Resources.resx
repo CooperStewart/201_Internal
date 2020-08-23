@@ -151,4 +151,19 @@
   <data name="titan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_1444.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="titan21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1472.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titan222" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1475.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titan23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1474.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titan24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1476.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="titan22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1492.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

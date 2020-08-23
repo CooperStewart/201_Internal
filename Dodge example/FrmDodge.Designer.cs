@@ -30,9 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.lblstart = new System.Windows.Forms.Label();
+            this.startscreen = new System.Windows.Forms.PictureBox();
+            this.lbljump = new System.Windows.Forms.Label();
             this.healthbar = new System.Windows.Forms.PictureBox();
             this.txtLives = new System.Windows.Forms.Label();
-            this.lblstart = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -46,14 +48,12 @@
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrColosion = new System.Windows.Forms.Timer(this.components);
-            this.lbljump = new System.Windows.Forms.Label();
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
-            this.startscreen = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.MnuStart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             this.SuspendLayout();
             // 
             // PnlGame
@@ -76,6 +76,41 @@
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
+            // lblstart
+            // 
+            this.lblstart.AutoSize = true;
+            this.lblstart.BackColor = System.Drawing.Color.White;
+            this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
+            this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblstart.Location = new System.Drawing.Point(191, 158);
+            this.lblstart.Name = "lblstart";
+            this.lblstart.Size = new System.Drawing.Size(277, 120);
+            this.lblstart.TabIndex = 7;
+            this.lblstart.Text = "Start";
+            this.lblstart.Click += new System.EventHandler(this.label3_Click);
+            this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
+            // 
+            // startscreen
+            // 
+            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
+            this.startscreen.Location = new System.Drawing.Point(3, -5);
+            this.startscreen.Name = "startscreen";
+            this.startscreen.Size = new System.Drawing.Size(640, 462);
+            this.startscreen.TabIndex = 11;
+            this.startscreen.TabStop = false;
+            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
+            // 
+            // lbljump
+            // 
+            this.lbljump.AutoSize = true;
+            this.lbljump.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
+            this.lbljump.Location = new System.Drawing.Point(112, 112);
+            this.lbljump.Name = "lbljump";
+            this.lbljump.Size = new System.Drawing.Size(348, 29);
+            this.lbljump.TabIndex = 10;
+            this.lbljump.Text = "Press the spacebar to jump";
+            this.lbljump.Visible = false;
+            // 
             // healthbar
             // 
             this.healthbar.BackColor = System.Drawing.Color.Lime;
@@ -95,20 +130,6 @@
             this.txtLives.TabIndex = 2;
             this.txtLives.Text = "634";
             this.txtLives.Click += new System.EventHandler(this.txtLives_Click);
-            // 
-            // lblstart
-            // 
-            this.lblstart.AutoSize = true;
-            this.lblstart.BackColor = System.Drawing.Color.White;
-            this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
-            this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblstart.Location = new System.Drawing.Point(191, 158);
-            this.lblstart.Name = "lblstart";
-            this.lblstart.Size = new System.Drawing.Size(277, 120);
-            this.lblstart.TabIndex = 7;
-            this.lblstart.Text = "Start";
-            this.lblstart.Click += new System.EventHandler(this.label3_Click);
-            this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
             // lblScore
             // 
@@ -214,30 +235,10 @@
             this.tmrColosion.Interval = 500;
             this.tmrColosion.Tick += new System.EventHandler(this.tmrColosion_Tick);
             // 
-            // lbljump
-            // 
-            this.lbljump.AutoSize = true;
-            this.lbljump.Font = new System.Drawing.Font("Prestige Elite Std", 18.25F, System.Drawing.FontStyle.Bold);
-            this.lbljump.Location = new System.Drawing.Point(112, 112);
-            this.lbljump.Name = "lbljump";
-            this.lbljump.Size = new System.Drawing.Size(402, 28);
-            this.lbljump.TabIndex = 10;
-            this.lbljump.Text = "Press the spacebar to jump";
-            this.lbljump.Visible = false;
-            // 
             // tmrhelp
             // 
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
-            // 
-            // startscreen
-            // 
-            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(3, -5);
-            this.startscreen.Name = "startscreen";
-            this.startscreen.Size = new System.Drawing.Size(640, 462);
-            this.startscreen.TabIndex = 11;
-            this.startscreen.TabStop = false;
             // 
             // FrmDodge
             // 
@@ -255,11 +256,11 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
             this.PnlGame.ResumeLayout(false);
             this.PnlGame.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.startscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.MnuStart.ResumeLayout(false);
             this.MnuStart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.startscreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
