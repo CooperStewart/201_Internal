@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Dodge_example
 {
@@ -21,7 +22,7 @@ namespace Dodge_example
             x = 10;
             y = 150;
             width = 80;
-            height = 80;
+            height = 150;
             spaceship = Properties.Resources.alien1;
             spaceRec = new Rectangle(x, y, width, height);
         }
@@ -31,9 +32,19 @@ namespace Dodge_example
 
             g.DrawImage(spaceship, spaceRec);
         }
+        public void Flip()
+        {
+            spaceRec.Width = 150;
+            spaceRec.Height = 25;
+        }
 
-   
-       
+        public void Flip2()
+        {
+            spaceRec.Width = 80;
+            spaceRec.Height = 150;
+        }
+
+
         public void MoveSpaceship(string move)
         {
             spaceRec.Location = new Point(x, y);
@@ -48,8 +59,16 @@ namespace Dodge_example
                 }
                 else
                 {
-                    x += 10;
-                    spaceRec.Location = new Point(x, y);
+                    if (move == "up")
+                    {
+                        x += 2;
+                        spaceRec.Location = new Point(x, y);
+                    }
+                    else
+                    {
+                        x += 10;
+                        spaceRec.Location = new Point(x, y);
+                    }
                 }
 
             }
@@ -64,16 +83,25 @@ namespace Dodge_example
                 }
                 else
                 {
-                    x -= 10;
-                    spaceRec.Location = new Point(x, y);
+
+                    if (move == "up")
+                    {
+                        x += 2;
+                        spaceRec.Location = new Point(x, y);
+                    }
+                    else
+                    {
+                        x -= 10;
+                        spaceRec.Location = new Point(x, y);
+                    }
                 }
 
             }
             if (move == "up")
             {
-                if (spaceRec.Location.Y < 12)
+                if (spaceRec.Location.Y < -10)
                 {
-                    y = 20;
+                    y = -9;
                     spaceRec.Location = new Point(x, y);
                 }
                 else
@@ -97,6 +125,8 @@ namespace Dodge_example
                 }
 
             }
+
+            
         }
 
     }

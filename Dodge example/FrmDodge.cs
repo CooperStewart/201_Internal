@@ -41,7 +41,7 @@ namespace Dodge_example
 
             for (int i = 0; i < 7; i++)
             {
-                int x = 200 + (i * 75);
+                int x = 235 + (i * 75);
                 int x2 = 320 + (i * 75);
 
 
@@ -51,7 +51,6 @@ namespace Dodge_example
 
 
             }
-
 
         }
 
@@ -72,7 +71,7 @@ namespace Dodge_example
             for (int i = 0; i < 1; i++)
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
-                int rndmspeed = yspeed.Next(5, 10)+ score/10;
+                int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 titan2[i].y += 15;
 
                 if (stop < 10)
@@ -115,22 +114,22 @@ namespace Dodge_example
                     stop2 = 0;
 
                 }
-
+                titan2[i].y += rndmspeed;
                 //call the Planet class's drawPlanet method to draw the images
+                spaceship.DrawSpaceship(g);
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
 
 
             }
 
-            spaceship.DrawSpaceship(g);
         }
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
             stop += 1;
             stop2 += 1;
-            healthbar.Width = lives;
+            healthbar.Width = lives*5;
           
             for (int i = 0; i < 1; i++)
             {
@@ -140,7 +139,7 @@ namespace Dodge_example
 
                 int rndmloc = (xloc.Next(1000, 1500))-score;
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (titan[i].y >= (1500-(score*10)))
+                if (titan[i].y >= 1500)
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
@@ -148,7 +147,7 @@ namespace Dodge_example
                         titan[i].y = -100;
                     
                 }
-                if (titan2[i].y >= (1500-(score*10)))
+                if (titan2[i].y >= 1500)
                 {
                     score += 1;//update the score
                     lblScore.Text = score.ToString();// display score
@@ -161,7 +160,6 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-                    titan[i].y = 0;
                     lives -= 1;// lose a life
                     txtLives.Text = lives.ToString();// display number of lives
                     CheckLives();
@@ -169,7 +167,6 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-                    titan2[i].y = 0;
 
                     lives -= 1;// lose a life
                     txtLives.Text = lives.ToString();// display number of lives
@@ -215,17 +212,25 @@ namespace Dodge_example
                 spaceship.MoveSpaceship(move);
                 up = false;
             }
-            if (spaceship.spaceRec.Location.Y > 389)
+            if (spaceship.spaceRec.Location.Y > 300)
             {
                 down = false;
             }
-            if (spaceship.spaceRec.Location.Y < 50)
+            if (spaceship.spaceRec.Location.Y < 85)
+            {
+         
+                spaceship.Flip();
+            }
+            else
+            {
+                spaceship.Flip2();
+            }
+            if (spaceship.spaceRec.Location.Y < 35)
             {
                 up = false;
                 down = true;
             }
 
-          
         }
 
         private void txtLives_Click(object sender, EventArgs e)

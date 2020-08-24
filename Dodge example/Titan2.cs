@@ -19,7 +19,7 @@ namespace Dodge_example
         {
             x = spacing;
             y = 180;
-            width = 100;
+            width = 85;
             height = 130;
             //planetImage contains the plane1.png image
             planetImage = Properties.Resources.titan21;

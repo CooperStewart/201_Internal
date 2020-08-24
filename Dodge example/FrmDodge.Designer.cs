@@ -93,7 +93,7 @@
             // startscreen
             // 
             this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -8);
+            this.startscreen.Location = new System.Drawing.Point(0, -5);
             this.startscreen.Name = "startscreen";
             this.startscreen.Size = new System.Drawing.Size(986, 462);
             this.startscreen.TabIndex = 11;
@@ -126,9 +126,9 @@
             this.txtLives.AutoSize = true;
             this.txtLives.Location = new System.Drawing.Point(600, 6);
             this.txtLives.Name = "txtLives";
-            this.txtLives.Size = new System.Drawing.Size(31, 13);
+            this.txtLives.Size = new System.Drawing.Size(25, 13);
             this.txtLives.TabIndex = 2;
-            this.txtLives.Text = "1000";
+            this.txtLives.Text = "200";
             this.txtLives.Click += new System.EventHandler(this.txtLives_Click);
             // 
             // lblScore
