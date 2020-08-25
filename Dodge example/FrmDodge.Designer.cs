@@ -93,7 +93,7 @@
             // startscreen
             // 
             this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -5);
+            this.startscreen.Location = new System.Drawing.Point(0, -8);
             this.startscreen.Name = "startscreen";
             this.startscreen.Size = new System.Drawing.Size(986, 462);
             this.startscreen.TabIndex = 11;
@@ -229,11 +229,6 @@
             this.MnuStop.Size = new System.Drawing.Size(43, 20);
             this.MnuStop.Text = "Stop";
             this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
-            // 
-            // tmrColosion
-            // 
-            this.tmrColosion.Interval = 500;
-            this.tmrColosion.Tick += new System.EventHandler(this.tmrColosion_Tick);
             // 
             // tmrhelp
             // 

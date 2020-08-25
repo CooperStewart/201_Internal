@@ -22,7 +22,9 @@ namespace Dodge_example
                     // declare space for an array of 7 objects called planet 
         Titan[] titan = new Titan[7];
         Titan2[] titan2 = new Titan2[7];
-
+        Background[] background = new Background[7];
+        Background2[] background2 = new Background2[7];
+        
         Random yspeed = new Random();
         Random xloc = new Random();
         Spaceship spaceship = new Spaceship();
@@ -43,10 +45,12 @@ namespace Dodge_example
             {
                 int x = 235 + (i * 75);
                 int x2 = 320 + (i * 75);
-
+                int x3 = 0 + (i * 75);
 
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
+                background[i] = new Background(x3);
+                background2[i] = new Background2(x);
 
 
 
@@ -73,7 +77,10 @@ namespace Dodge_example
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 titan2[i].y += 15;
-
+                background[i].x += 15;
+                background2[i].x += 15;
+                background[i].y = 0;
+                background2[i].y = 0;
                 if (stop < 10)
                 {
                     titan[i].y += rndmspeed;
@@ -116,6 +123,8 @@ namespace Dodge_example
                 }
                 titan2[i].y += rndmspeed;
                 //call the Planet class's drawPlanet method to draw the images
+                background2[i].DrawBackground(g);
+                background[i].DrawBackground(g);
                 spaceship.DrawSpaceship(g);
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
@@ -154,8 +163,21 @@ namespace Dodge_example
 
                     titan2[i].y = -100;
                 }
+
+                if (background[i].x > 1000)
+                {
+                    background[i].x = 500;
+                }
+
+
+                if (background2[i].x > 1000)
+                {
+                    background2[i].x = 0;
+                }
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
+                background[i].MoveBackground();
+                background2[i].MoveBackground();
 
                 if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
@@ -280,37 +302,7 @@ namespace Dodge_example
 
         }
 
-        private void tmrColosion_Tick(object sender, EventArgs e)
-        {
-
-            for (int i = 0; i < 1; i++)
-            {
-                titan[i].MovePlanet();
-                if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
-                {
-                    //reset planet[i] back to top of panel
-
-                    lives -= 1;// lose a life
-                    txtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
-                }
-
-
-                //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (titan[i].y >= PnlGame.Height)
-                {
-                    score += 1;//update the score
-                    lblScore.Text = score.ToString();// display score
-
-                    titan[i].y = 30;
-                }
-
-
-
-            }
-            PnlGame.Invalidate();//makes the paint event fire to redraw the panel
-
-        }
+  
 
         private void startToolStripMenuItem_Click(object sender, EventArgs e)
         {
