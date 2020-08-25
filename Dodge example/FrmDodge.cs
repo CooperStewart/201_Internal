@@ -50,7 +50,7 @@ namespace Dodge_example
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
                 background[i] = new Background(x3);
-                background2[i] = new Background2(x);
+                background2[i] = new Background2(x3);
 
 
 
@@ -77,17 +77,19 @@ namespace Dodge_example
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 titan2[i].y += 15;
-                background[i].x += 15;
-                background2[i].x += 15;
+                background[i].x += 7;
+                background2[i].x += 7;
                 background[i].y = 0;
-                background2[i].y = 0;
-                if (stop < 10)
+                background2[i].y = 4;
+                if (stop < 7)
                 {
-                    titan[i].y += rndmspeed;
+                    titan[i].y += 13;
 
 
                 }
                 else {
+                    titan[i].y += 7;
+
                     titan[i].ChangeSprite();
                 }
 
@@ -166,13 +168,13 @@ namespace Dodge_example
 
                 if (background[i].x > 1000)
                 {
-                    background[i].x = 500;
+                    background[i].x = -1000;
                 }
 
 
                 if (background2[i].x > 1000)
                 {
-                    background2[i].x = 0;
+                    background2[i].x = background[i].x -1000;
                 }
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();

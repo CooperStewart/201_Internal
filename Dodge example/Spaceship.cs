@@ -66,7 +66,7 @@ namespace Dodge_example
                     }
                     else
                     {
-                        x += 10;
+                        x += 30;
                         spaceRec.Location = new Point(x, y);
                     }
                 }
@@ -91,7 +91,7 @@ namespace Dodge_example
                     }
                     else
                     {
-                        x -= 10;
+                        x -= 30;
                         spaceRec.Location = new Point(x, y);
                     }
                 }
@@ -107,7 +107,7 @@ namespace Dodge_example
                 else
                 {
                     
-                    y -= (spaceRec.Location.Y / 10);
+                    y -= (spaceRec.Location.Y / 10)*3;
                     spaceRec.Location = new Point(x, y);
                 }
             }
@@ -120,7 +120,7 @@ namespace Dodge_example
                 }
                 else
                 {
-                    y +=20+((spaceRec.Location.Y/100)*5);
+                    y +=45+((spaceRec.Location.Y/100)*15);
                     spaceRec.Location = new Point(x, y);
                 }
 

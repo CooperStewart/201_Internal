@@ -93,7 +93,7 @@
             // startscreen
             // 
             this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -8);
+            this.startscreen.Location = new System.Drawing.Point(382, -8);
             this.startscreen.Name = "startscreen";
             this.startscreen.Size = new System.Drawing.Size(986, 462);
             this.startscreen.TabIndex = 11;
@@ -114,7 +114,7 @@
             // healthbar
             // 
             this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(0, 434);
+            this.healthbar.Location = new System.Drawing.Point(3, 0);
             this.healthbar.Name = "healthbar";
             this.healthbar.Size = new System.Drawing.Size(986, 20);
             this.healthbar.TabIndex = 8;
@@ -178,7 +178,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 434);
+            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(986, 20);
             this.pictureBox2.TabIndex = 9;

@@ -23,7 +23,7 @@ namespace Dodge_example
             width = 1000;
             height = 500;
             //planetImage contains the plane1.png image
-            Backgroundimage = Properties.Resources.damien_hausson_promo_bg_low_copie;
+            Backgroundimage = Properties.Resources.background;
             titanrec = new Rectangle(x, y, width, height);
         }
 
