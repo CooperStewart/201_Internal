@@ -21,10 +21,10 @@ namespace Dodge_example
         public Spaceship()
         {
             x = 10;
-            y = 150;
-            width = 80;
-            height = 150;
-            spaceship = Properties.Resources.alien1;
+            y = 301;
+            width = 160;
+            height = 210;
+            spaceship = Properties.Resources.player;
             spaceRec = new Rectangle(x, y, width, height);
         }
         //methods
@@ -39,10 +39,32 @@ namespace Dodge_example
             spaceRec.Height = 25;
         }
 
+        public void SpriteChange()
+        {
+            spaceship = Properties.Resources.player2;
+
+        }
+
+        public void SpriteChange2()
+        {
+            spaceship = Properties.Resources.player;
+
+        }
+        public void SpriteChange3()
+        {
+            spaceship = Properties.Resources.player3;
+
+        }
+
+        public void SpriteChange4()
+        {
+            spaceship = Properties.Resources.player4;
+
+        }
         public void Flip2()
         {
-            spaceRec.Width = 80;
-            spaceRec.Height = 150;
+            spaceRec.Width = 160;
+            spaceRec.Height = 210;
         }
 
 
@@ -124,7 +146,7 @@ namespace Dodge_example
                 }
                 else
                 {
-                    y +=45+((spaceRec.Location.Y/100)*15);
+                    y +=45+((spaceRec.Location.Y/100)*7);
                     spaceRec.Location = new Point(x, y);
                 }
 

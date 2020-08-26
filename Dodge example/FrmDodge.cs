@@ -31,7 +31,7 @@ namespace Dodge_example
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
         string move;
-
+        int cycle;
         int score, lives, stop, stop2, fall;
         public FrmDodge()
         {
@@ -216,7 +216,28 @@ namespace Dodge_example
 
         private void TmrShip_Tick(object sender, EventArgs e)
         {
-            
+
+            cycle += 1;
+
+            if (cycle == 2)
+            {
+                spaceship.SpriteChange();
+            }
+            if (cycle == 4)
+            {
+                spaceship.SpriteChange2();
+            }
+
+            if (cycle == 8)
+            {
+                spaceship.SpriteChange3();
+            }
+
+            if (cycle == 10)
+            {
+                spaceship.SpriteChange4();
+                cycle = 0;
+            }
             if (right) // if right arrow key pressed
             {
                 move = "right";
@@ -242,7 +263,7 @@ namespace Dodge_example
                 spaceship.MoveSpaceship(move);
                 up = false;
             }
-            if (spaceship.spaceRec.Location.Y > 300)
+            if (spaceship.spaceRec.Location.Y > 270)
             {
                 down = false;
                 fall = 10;
@@ -342,7 +363,6 @@ namespace Dodge_example
         {
             if (e.KeyData == Keys.Left) { left = false; }
             if (e.KeyData == Keys.Right) { right = false; }
-            if (e.KeyData == Keys.Space) { down = true; up = false; }
 
         }
 
