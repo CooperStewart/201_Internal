@@ -32,7 +32,7 @@ namespace Dodge_example
         bool left, right, up, down;
         string move;
 
-        int score, lives, stop, stop2;
+        int score, lives, stop, stop2, fall;
         public FrmDodge()
         {
             InitializeComponent();
@@ -229,8 +229,12 @@ namespace Dodge_example
             }
             if (up)
             {
-                move = "up";
-                spaceship.MoveSpaceship(move);
+                if (fall > 0)
+                {
+                    move = "up";
+                    spaceship.MoveSpaceship(move);
+                    fall -= 1;
+                }
             }
             if (down)
             {
@@ -241,6 +245,7 @@ namespace Dodge_example
             if (spaceship.spaceRec.Location.Y > 300)
             {
                 down = false;
+                fall = 10;
             }
             if (spaceship.spaceRec.Location.Y < 85)
             {
@@ -255,6 +260,8 @@ namespace Dodge_example
             {
                 up = false;
                 down = true;
+     
+                fall = 0;
             }
 
         }
@@ -297,6 +304,12 @@ namespace Dodge_example
 
         }
 
+        private void tmrJump_Tick(object sender, EventArgs e)
+        {
+            fall += 1;
+            
+        }
+
         private void lblstart_MouseHover(object sender, EventArgs e)
         {
         }
@@ -321,7 +334,7 @@ namespace Dodge_example
         {
             TmrShip.Enabled = false;
             TmrPlanet.Enabled = false;
-            tmrColosion.Enabled = false;
+            tmrJump.Enabled = false;
 
         }
 
@@ -338,7 +351,7 @@ namespace Dodge_example
         {
             if (lives == 0)
             {
-                tmrColosion.Enabled = false;
+                tmrJump.Enabled = false;
                 TmrPlanet.Enabled = false;
                 TmrShip.Enabled = false;
                 MessageBox.Show("Game Over");
