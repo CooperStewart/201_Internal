@@ -101,6 +101,26 @@ namespace Dodge_example.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap background3 {
+            get {
+                object obj = ResourceManager.GetObject("background3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap background4 {
+            get {
+                object obj = ResourceManager.GetObject("background4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         public static byte[] Counter_Attack_Mankind_8_Bit__Attack_on_Titan_OST {
@@ -116,6 +136,16 @@ namespace Dodge_example.Properties {
         public static System.Drawing.Bitmap damien_hausson_promo_bg_low_copie {
             get {
                 object obj = ResourceManager.GetObject("damien-hausson-promo-bg-low-copie", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flare {
+            get {
+                object obj = ResourceManager.GetObject("flare", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

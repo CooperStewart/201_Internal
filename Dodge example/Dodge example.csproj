@@ -54,6 +54,7 @@
       <DependentUpon>FrmDodge.cs</DependentUpon>
     </Compile>
     <Compile Include="Background.cs" />
+    <Compile Include="Titan - Copy.cs" />
     <Compile Include="Titan2.cs" />
     <Compile Include="Titan.cs" />
     <Compile Include="Program.cs" />
@@ -156,6 +157,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMG_1522.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1524.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download-flare-sun-lens-lensflare-light-lights-bright-yellow-lens-flare-texture-png-1048_1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1525 %281%29.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

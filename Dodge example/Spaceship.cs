@@ -4,6 +4,7 @@ using System.Linq;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
 
 namespace Dodge_example
 {
@@ -109,6 +110,9 @@ namespace Dodge_example
                     
                     y -= (spaceRec.Location.Y / 10)*3;
                     spaceRec.Location = new Point(x, y);
+                }
+                if (spaceRec.Location.Y < 50)
+                {
                 }
             }
             if (move == "down")

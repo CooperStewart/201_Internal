@@ -24,7 +24,8 @@ namespace Dodge_example
         Titan2[] titan2 = new Titan2[7];
         Background[] background = new Background[7];
         Background2[] background2 = new Background2[7];
-        
+        flare flare = new flare();
+
         Random yspeed = new Random();
         Random xloc = new Random();
         Spaceship spaceship = new Spaceship();
@@ -80,7 +81,7 @@ namespace Dodge_example
                 background[i].x += 7;
                 background2[i].x += 7;
                 background[i].y = 0;
-                background2[i].y = 4;
+                background2[i].y = 0;
                 if (stop < 7)
                 {
                     titan[i].y += 13;
@@ -215,6 +216,7 @@ namespace Dodge_example
 
         private void TmrShip_Tick(object sender, EventArgs e)
         {
+            
             if (right) // if right arrow key pressed
             {
                 move = "right";
