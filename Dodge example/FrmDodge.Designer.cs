@@ -31,26 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
             this.lblstart = new System.Windows.Forms.Label();
+            this.startscreen = new System.Windows.Forms.PictureBox();
             this.lbljump = new System.Windows.Forms.Label();
+            this.healthbar = new System.Windows.Forms.PictureBox();
             this.txtLives = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PlanetDodge = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
-            this.MnuStart = new System.Windows.Forms.MenuStrip();
-            this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.MnuStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
-            this.startscreen = new System.Windows.Forms.PictureBox();
-            this.healthbar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
-            this.MnuStart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -90,6 +86,16 @@
             this.lblstart.Click += new System.EventHandler(this.label3_Click);
             this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
+            // startscreen
+            // 
+            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
+            this.startscreen.Location = new System.Drawing.Point(0, -5);
+            this.startscreen.Name = "startscreen";
+            this.startscreen.Size = new System.Drawing.Size(986, 462);
+            this.startscreen.TabIndex = 11;
+            this.startscreen.TabStop = false;
+            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
+            // 
             // lbljump
             // 
             this.lbljump.AutoSize = true;
@@ -100,6 +106,16 @@
             this.lbljump.TabIndex = 10;
             this.lbljump.Text = "Press the spacebar to jump";
             this.lbljump.Visible = false;
+            // 
+            // healthbar
+            // 
+            this.healthbar.BackColor = System.Drawing.Color.Lime;
+            this.healthbar.Location = new System.Drawing.Point(3, 0);
+            this.healthbar.Name = "healthbar";
+            this.healthbar.Size = new System.Drawing.Size(986, 20);
+            this.healthbar.TabIndex = 8;
+            this.healthbar.TabStop = false;
+            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
             // 
             // txtLives
             // 
@@ -155,6 +171,15 @@
             this.PlanetDodge.TabIndex = 2;
             this.PlanetDodge.Text = "Planet Dodge";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
+            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // TmrPlanet
             // 
             this.TmrPlanet.Interval = 50;
@@ -170,37 +195,6 @@
             this.TmrShip.Interval = 10;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
-            // MnuStart
-            // 
-            this.MnuStart.Dock = System.Windows.Forms.DockStyle.None;
-            this.MnuStart.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.MnuStart.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.startToolStripMenuItem,
-            this.MnuStop});
-            this.MnuStart.Location = new System.Drawing.Point(0, 0);
-            this.MnuStart.Name = "MnuStart";
-            this.MnuStart.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.MnuStart.Size = new System.Drawing.Size(55, 24);
-            this.MnuStart.TabIndex = 2;
-            this.MnuStart.Text = "menuStrip1";
-            this.MnuStart.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MnuStart_ItemClicked);
-            // 
-            // startToolStripMenuItem
-            // 
-            this.startToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 19F);
-            this.startToolStripMenuItem.Name = "startToolStripMenuItem";
-            this.startToolStripMenuItem.Size = new System.Drawing.Size(80, 40);
-            this.startToolStripMenuItem.Text = "Start";
-            this.startToolStripMenuItem.Visible = false;
-            this.startToolStripMenuItem.Click += new System.EventHandler(this.startToolStripMenuItem_Click);
-            // 
-            // MnuStop
-            // 
-            this.MnuStop.Name = "MnuStop";
-            this.MnuStop.Size = new System.Drawing.Size(43, 20);
-            this.MnuStop.Text = "Stop";
-            this.MnuStop.Click += new System.EventHandler(this.MnuStop_Click);
-            // 
             // tmrJump
             // 
             this.tmrJump.Interval = 1000;
@@ -211,44 +205,13 @@
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
             // 
-            // startscreen
-            // 
-            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -8);
-            this.startscreen.Name = "startscreen";
-            this.startscreen.Size = new System.Drawing.Size(986, 462);
-            this.startscreen.TabIndex = 11;
-            this.startscreen.TabStop = false;
-            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
-            // 
-            // healthbar
-            // 
-            this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(3, 0);
-            this.healthbar.Name = "healthbar";
-            this.healthbar.Size = new System.Drawing.Size(986, 20);
-            this.healthbar.TabIndex = 8;
-            this.healthbar.TabStop = false;
-            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
-            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // FrmDodge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 461);
-            this.Controls.Add(this.MnuStart);
             this.Controls.Add(this.PnlGame);
             this.KeyPreview = true;
-            this.MainMenuStrip = this.MnuStart;
             this.Name = "FrmDodge";
             this.Text = "Dodge";
             this.Load += new System.EventHandler(this.FrmDodge_Load);
@@ -256,13 +219,10 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmDodge_KeyUp);
             this.PnlGame.ResumeLayout(false);
             this.PnlGame.PerformLayout();
-            this.MnuStart.ResumeLayout(false);
-            this.MnuStart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -278,9 +238,6 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label PlanetDodge;
-        private System.Windows.Forms.MenuStrip MnuStart;
-        private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MnuStop;
         private System.Windows.Forms.Timer tmrJump;
         private System.Windows.Forms.PictureBox healthbar;
         private System.Windows.Forms.PictureBox pictureBox2;

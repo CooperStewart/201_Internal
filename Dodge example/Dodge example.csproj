@@ -54,6 +54,8 @@
       <DependentUpon>FrmDodge.cs</DependentUpon>
     </Compile>
     <Compile Include="Background.cs" />
+    <Compile Include="Titan - Copy %282%29.cs" />
+    <Compile Include="Titan - Copy %283%29.cs" />
     <Compile Include="Titan - Copy.cs" />
     <Compile Include="Titan2.cs" />
     <Compile Include="Titan.cs" />
@@ -178,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMG_1532.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3-35038_rock-clipart-for-free-cartoon-rock-transparent-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

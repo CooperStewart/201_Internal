@@ -22,6 +22,8 @@ namespace Dodge_example
                     // declare space for an array of 7 objects called planet 
         Titan[] titan = new Titan[7];
         Titan2[] titan2 = new Titan2[7];
+        rock[] rock = new rock[7];
+        Beast[] beast = new Beast[7];
         Background[] background = new Background[7];
         Background2[] background2 = new Background2[7];
         flare flare = new flare();
@@ -32,7 +34,7 @@ namespace Dodge_example
         bool left, right, up, down;
         string move;
         int cycle;
-        int score, lives, stop, stop2, fall;
+        int score, lives, stop, stop2, fall, thump;
         public FrmDodge()
         {
             InitializeComponent();
@@ -47,12 +49,12 @@ namespace Dodge_example
                 int x = 235 + (i * 75);
                 int x2 = 320 + (i * 75);
                 int x3 = 0 + (i * 75);
-
+                rock[i] = new rock(235);
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
                 background[i] = new Background(x3);
                 background2[i] = new Background2(x3);
-
+                beast[i] = new Beast(x);
 
 
             }
@@ -78,6 +80,9 @@ namespace Dodge_example
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 titan2[i].y += 15;
+                rock[i].x += 15;
+                rock[i].y += 15;
+                beast[i].y += 7;
                 background[i].x += 7;
                 background2[i].x += 7;
                 background[i].y = 0;
@@ -129,9 +134,17 @@ namespace Dodge_example
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
                 spaceship.DrawSpaceship(g);
+                if (score > 10)
+                {
+                    rock[i].DrawRock(g);
+                }
+
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
-
+                if (score > 15)
+                {
+                    beast[i].DrawBeast(g);
+                }
 
             }
 
@@ -143,14 +156,24 @@ namespace Dodge_example
             stop2 += 1;
             healthbar.Width = lives*5;
           
+            if(score == 10)
+            {
+                thump += 1;
+            }
+
             for (int i = 0; i < 1; i++)
             {
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
-
-
+                rock[i].MoveRock();
+                beast[i].MoveBeast();
                 int rndmloc = (xloc.Next(1000, 1500))-score;
                 //if a planet reaches the bottom of the Game Area reposition it at the top
+                if (score == 15)
+                {
+                    beast[i].y = 0;
+                }
+
                 if (titan[i].y >= 1500)
                 {
                     score += 1;//update the score
@@ -159,6 +182,16 @@ namespace Dodge_example
                         titan[i].y = -100;
                     
                 }
+
+                if (rock[i].x >= 1500)
+                {
+                    lblScore.Text = score.ToString();// display score
+
+                    rock[i].x = 0;
+                    rock[i].y = 100;
+
+                }
+
                 if (titan2[i].y >= 1500)
                 {
                     score += 1;//update the score
@@ -189,6 +222,19 @@ namespace Dodge_example
                     txtLives.Text = lives.ToString();// display number of lives
                     CheckLives();
                 }
+
+                if (spaceship.spaceRec.IntersectsWith(beast[i].titanrec))
+                {
+
+                    if (score > 15)
+                    {
+                        //reset planet[i] back to top of panel
+                        lives -= 3;// lose a life
+                        txtLives.Text = lives.ToString();// display number of lives
+                        CheckLives();
+                    }
+                }
+
                 if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
@@ -197,7 +243,17 @@ namespace Dodge_example
                     txtLives.Text = lives.ToString();// display number of lives
                     CheckLives();
                 }
-
+                if (spaceship.spaceRec.IntersectsWith(rock[i].titanrec))
+                {
+                    //reset planet[i] back to top of panel
+                    if (score > 10)
+                    {
+                        //reset planet[i] back to top of panel
+                        lives -= 1;// lose a life
+                        txtLives.Text = lives.ToString();// display number of lives
+                        CheckLives();
+                    }
+                }
 
             }
             PnlGame.Invalidate();//makes the paint event fire to redraw the panel
