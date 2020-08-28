@@ -159,8 +159,18 @@ namespace Dodge_example
             if(score == 10)
             {
                 thump += 1;
+                lblthump1.Visible = true;
             }
 
+            if(thump == 15)
+            {
+                lblthump2.Visible = true;
+            }
+
+            if (thump == 40)
+            {
+                lblthump3.Visible = true;
+            }
             for (int i = 0; i < 1; i++)
             {
                 titan[i].MovePlanet();
