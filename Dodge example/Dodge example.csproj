@@ -187,5 +187,8 @@
   <ItemGroup>
     <None Include="Resources\unnamed.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\318-3182480_yellow-gradient-background-yellow-fade-background-transparent.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

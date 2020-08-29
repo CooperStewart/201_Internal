@@ -18,12 +18,12 @@ namespace Dodge_example
         public flare()
         {
 
-            x = 600;
-            y = -100    ;
-            width = 500;
+            x = 0;
+            y = 0    ;
+            width = 100;
             height = 500;
             //planetImage contains the plane1.png image
-            titanImage = Properties.Resources.flare;
+            titanImage = Properties.Resources.flare1;
             titanrec = new Rectangle(x, y, width, height);
         }
 

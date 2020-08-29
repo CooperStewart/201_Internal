@@ -34,7 +34,7 @@ namespace Dodge_example
         bool left, right, up, down;
         string move;
         int cycle;
-        int score, lives, stop, stop2, fall, thump;
+        int score, lives, stop, stop2, fall, thump, flare1;
         public FrmDodge()
         {
             InitializeComponent();
@@ -81,7 +81,17 @@ namespace Dodge_example
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 rock[i].x += 15;
                 beast[i].y += 7;
-
+                if (score > 9)
+                {
+                    if (flare1 < 10)
+                    {
+                        flare.width += 150;
+                    }
+                    if (flare1 > 10)
+                    {
+                        flare.width -= 200;
+                    }
+                }
                 if (score < 15)
                 {
                     beast[i].y = 1000;
@@ -178,6 +188,8 @@ namespace Dodge_example
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
                 spaceship.DrawSpaceship(g);
+               
+
                 if (score > 10)
                 {
                     rock[i].DrawRock(g);
@@ -185,37 +197,33 @@ namespace Dodge_example
 
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
+                if (flare.width > 2)
+                {
+                    if (score > 9)
+                    {
+                        flare.DrawFlare(g);
+                    }
+                }
                 if (score > 14)
                 {
                     beast[i].DrawBeast(g);
                 }
-
+              
             }
 
         }
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
+            if (score > 9)
+            {
+                flare1 += 1;
+            }
             stop += 1;
             stop2 += 1;
             healthbar.Width = lives*5;
           
-            if(score == 10)
-            {
-                thump += 1;
-                lblthump1.Visible = true;
-            }
-
-            if(thump == 15)
-            {
-                lblthump2.Visible = true;
-            }
-
-            if (thump == 40)
-            {
-                lblthump3.Visible = true;
-            }
-
+       
 
             if (thump > 55)
             {
@@ -434,7 +442,7 @@ namespace Dodge_example
         {
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 0;
+            score = 9;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
