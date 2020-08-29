@@ -9,13 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Threading;
-
 namespace Dodge_example
 {
     public partial class FrmDodge : Form
     {
       
-
+        
 
 
         Graphics g; //declare a graphics object called g
@@ -27,7 +26,6 @@ namespace Dodge_example
         Background[] background = new Background[7];
         Background2[] background2 = new Background2[7];
         flare flare = new flare();
-
         Random yspeed = new Random();
         Random xloc = new Random();
         Spaceship spaceship = new Spaceship();
@@ -442,13 +440,15 @@ namespace Dodge_example
         {
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 9;
+            score = 0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
             TmrPlanet.Enabled = true;
             TmrShip.Enabled = true;
-
+            System.IO.Stream str = Properties.Resources.music;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Play();
         }
 
         private void tmrJump_Tick(object sender, EventArgs e)
