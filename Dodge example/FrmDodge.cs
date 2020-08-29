@@ -79,34 +79,78 @@ namespace Dodge_example
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
-                titan2[i].y += 15;
                 rock[i].x += 15;
-                rock[i].y += 15;
                 beast[i].y += 7;
-                background[i].x += 7;
-                background2[i].x += 7;
-                background[i].y = 0;
-                background2[i].y = 0;
-                if (stop < 7)
+
+                if (score < 15)
                 {
-                    titan[i].y += 13;
-
-
-                }
-                else {
-                    titan[i].y += 7;
-
-                    titan[i].ChangeSprite();
+                    beast[i].y = 1000;
                 }
 
-                if (stop == 20)
+                if  (beast[i].y < PnlGame.Width)
                 {
-                    stop = 0;
-                    titan[i].ChangeSprite2();
+                    if (score > 14)
+                    {
+                        background[i].x += 0;
+                        background2[i].x += 0;
+                        titan2[i].y += 8;
+                        rock[i].y += 8;
+                        if (stop < 7)
+                        {
+                            titan[i].y += 6;
 
 
+                        }
+                        else
+                        {
+                            titan[i].y += 0;
+
+                            titan[i].ChangeSprite();
+                        }
+                        if (stop == 20)
+                        {
+                            stop = 0;
+                            titan[i].ChangeSprite2();
+
+
+
+                        }
+                    }
+                }
+               
+                
+                else
+                {
+                    background[i].x += 7;
+                    background2[i].x += 7;
+                    background[i].y = 0;
+                    background2[i].y = 0;
+                    titan2[i].y += 15;
+                    rock[i].y += 15;
+                    if (stop < 7)
+                    {
+                        titan[i].y += 13;
+
+
+                    }
+                    else
+                    {
+                        titan[i].y += 7;
+
+                        titan[i].ChangeSprite();
+                    }
+                    if (stop == 20)
+                    {
+                        stop = 0;
+                        titan[i].ChangeSprite2();
+
+
+
+                    }
 
                 }
+
+              
                 if (stop2 <2)
                 {
                     titan2[i].ChangeSprite4();
@@ -141,7 +185,7 @@ namespace Dodge_example
 
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
-                if (score > 15)
+                if (score > 14)
                 {
                     beast[i].DrawBeast(g);
                 }
@@ -170,6 +214,14 @@ namespace Dodge_example
             if (thump == 40)
             {
                 lblthump3.Visible = true;
+            }
+
+
+            if (thump > 55)
+            {
+                lblthump1.Visible = false;
+                lblthump2.Visible = false;
+                lblthump3.Visible = false;
             }
             for (int i = 0; i < 1; i++)
             {
