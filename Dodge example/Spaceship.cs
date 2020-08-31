@@ -61,6 +61,30 @@ namespace Dodge_example
             spaceship = Properties.Resources.player4;
 
         }
+
+        public void SpriteChange5()
+        {
+            spaceship = Properties.Resources.player5;
+
+        }
+
+        public void SpriteChange6()
+        {
+            spaceship = Properties.Resources.player6;
+
+        }
+
+        public void SpriteChange7()
+        {
+            spaceship = Properties.Resources.player7;
+
+        }
+
+        public void SpriteChange8()
+        {
+            spaceship = Properties.Resources.player8;
+
+        }
         public void Flip2()
         {
             spaceRec.Width = 160;

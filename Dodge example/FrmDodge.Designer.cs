@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
+            this.lblthump3 = new System.Windows.Forms.Label();
+            this.lblthump2 = new System.Windows.Forms.Label();
+            this.lblthump1 = new System.Windows.Forms.Label();
             this.lblstart = new System.Windows.Forms.Label();
+            this.startscreen = new System.Windows.Forms.PictureBox();
             this.lbljump = new System.Windows.Forms.Label();
+            this.healthbar = new System.Windows.Forms.PictureBox();
             this.txtLives = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PlanetDodge = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
-            this.startscreen = new System.Windows.Forms.PictureBox();
-            this.healthbar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblthump1 = new System.Windows.Forms.Label();
-            this.lblthump2 = new System.Windows.Forms.Label();
-            this.lblthump3 = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -78,6 +78,42 @@
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
+            // lblthump3
+            // 
+            this.lblthump3.AutoSize = true;
+            this.lblthump3.BackColor = System.Drawing.Color.White;
+            this.lblthump3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblthump3.Location = new System.Drawing.Point(699, 65);
+            this.lblthump3.Name = "lblthump3";
+            this.lblthump3.Size = new System.Drawing.Size(241, 76);
+            this.lblthump3.TabIndex = 14;
+            this.lblthump3.Text = "Thump";
+            this.lblthump3.Visible = false;
+            // 
+            // lblthump2
+            // 
+            this.lblthump2.AutoSize = true;
+            this.lblthump2.BackColor = System.Drawing.Color.White;
+            this.lblthump2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblthump2.Location = new System.Drawing.Point(363, 256);
+            this.lblthump2.Name = "lblthump2";
+            this.lblthump2.Size = new System.Drawing.Size(241, 76);
+            this.lblthump2.TabIndex = 13;
+            this.lblthump2.Text = "Thump";
+            this.lblthump2.Visible = false;
+            // 
+            // lblthump1
+            // 
+            this.lblthump1.AutoSize = true;
+            this.lblthump1.BackColor = System.Drawing.Color.White;
+            this.lblthump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblthump1.Location = new System.Drawing.Point(104, 52);
+            this.lblthump1.Name = "lblthump1";
+            this.lblthump1.Size = new System.Drawing.Size(1625, 76);
+            this.lblthump1.TabIndex = 12;
+            this.lblthump1.Text = " System.IO.Stream str = Properties.Resources.music;";
+            this.lblthump1.Visible = false;
+            // 
             // lblstart
             // 
             this.lblstart.AutoSize = true;
@@ -92,6 +128,16 @@
             this.lblstart.Click += new System.EventHandler(this.label3_Click);
             this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
+            // startscreen
+            // 
+            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
+            this.startscreen.Location = new System.Drawing.Point(0, -5);
+            this.startscreen.Name = "startscreen";
+            this.startscreen.Size = new System.Drawing.Size(986, 462);
+            this.startscreen.TabIndex = 11;
+            this.startscreen.TabStop = false;
+            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
+            // 
             // lbljump
             // 
             this.lbljump.AutoSize = true;
@@ -102,6 +148,16 @@
             this.lbljump.TabIndex = 10;
             this.lbljump.Text = "Press the spacebar to jump";
             this.lbljump.Visible = false;
+            // 
+            // healthbar
+            // 
+            this.healthbar.BackColor = System.Drawing.Color.Lime;
+            this.healthbar.Location = new System.Drawing.Point(3, 0);
+            this.healthbar.Name = "healthbar";
+            this.healthbar.Size = new System.Drawing.Size(986, 20);
+            this.healthbar.TabIndex = 8;
+            this.healthbar.TabStop = false;
+            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
             // 
             // txtLives
             // 
@@ -157,6 +213,15 @@
             this.PlanetDodge.TabIndex = 2;
             this.PlanetDodge.Text = "Planet Dodge";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
+            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
             // TmrPlanet
             // 
             this.TmrPlanet.Interval = 50;
@@ -181,71 +246,6 @@
             // 
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
-            // 
-            // startscreen
-            // 
-            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -5);
-            this.startscreen.Name = "startscreen";
-            this.startscreen.Size = new System.Drawing.Size(986, 462);
-            this.startscreen.TabIndex = 11;
-            this.startscreen.TabStop = false;
-            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
-            // 
-            // healthbar
-            // 
-            this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(3, 0);
-            this.healthbar.Name = "healthbar";
-            this.healthbar.Size = new System.Drawing.Size(986, 20);
-            this.healthbar.TabIndex = 8;
-            this.healthbar.TabStop = false;
-            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
-            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblthump1
-            // 
-            this.lblthump1.AutoSize = true;
-            this.lblthump1.BackColor = System.Drawing.Color.White;
-            this.lblthump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump1.Location = new System.Drawing.Point(104, 52);
-            this.lblthump1.Name = "lblthump1";
-            this.lblthump1.Size = new System.Drawing.Size(241, 76);
-            this.lblthump1.TabIndex = 12;
-            this.lblthump1.Text = "Thump";
-            this.lblthump1.Visible = false;
-            // 
-            // lblthump2
-            // 
-            this.lblthump2.AutoSize = true;
-            this.lblthump2.BackColor = System.Drawing.Color.White;
-            this.lblthump2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump2.Location = new System.Drawing.Point(363, 256);
-            this.lblthump2.Name = "lblthump2";
-            this.lblthump2.Size = new System.Drawing.Size(241, 76);
-            this.lblthump2.TabIndex = 13;
-            this.lblthump2.Text = "Thump";
-            this.lblthump2.Visible = false;
-            // 
-            // lblthump3
-            // 
-            this.lblthump3.AutoSize = true;
-            this.lblthump3.BackColor = System.Drawing.Color.White;
-            this.lblthump3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump3.Location = new System.Drawing.Point(699, 65);
-            this.lblthump3.Name = "lblthump3";
-            this.lblthump3.Size = new System.Drawing.Size(241, 76);
-            this.lblthump3.TabIndex = 14;
-            this.lblthump3.Text = "Thump";
-            this.lblthump3.Visible = false;
             // 
             // FrmDodge
             // 

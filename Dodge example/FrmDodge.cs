@@ -32,7 +32,7 @@ namespace Dodge_example
         bool left, right, up, down;
         string move;
         int cycle;
-        int score, lives, stop, stop2, fall, thump, flare1;
+        int score, lives, stop, stop2, fall, thump, flare1, flip;
         public FrmDodge()
         {
             InitializeComponent();
@@ -343,6 +343,11 @@ namespace Dodge_example
 
             cycle += 1;
 
+            if(spaceship.spaceRec.Location.Y < 300)
+            {
+                flip += 1;
+            }
+
             if (cycle == 2)
             {
                 spaceship.SpriteChange();
@@ -372,8 +377,26 @@ namespace Dodge_example
                 move = "left";
                 spaceship.MoveSpaceship(move);
             }
+            if (flip == 1)
+            {
+                spaceship.SpriteChange6();
+
+            }
             if (up)
             {
+
+
+                if (spaceship.spaceRec.Location.Y < 300)
+                {
+                    
+                        spaceship.SpriteChange7();
+
+                    
+                }
+
+                
+
+
                 if (fall > 0)
                 {
                     move = "up";
@@ -383,6 +406,8 @@ namespace Dodge_example
             }
             if (down)
             {
+                spaceship.SpriteChange8();
+
                 move = "down";
                 spaceship.MoveSpaceship(move);
                 up = false;
@@ -395,7 +420,6 @@ namespace Dodge_example
             if (spaceship.spaceRec.Location.Y < 85)
             {
          
-                spaceship.Flip();
             }
             else
             {
@@ -446,9 +470,7 @@ namespace Dodge_example
             lbljump.Visible = false;
             TmrPlanet.Enabled = true;
             TmrShip.Enabled = true;
-            System.IO.Stream str = Properties.Resources.music;
-            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
-            snd.Play();
+           
         }
 
         private void tmrJump_Tick(object sender, EventArgs e)

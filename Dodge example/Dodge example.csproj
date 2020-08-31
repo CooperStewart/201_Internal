@@ -193,5 +193,17 @@
   <ItemGroup>
     <None Include="Resources\Counter Attack Mankind 8 Bit- Attack on Titan OST %281%29.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1610.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1606.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1607.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1611.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
