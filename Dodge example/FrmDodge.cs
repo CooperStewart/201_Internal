@@ -290,9 +290,15 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-                    lives -= 1;// lose a life
-                    txtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
+                    if (down == false)
+                    {
+                        if (up == false)
+                        {
+                            lives -= 1;// lose a life
+                            txtLives.Text = lives.ToString();// display number of lives
+                            CheckLives();
+                        }
+                    }
                 }
 
                 if (spaceship.spaceRec.IntersectsWith(beast[i].titanrec))
@@ -301,19 +307,30 @@ namespace Dodge_example
                     if (score > 15)
                     {
                         //reset planet[i] back to top of panel
-                        lives -= 3;// lose a life
-                        txtLives.Text = lives.ToString();// display number of lives
-                        CheckLives();
+                        if (down == false)
+                        {
+                            if (up == false)
+                            {
+                                lives -= 3;// lose a life
+                                txtLives.Text = lives.ToString();// display number of lives
+                                CheckLives();
+                            }
+                        }
                     }
                 }
 
                 if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-
-                    lives -= 1;// lose a life
-                    txtLives.Text = lives.ToString();// display number of lives
-                    CheckLives();
+                    if (down == false)
+                    {
+                        if (up == false)
+                        {
+                            lives -= 1;// lose a life
+                            txtLives.Text = lives.ToString();// display number of lives
+                            CheckLives();
+                        }
+                    }
                 }
                 if (spaceship.spaceRec.IntersectsWith(rock[i].titanrec))
                 {
