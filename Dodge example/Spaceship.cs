@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Threading.Tasks;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading;
+using System.Drawing.Drawing2D;
 
 namespace Dodge_example
 {
@@ -16,20 +17,35 @@ namespace Dodge_example
         public Image spaceship;//variable for the planet's image
         
         public Rectangle spaceRec;//variable for a rectangle to place our image in
+        public  int rotationAngle;
+        public Matrix matrix;
+        Point centre;
 
         //Create a constructor (initialises the values of the fields)
         public Spaceship()
         {
+
             x = 10;
             y = 301;
             width = 160;
             height = 210;
+            rotationAngle = 0;
+
             spaceship = Properties.Resources.player;
             spaceRec = new Rectangle(x, y, width, height);
         }
         //methods
         public void DrawSpaceship(Graphics g)
         {
+            // find the centre point of spaceRec
+             centre = new Point(spaceRec.X + width / 2, spaceRec.Y + width / 2);
+            //instantiate a Matrix object called matrix
+            matrix = new Matrix();
+            //rotate the matrix (spaceRec) about its centre
+            matrix.RotateAt(rotationAngle, centre);
+            //Set the current draw location to the rotated matrix point
+            g.Transform = matrix;
+            //draw the spaceship
 
             g.DrawImage(spaceship, spaceRec);
         }
@@ -154,7 +170,7 @@ namespace Dodge_example
                 else
                 {
                     
-                    y -= (spaceRec.Location.Y / 10)*3;
+                    y -= ((spaceRec.Location.Y / 10)*3)+10;
                     spaceRec.Location = new Point(x, y);
                 }
                 if (spaceRec.Location.Y < 50)

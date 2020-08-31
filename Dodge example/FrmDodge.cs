@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
 using System.Threading;
+
 namespace Dodge_example
 {
     public partial class FrmDodge : Form
@@ -30,6 +31,8 @@ namespace Dodge_example
         Random xloc = new Random();
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
+        bool turnLeft, turnLEFT;
+
         string move;
         int cycle;
         int score, lives, stop, stop2, fall, thump, flare1, flip;
@@ -185,7 +188,6 @@ namespace Dodge_example
                 //call the Planet class's drawPlanet method to draw the images
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
-                spaceship.DrawSpaceship(g);
                
 
                 if (score > 10)
@@ -206,7 +208,9 @@ namespace Dodge_example
                 {
                     beast[i].DrawBeast(g);
                 }
-              
+                spaceship.DrawSpaceship(g);
+
+
             }
 
         }
@@ -342,8 +346,15 @@ namespace Dodge_example
         {
 
             cycle += 1;
+            if (turnLeft) { 
+                spaceship.rotationAngle -= 10;
+        }
+            if(turnLEFT)
+            {
+                spaceship.rotationAngle -= 70;
 
-            if(spaceship.spaceRec.Location.Y < 300)
+            }
+            if (spaceship.spaceRec.Location.Y < 300)
             {
                 flip += 1;
             }
@@ -390,6 +401,7 @@ namespace Dodge_example
                 {
                     
                         spaceship.SpriteChange7();
+                    turnLeft = true;
 
                     
                 }
@@ -407,7 +419,7 @@ namespace Dodge_example
             if (down)
             {
                 spaceship.SpriteChange8();
-
+                turnLEFT = true;
                 move = "down";
                 spaceship.MoveSpaceship(move);
                 up = false;
@@ -416,6 +428,11 @@ namespace Dodge_example
             {
                 down = false;
                 fall = 10;
+                turnLeft = false;
+                spaceship.rotationAngle =0;
+
+                turnLEFT = false;
+
             }
             if (spaceship.spaceRec.Location.Y < 85)
             {
@@ -425,7 +442,7 @@ namespace Dodge_example
             {
                 spaceship.Flip2();
             }
-            if (spaceship.spaceRec.Location.Y < 35)
+            if (spaceship.spaceRec.Location.Y < 10)
             {
                 up = false;
                 down = true;
