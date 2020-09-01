@@ -107,7 +107,7 @@
             this.lblthump1.AutoSize = true;
             this.lblthump1.BackColor = System.Drawing.Color.White;
             this.lblthump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump1.Location = new System.Drawing.Point(104, 52);
+            this.lblthump1.Location = new System.Drawing.Point(-313, 19);
             this.lblthump1.Name = "lblthump1";
             this.lblthump1.Size = new System.Drawing.Size(1625, 76);
             this.lblthump1.TabIndex = 12;

@@ -381,21 +381,42 @@ namespace Dodge_example
             if (cycle == 2)
             {
                 spaceship.SpriteChange();
+                if(lives < 150)
+                {
+                    spaceship.InjuredSpriteChange();
+
+                }
             }
             if (cycle == 4)
             {
                 spaceship.SpriteChange2();
+                if (lives < 150)
+                {
+                    spaceship.injuredSpriteChange2();
+
+                }
             }
 
             if (cycle == 8)
             {
                 spaceship.SpriteChange3();
+                if (lives < 150)
+                {
+                    spaceship.InjuredSpriteChange3();
+
+                }
+
             }
 
             if (cycle == 10)
             {
-                spaceship.SpriteChange4();
+                spaceship.SpriteChange2();
                 cycle = 0;
+                if (lives < 150)
+                {
+                    spaceship.injuredSpriteChange2();
+
+                }
             }
             if (right) // if right arrow key pressed
             {
@@ -410,6 +431,11 @@ namespace Dodge_example
             if (flip == 1)
             {
                 spaceship.SpriteChange6();
+                if (lives < 150)
+                {
+                    spaceship.InjuredSpriteChange6();
+
+                }
 
             }
             if (up)
@@ -421,8 +447,12 @@ namespace Dodge_example
                     
                         spaceship.SpriteChange7();
                     turnLeft = true;
+                    if (lives < 150)
+                    {
+                        spaceship.InjuredSpriteChange7();
 
-                    
+                    }
+
                 }
 
                 
@@ -438,6 +468,11 @@ namespace Dodge_example
             if (down)
             {
                 spaceship.SpriteChange8();
+                if (lives < 150)
+                {
+                    spaceship.InjuredSpriteChange8();
+
+                }
                 turnLEFT = true;
                 move = "down";
                 spaceship.MoveSpaceship(move);
