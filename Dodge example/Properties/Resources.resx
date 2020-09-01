@@ -259,4 +259,37 @@
   <data name="playeri3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_1630.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="injured21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1626.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured22" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1628.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured23" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1632.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured26" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1622.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1617.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured28" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1619.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1634.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1629.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1633.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1623.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="injured38" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1635.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -67,7 +67,17 @@ namespace Dodge_example
 
         }
 
+        public void InjuredSpriteChange21()
+        {
+            spaceship = Properties.Resources.injured21;
 
+        }
+
+        public void InjuredSpriteChange31()
+        {
+            spaceship = Properties.Resources.injured31;
+
+        }
         public void SpriteChange2()
         {
             spaceship = Properties.Resources.playeri2;
@@ -77,6 +87,18 @@ namespace Dodge_example
         public void injuredSpriteChange2()
         {
             spaceship = Properties.Resources.injured2;
+
+        }
+
+        public void injuredSpriteChange22()
+        {
+            spaceship = Properties.Resources.injured22;
+
+        }
+
+        public void injuredSpriteChange32()
+        {
+            spaceship = Properties.Resources.injured32;
 
         }
         public void SpriteChange3()
@@ -91,6 +113,17 @@ namespace Dodge_example
 
         }
 
+
+        public void InjuredSpriteChange23()
+        {
+            spaceship = Properties.Resources.injured23;
+
+        }
+        public void InjuredSpriteChange33()
+        {
+            spaceship = Properties.Resources.injured33;
+
+        }
         public void SpriteChange4()
         {
             spaceship = Properties.Resources.player4;
@@ -115,6 +148,17 @@ namespace Dodge_example
 
         }
 
+        public void InjuredSpriteChange26()
+        {
+            spaceship = Properties.Resources.injured26;
+
+        }
+
+        public void InjuredSpriteChange36()
+        {
+            spaceship = Properties.Resources.injured36;
+
+        }
         public void SpriteChange7()
         {
             spaceship = Properties.Resources.player7;
@@ -126,7 +170,17 @@ namespace Dodge_example
             spaceship = Properties.Resources.injured7;
 
         }
+        public void InjuredSpriteChange27()
+        {
+            spaceship = Properties.Resources.injured27;
 
+        }
+
+        public void InjuredSpriteChange37()
+        {
+            spaceship = Properties.Resources.injured27;
+
+        }
         public void SpriteChange8()
         {
             spaceship = Properties.Resources.player8;
@@ -138,7 +192,17 @@ namespace Dodge_example
             spaceship = Properties.Resources.injured8;
 
         }
+        public void InjuredSpriteChange28()
+        {
+            spaceship = Properties.Resources.injured28;
 
+        }
+
+        public void InjuredSpriteChange38()
+        {
+            spaceship = Properties.Resources.injured38;
+
+        }
         public void Flip2()
         {
             spaceRec.Width = 160;
