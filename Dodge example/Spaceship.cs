@@ -26,7 +26,7 @@ namespace Dodge_example
         {
 
             x = 10;
-            y = 301;
+            y = 260;
             width = 160;
             height = 210;
             rotationAngle = 0;
@@ -179,9 +179,9 @@ namespace Dodge_example
             }
             if (move == "down")
             {
-                if (spaceRec.Location.Y > 390)
+                if (spaceRec.Location.Y > 260)
                 {
-                    y = 389;
+                    y = 259;
                     spaceRec.Location = new Point(x, y);
                 }
                 else

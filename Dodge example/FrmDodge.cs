@@ -363,6 +363,8 @@ namespace Dodge_example
         {
 
             cycle += 1;
+       
+
             if (turnLeft) { 
                 spaceship.rotationAngle -= 10;
         }
@@ -371,7 +373,7 @@ namespace Dodge_example
                 spaceship.rotationAngle -= 70;
 
             }
-            if (spaceship.spaceRec.Location.Y < 300)
+            if (spaceship.spaceRec.Location.Y < 260)
             {
                 flip += 1;
             }
@@ -414,7 +416,7 @@ namespace Dodge_example
             {
 
 
-                if (spaceship.spaceRec.Location.Y < 300)
+                if (spaceship.spaceRec.Location.Y < 260)
                 {
                     
                         spaceship.SpriteChange7();
@@ -441,7 +443,7 @@ namespace Dodge_example
                 spaceship.MoveSpaceship(move);
                 up = false;
             }
-            if (spaceship.spaceRec.Location.Y > 270)
+            if (spaceship.spaceRec.Location.Y > 259)
             {
                 down = false;
                 fall = 10;
@@ -466,7 +468,11 @@ namespace Dodge_example
      
                 fall = 0;
             }
-
+            if (spaceship.spaceRec.Location.Y > 260)
+            {
+                down = false;
+                spaceship.spaceRec.Y = 260;
+            }
         }
 
         private void txtLives_Click(object sender, EventArgs e)
