@@ -132,6 +132,7 @@ namespace Dodge_example
                 
                 else
                 {
+
                     background[i].x += 7;
                     background2[i].x += 7;
                     background[i].y = 0;
@@ -366,11 +367,11 @@ namespace Dodge_example
        
 
             if (turnLeft) { 
-                spaceship.rotationAngle -= 10;
+                spaceship.rotationAngle -= 20;
         }
             if(turnLEFT)
             {
-                spaceship.rotationAngle -= 70;
+                spaceship.rotationAngle -= 35;
 
             }
             if (spaceship.spaceRec.Location.Y < 260)
