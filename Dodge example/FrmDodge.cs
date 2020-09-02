@@ -632,6 +632,13 @@ namespace Dodge_example
 
         private void label3_Click(object sender, EventArgs e)
         {
+            lives = 200;
+            txtLives.Text = lives.ToString();
+
+            lblyourname.Visible = false;
+            lblname.Visible = false;
+
+            lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
             score = 0;
@@ -689,6 +696,8 @@ namespace Dodge_example
         {
             if (lives == 0)
             {
+                lblstart.Visible = true;
+                lblstart.Text = "Restart";
                 lblyourname.Visible = true;
                 lblyourname.Text = "Final Score";
                 lblfinalscore.Visible = true;

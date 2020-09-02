@@ -102,7 +102,7 @@
             this.lblname.AutoSize = true;
             this.lblname.BackColor = System.Drawing.Color.White;
             this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblname.Location = new System.Drawing.Point(242, 209);
+            this.lblname.Location = new System.Drawing.Point(230, 381);
             this.lblname.Name = "lblname";
             this.lblname.Size = new System.Drawing.Size(241, 76);
             this.lblname.TabIndex = 13;
@@ -128,7 +128,7 @@
             this.lblstart.BackColor = System.Drawing.Color.White;
             this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
             this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblstart.Location = new System.Drawing.Point(348, 112);
+            this.lblstart.Location = new System.Drawing.Point(381, 95);
             this.lblstart.Name = "lblstart";
             this.lblstart.Size = new System.Drawing.Size(277, 120);
             this.lblstart.TabIndex = 7;
@@ -271,7 +271,7 @@
             this.lblfinalscore.AutoSize = true;
             this.lblfinalscore.BackColor = System.Drawing.Color.White;
             this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblfinalscore.Location = new System.Drawing.Point(688, 209);
+            this.lblfinalscore.Location = new System.Drawing.Point(708, 381);
             this.lblfinalscore.Name = "lblfinalscore";
             this.lblfinalscore.Size = new System.Drawing.Size(70, 76);
             this.lblfinalscore.TabIndex = 16;
@@ -283,7 +283,7 @@
             this.lblyourname.AutoSize = true;
             this.lblyourname.BackColor = System.Drawing.Color.White;
             this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblyourname.Location = new System.Drawing.Point(231, 115);
+            this.lblyourname.Location = new System.Drawing.Point(230, 295);
             this.lblyourname.Name = "lblyourname";
             this.lblyourname.Size = new System.Drawing.Size(548, 76);
             this.lblyourname.TabIndex = 18;
