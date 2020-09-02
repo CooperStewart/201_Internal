@@ -384,13 +384,19 @@ namespace Dodge_example
                 spaceship.SpriteChange();
                 if(lives < 150)
                 {
-                    spaceship.InjuredSpriteChange();
+                    if (lives > 100)
+                    {
+                        spaceship.InjuredSpriteChange();
+                    }
 
                 }
                 if (lives < 100)
                 {
-                    spaceship.InjuredSpriteChange21();
+                    if (lives > 50)
+                    {
+                        spaceship.InjuredSpriteChange21();
 
+                    }
                 }
                 if (lives < 50)
                 {
@@ -403,12 +409,18 @@ namespace Dodge_example
                 spaceship.SpriteChange2();
                 if (lives < 150)
                 {
-                    spaceship.injuredSpriteChange2();
+                    if (lives > 100)
+                    {
+                        spaceship.injuredSpriteChange2();
+                    }
 
                 }
                 if (lives < 100)
                 {
-                    spaceship.injuredSpriteChange22();
+                    if (lives > 50)
+                    {
+                        spaceship.injuredSpriteChange22();
+                    }
 
                 }
                 if (lives < 50)
@@ -423,13 +435,17 @@ namespace Dodge_example
                 spaceship.SpriteChange3();
                 if (lives < 150)
                 {
-                    spaceship.InjuredSpriteChange3();
-
+                    if (lives > 100)
+                    {
+                        spaceship.InjuredSpriteChange3();
+                    }
                 }
                 if (lives < 100)
                 {
-                    spaceship.InjuredSpriteChange23();
-
+                    if (lives > 50)
+                    {
+                        spaceship.InjuredSpriteChange23();
+                    }
                 }
                 if (lives < 50)
                 {
@@ -444,13 +460,17 @@ namespace Dodge_example
                 cycle = 0;
                 if (lives < 150)
                 {
-                    spaceship.injuredSpriteChange2();
-
+                    if (lives > 100)
+                    {
+                        spaceship.injuredSpriteChange2();
+                    }
                 }
                 if (lives < 100)
                 {
-                    spaceship.injuredSpriteChange22();
-
+                    if (lives > 50)
+                    {
+                        spaceship.injuredSpriteChange22();
+                    }
                 }
                 if (lives < 50)
                 {
@@ -473,13 +493,17 @@ namespace Dodge_example
                 spaceship.SpriteChange6();
                 if (lives < 150)
                 {
-                    spaceship.InjuredSpriteChange6();
-
+                    if (lives > 100)
+                    {
+                        spaceship.InjuredSpriteChange6();
+                    }
                 }
                 if (lives < 100)
                 {
-                    spaceship.InjuredSpriteChange26();
-
+                    if (lives > 50)
+                    {
+                        spaceship.InjuredSpriteChange26();
+                    }
                 }
                 if (lives < 50)
                 {
@@ -499,13 +523,17 @@ namespace Dodge_example
                     turnLeft = true;
                     if (lives < 150)
                     {
-                        spaceship.InjuredSpriteChange7();
-
+                        if (lives > 100)
+                        {
+                            spaceship.InjuredSpriteChange7();
+                        }
                     }
                     if (lives < 100)
                     {
-                        spaceship.InjuredSpriteChange27();
-
+                        if (lives > 50)
+                        {
+                            spaceship.InjuredSpriteChange27();
+                        }
                     }
                     if (lives < 50)
                     {
@@ -530,13 +558,17 @@ namespace Dodge_example
                 spaceship.SpriteChange8();
                 if (lives < 150)
                 {
-                    spaceship.InjuredSpriteChange8();
-
+                    if (lives > 100)
+                    {
+                        spaceship.InjuredSpriteChange8();
+                    }
                 }
                 if (lives < 100)
                 {
-                    spaceship.InjuredSpriteChange28();
-
+                    if (lives > 50)
+                    {
+                        spaceship.InjuredSpriteChange28();
+                    }
                 }
                 if (lives < 50)
                 {
