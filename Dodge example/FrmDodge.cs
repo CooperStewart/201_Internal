@@ -231,8 +231,8 @@ namespace Dodge_example
             if (thump > 55)
             {
                 lblthump1.Visible = false;
-                lblthump2.Visible = false;
-                lblthump3.Visible = false;
+                lblname.Visible = false;
+                lbl1.Visible = false;
             }
             for (int i = 0; i < 1; i++)
             {
@@ -585,6 +585,31 @@ namespace Dodge_example
 
         }
 
+        private void lblname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter) { textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
+
+        }
+
+        private void lbl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void healthbar_Click(object sender, EventArgs e)
         {
 
@@ -664,6 +689,13 @@ namespace Dodge_example
         {
             if (lives == 0)
             {
+                lblyourname.Visible = true;
+                lblyourname.Text = "Final Score";
+                lblfinalscore.Visible = true;
+                lblfinalscore.Text = lblScore.Text;
+                lbl1.Visible = true;
+                lblname.Visible = true;
+                startscreen.Visible = true;
                 tmrJump.Enabled = false;
                 TmrPlanet.Enabled = false;
                 TmrShip.Enabled = false;

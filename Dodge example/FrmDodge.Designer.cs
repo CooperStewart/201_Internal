@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
-            this.lblthump3 = new System.Windows.Forms.Label();
-            this.lblthump2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblname = new System.Windows.Forms.Label();
             this.lblthump1 = new System.Windows.Forms.Label();
             this.lblstart = new System.Windows.Forms.Label();
             this.startscreen = new System.Windows.Forms.PictureBox();
@@ -49,6 +49,8 @@
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblfinalscore = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -58,8 +60,10 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.White;
-            this.PnlGame.Controls.Add(this.lblthump3);
-            this.PnlGame.Controls.Add(this.lblthump2);
+            this.PnlGame.Controls.Add(this.lblfinalscore);
+            this.PnlGame.Controls.Add(this.lblname);
+            this.PnlGame.Controls.Add(this.textBox1);
+            this.PnlGame.Controls.Add(this.lbl1);
             this.PnlGame.Controls.Add(this.lblthump1);
             this.PnlGame.Controls.Add(this.lblstart);
             this.PnlGame.Controls.Add(this.startscreen);
@@ -78,29 +82,31 @@
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
-            // lblthump3
+            // lbl1
             // 
-            this.lblthump3.AutoSize = true;
-            this.lblthump3.BackColor = System.Drawing.Color.White;
-            this.lblthump3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump3.Location = new System.Drawing.Point(699, 65);
-            this.lblthump3.Name = "lblthump3";
-            this.lblthump3.Size = new System.Drawing.Size(241, 76);
-            this.lblthump3.TabIndex = 14;
-            this.lblthump3.Text = "Thump";
-            this.lblthump3.Visible = false;
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.White;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lbl1.Location = new System.Drawing.Point(-13, -32);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(70, 76);
+            this.lbl1.TabIndex = 14;
+            this.lbl1.Text = "1";
+            this.lbl1.Visible = false;
+            this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
             // 
-            // lblthump2
+            // lblname
             // 
-            this.lblthump2.AutoSize = true;
-            this.lblthump2.BackColor = System.Drawing.Color.White;
-            this.lblthump2.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump2.Location = new System.Drawing.Point(363, 256);
-            this.lblthump2.Name = "lblthump2";
-            this.lblthump2.Size = new System.Drawing.Size(241, 76);
-            this.lblthump2.TabIndex = 13;
-            this.lblthump2.Text = "Thump";
-            this.lblthump2.Visible = false;
+            this.lblname.AutoSize = true;
+            this.lblname.BackColor = System.Drawing.Color.White;
+            this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblname.Location = new System.Drawing.Point(242, 209);
+            this.lblname.Name = "lblname";
+            this.lblname.Size = new System.Drawing.Size(241, 76);
+            this.lblname.TabIndex = 13;
+            this.lblname.Text = "Thump";
+            this.lblname.Visible = false;
+            this.lblname.Click += new System.EventHandler(this.lblname_Click);
             // 
             // lblthump1
             // 
@@ -125,6 +131,7 @@
             this.lblstart.Size = new System.Drawing.Size(277, 120);
             this.lblstart.TabIndex = 7;
             this.lblstart.Text = "Start";
+            this.lblstart.Visible = false;
             this.lblstart.Click += new System.EventHandler(this.label3_Click);
             this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
@@ -247,6 +254,28 @@
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60.25F);
+            this.textBox1.Location = new System.Drawing.Point(267, 194);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(500, 98);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // lblfinalscore
+            // 
+            this.lblfinalscore.AutoSize = true;
+            this.lblfinalscore.BackColor = System.Drawing.Color.White;
+            this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblfinalscore.Location = new System.Drawing.Point(688, 209);
+            this.lblfinalscore.Name = "lblfinalscore";
+            this.lblfinalscore.Size = new System.Drawing.Size(70, 76);
+            this.lblfinalscore.TabIndex = 16;
+            this.lblfinalscore.Text = "1";
+            this.lblfinalscore.Visible = false;
+            // 
             // FrmDodge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,9 +315,11 @@
         private System.Windows.Forms.Label lbljump;
         private System.Windows.Forms.Timer tmrhelp;
         private System.Windows.Forms.PictureBox startscreen;
-        private System.Windows.Forms.Label lblthump3;
-        public System.Windows.Forms.Label lblthump2;
+        private System.Windows.Forms.Label lbl1;
+        public System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Label lblthump1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblfinalscore;
     }
 }
 
