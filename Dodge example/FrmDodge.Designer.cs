@@ -51,6 +51,7 @@
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblfinalscore = new System.Windows.Forms.Label();
+            this.lblyourname = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -60,6 +61,7 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.White;
+            this.PnlGame.Controls.Add(this.lblyourname);
             this.PnlGame.Controls.Add(this.lblfinalscore);
             this.PnlGame.Controls.Add(this.lblname);
             this.PnlGame.Controls.Add(this.textBox1);
@@ -276,6 +278,17 @@
             this.lblfinalscore.Text = "1";
             this.lblfinalscore.Visible = false;
             // 
+            // lblyourname
+            // 
+            this.lblyourname.AutoSize = true;
+            this.lblyourname.BackColor = System.Drawing.Color.White;
+            this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblyourname.Location = new System.Drawing.Point(231, 115);
+            this.lblyourname.Name = "lblyourname";
+            this.lblyourname.Size = new System.Drawing.Size(548, 76);
+            this.lblyourname.TabIndex = 18;
+            this.lblyourname.Text = "Enter Your Name";
+            // 
             // FrmDodge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,6 +333,7 @@
         private System.Windows.Forms.Label lblthump1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblfinalscore;
+        public System.Windows.Forms.Label lblyourname;
     }
 }
 
