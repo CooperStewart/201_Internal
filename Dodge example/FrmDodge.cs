@@ -32,7 +32,7 @@ namespace Dodge_example
         Spaceship spaceship = new Spaceship();
         bool left, right, up, down;
         bool turnLeft, turnLEFT;
-
+        int Acceleration;
         string move;
         int cycle;
         int score, lives, stop, stop2, fall, thump, flare1, flip;
@@ -82,6 +82,7 @@ namespace Dodge_example
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 rock[i].x += 15;
                 beast[i].y += 7;
+                Acceleration = (score / 10);
                 if (score > 9)
                 {
                     if (flare1 < 10)
@@ -104,11 +105,11 @@ namespace Dodge_example
                     {
                         background[i].x += 0;
                         background2[i].x += 0;
-                        titan2[i].y += 8;
-                        rock[i].y += 8;
+                        titan2[i].y += 8+(score/10);
+                        rock[i].y += 8 + (score / 10);
                         if (stop < 7)
                         {
-                            titan[i].y += 6;
+                            titan[i].y += 6 + (score / 10);
 
 
                         }
@@ -133,21 +134,21 @@ namespace Dodge_example
                 else
                 {
 
-                    background[i].x += 7;
-                    background2[i].x += 7;
+                    background[i].x += 7 + (score / 10);
+                    background2[i].x += 7 + (score / 10);
                     background[i].y = 0;
                     background2[i].y = 0;
-                    titan2[i].y += 15;
-                    rock[i].y += 15;
+                    titan2[i].y += 15 + (score / 10);
+                    rock[i].y += 15 + (score / 10);
                     if (stop < 7)
                     {
-                        titan[i].y += 13;
+                        titan[i].y += 13 + (score / 10);
 
 
                     }
                     else
                     {
-                        titan[i].y += 7;
+                        titan[i].y += 7 + (score / 10);
 
                         titan[i].ChangeSprite();
                     }
@@ -232,7 +233,6 @@ namespace Dodge_example
             {
                 lblthump1.Visible = false;
                 lblname.Visible = false;
-                lbl1.Visible = false;
             }
             for (int i = 0; i < 1; i++)
             {
@@ -666,7 +666,6 @@ namespace Dodge_example
         {
             lives = 200;
             txtLives.Text = lives.ToString();
-
             lblyourname.Visible = false;
             lblname.Visible = false;
 
@@ -737,7 +736,6 @@ namespace Dodge_example
                 lblyourname.Text = "Final Score";
                 lblfinalscore.Visible = true;
                 lblfinalscore.Text = lblScore.Text;
-                lbl1.Visible = true;
                 lblname.Visible = true;
                 startscreen.Visible = true;
                 tmrJump.Enabled = false;

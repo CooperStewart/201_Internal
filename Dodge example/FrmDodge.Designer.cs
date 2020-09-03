@@ -34,7 +34,6 @@
             this.lblfinalscore = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl1 = new System.Windows.Forms.Label();
             this.lblthump1 = new System.Windows.Forms.Label();
             this.lblstart = new System.Windows.Forms.Label();
             this.startscreen = new System.Windows.Forms.PictureBox();
@@ -45,7 +44,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.PlanetDodge = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -65,7 +63,6 @@
             this.PnlGame.Controls.Add(this.lblfinalscore);
             this.PnlGame.Controls.Add(this.lblname);
             this.PnlGame.Controls.Add(this.textBox1);
-            this.PnlGame.Controls.Add(this.lbl1);
             this.PnlGame.Controls.Add(this.lblthump1);
             this.PnlGame.Controls.Add(this.lblstart);
             this.PnlGame.Controls.Add(this.startscreen);
@@ -76,7 +73,6 @@
             this.PnlGame.Controls.Add(this.label2);
             this.PnlGame.Controls.Add(this.txtName);
             this.PnlGame.Controls.Add(this.label1);
-            this.PnlGame.Controls.Add(this.PlanetDodge);
             this.PnlGame.Controls.Add(this.pictureBox2);
             this.PnlGame.Location = new System.Drawing.Point(-3, 5);
             this.PnlGame.Name = "PnlGame";
@@ -88,10 +84,10 @@
             // 
             this.lblyourname.AutoSize = true;
             this.lblyourname.BackColor = System.Drawing.Color.White;
-            this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold);
             this.lblyourname.Location = new System.Drawing.Point(230, 295);
             this.lblyourname.Name = "lblyourname";
-            this.lblyourname.Size = new System.Drawing.Size(548, 76);
+            this.lblyourname.Size = new System.Drawing.Size(563, 76);
             this.lblyourname.TabIndex = 18;
             this.lblyourname.Text = "Enter Your Name";
             // 
@@ -99,10 +95,10 @@
             // 
             this.lblfinalscore.AutoSize = true;
             this.lblfinalscore.BackColor = System.Drawing.Color.White;
-            this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold);
             this.lblfinalscore.Location = new System.Drawing.Point(708, 381);
             this.lblfinalscore.Name = "lblfinalscore";
-            this.lblfinalscore.Size = new System.Drawing.Size(70, 76);
+            this.lblfinalscore.Size = new System.Drawing.Size(71, 76);
             this.lblfinalscore.TabIndex = 16;
             this.lblfinalscore.Text = "1";
             this.lblfinalscore.Visible = false;
@@ -111,10 +107,10 @@
             // 
             this.lblname.AutoSize = true;
             this.lblname.BackColor = System.Drawing.Color.White;
-            this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold);
             this.lblname.Location = new System.Drawing.Point(230, 381);
             this.lblname.Name = "lblname";
-            this.lblname.Size = new System.Drawing.Size(241, 76);
+            this.lblname.Size = new System.Drawing.Size(246, 76);
             this.lblname.TabIndex = 13;
             this.lblname.Text = "Thump";
             this.lblname.Visible = false;
@@ -122,7 +118,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60.25F);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60.25F, System.Drawing.FontStyle.Bold);
             this.textBox1.Location = new System.Drawing.Point(252, 194);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(500, 98);
@@ -130,25 +126,12 @@
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
-            // lbl1
-            // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.White;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lbl1.Location = new System.Drawing.Point(-13, -32);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(70, 76);
-            this.lbl1.TabIndex = 14;
-            this.lbl1.Text = "1";
-            this.lbl1.Visible = false;
-            this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
-            // 
             // lblthump1
             // 
             this.lblthump1.AutoSize = true;
             this.lblthump1.BackColor = System.Drawing.Color.White;
             this.lblthump1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblthump1.Location = new System.Drawing.Point(-313, 19);
+            this.lblthump1.Location = new System.Drawing.Point(-282, 194);
             this.lblthump1.Name = "lblthump1";
             this.lblthump1.Size = new System.Drawing.Size(1625, 76);
             this.lblthump1.TabIndex = 12;
@@ -159,11 +142,11 @@
             // 
             this.lblstart.AutoSize = true;
             this.lblstart.BackColor = System.Drawing.Color.White;
-            this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
-            this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F, System.Drawing.FontStyle.Bold);
+            this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblstart.Location = new System.Drawing.Point(360, 95);
             this.lblstart.Name = "lblstart";
-            this.lblstart.Size = new System.Drawing.Size(277, 120);
+            this.lblstart.Size = new System.Drawing.Size(282, 120);
             this.lblstart.TabIndex = 7;
             this.lblstart.Text = "Start";
             this.lblstart.Visible = false;
@@ -173,7 +156,7 @@
             // startscreen
             // 
             this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(0, -5);
+            this.startscreen.Location = new System.Drawing.Point(3, -5);
             this.startscreen.Name = "startscreen";
             this.startscreen.Size = new System.Drawing.Size(986, 462);
             this.startscreen.TabIndex = 11;
@@ -214,18 +197,21 @@
             // lblScore
             // 
             this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(492, 62);
+            this.lblScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
+            this.lblScore.Location = new System.Drawing.Point(947, 23);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(13, 13);
+            this.lblScore.Size = new System.Drawing.Size(28, 29);
             this.lblScore.TabIndex = 6;
             this.lblScore.Text = "0";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(511, 62);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(839, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(84, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Score";
             // 
@@ -245,15 +231,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
-            // 
-            // PlanetDodge
-            // 
-            this.PlanetDodge.AutoSize = true;
-            this.PlanetDodge.Location = new System.Drawing.Point(15, 19);
-            this.PlanetDodge.Name = "PlanetDodge";
-            this.PlanetDodge.Size = new System.Drawing.Size(72, 13);
-            this.PlanetDodge.TabIndex = 2;
-            this.PlanetDodge.Text = "Planet Dodge";
             // 
             // pictureBox2
             // 
@@ -321,14 +298,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label PlanetDodge;
         private System.Windows.Forms.Timer tmrJump;
         private System.Windows.Forms.PictureBox healthbar;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbljump;
         private System.Windows.Forms.Timer tmrhelp;
         private System.Windows.Forms.PictureBox startscreen;
-        private System.Windows.Forms.Label lbl1;
         public System.Windows.Forms.Label lblname;
         private System.Windows.Forms.Label lblthump1;
         private System.Windows.Forms.TextBox textBox1;
