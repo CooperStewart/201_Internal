@@ -30,8 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.PnlGame = new System.Windows.Forms.Panel();
-            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblyourname = new System.Windows.Forms.Label();
+            this.lblfinalscore = new System.Windows.Forms.Label();
             this.lblname = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl1 = new System.Windows.Forms.Label();
             this.lblthump1 = new System.Windows.Forms.Label();
             this.lblstart = new System.Windows.Forms.Label();
             this.startscreen = new System.Windows.Forms.PictureBox();
@@ -49,9 +52,6 @@
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblfinalscore = new System.Windows.Forms.Label();
-            this.lblyourname = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -84,18 +84,28 @@
             this.PnlGame.TabIndex = 1;
             this.PnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlGame_Paint);
             // 
-            // lbl1
+            // lblyourname
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.BackColor = System.Drawing.Color.White;
-            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lbl1.Location = new System.Drawing.Point(-13, -32);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(70, 76);
-            this.lbl1.TabIndex = 14;
-            this.lbl1.Text = "1";
-            this.lbl1.Visible = false;
-            this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
+            this.lblyourname.AutoSize = true;
+            this.lblyourname.BackColor = System.Drawing.Color.White;
+            this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblyourname.Location = new System.Drawing.Point(230, 295);
+            this.lblyourname.Name = "lblyourname";
+            this.lblyourname.Size = new System.Drawing.Size(548, 76);
+            this.lblyourname.TabIndex = 18;
+            this.lblyourname.Text = "Enter Your Name";
+            // 
+            // lblfinalscore
+            // 
+            this.lblfinalscore.AutoSize = true;
+            this.lblfinalscore.BackColor = System.Drawing.Color.White;
+            this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lblfinalscore.Location = new System.Drawing.Point(708, 381);
+            this.lblfinalscore.Name = "lblfinalscore";
+            this.lblfinalscore.Size = new System.Drawing.Size(70, 76);
+            this.lblfinalscore.TabIndex = 16;
+            this.lblfinalscore.Text = "1";
+            this.lblfinalscore.Visible = false;
             // 
             // lblname
             // 
@@ -109,6 +119,29 @@
             this.lblname.Text = "Thump";
             this.lblname.Visible = false;
             this.lblname.Click += new System.EventHandler(this.lblname_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60.25F);
+            this.textBox1.Location = new System.Drawing.Point(252, 194);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(500, 98);
+            this.textBox1.TabIndex = 15;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.BackColor = System.Drawing.Color.White;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
+            this.lbl1.Location = new System.Drawing.Point(-13, -32);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(70, 76);
+            this.lbl1.TabIndex = 14;
+            this.lbl1.Text = "1";
+            this.lbl1.Visible = false;
+            this.lbl1.Click += new System.EventHandler(this.lbl1_Click);
             // 
             // lblthump1
             // 
@@ -128,7 +161,7 @@
             this.lblstart.BackColor = System.Drawing.Color.White;
             this.lblstart.Font = new System.Drawing.Font("Microsoft Sans Serif", 80.25F);
             this.lblstart.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.lblstart.Location = new System.Drawing.Point(381, 95);
+            this.lblstart.Location = new System.Drawing.Point(360, 95);
             this.lblstart.Name = "lblstart";
             this.lblstart.Size = new System.Drawing.Size(277, 120);
             this.lblstart.TabIndex = 7;
@@ -255,39 +288,6 @@
             // 
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 60.25F);
-            this.textBox1.Location = new System.Drawing.Point(267, 194);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(500, 98);
-            this.textBox1.TabIndex = 15;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
-            // 
-            // lblfinalscore
-            // 
-            this.lblfinalscore.AutoSize = true;
-            this.lblfinalscore.BackColor = System.Drawing.Color.White;
-            this.lblfinalscore.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblfinalscore.Location = new System.Drawing.Point(708, 381);
-            this.lblfinalscore.Name = "lblfinalscore";
-            this.lblfinalscore.Size = new System.Drawing.Size(70, 76);
-            this.lblfinalscore.TabIndex = 16;
-            this.lblfinalscore.Text = "1";
-            this.lblfinalscore.Visible = false;
-            // 
-            // lblyourname
-            // 
-            this.lblyourname.AutoSize = true;
-            this.lblyourname.BackColor = System.Drawing.Color.White;
-            this.lblyourname.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F);
-            this.lblyourname.Location = new System.Drawing.Point(230, 295);
-            this.lblyourname.Name = "lblyourname";
-            this.lblyourname.Size = new System.Drawing.Size(548, 76);
-            this.lblyourname.TabIndex = 18;
-            this.lblyourname.Text = "Enter Your Name";
             // 
             // FrmDodge
             // 

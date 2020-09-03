@@ -726,9 +726,12 @@ namespace Dodge_example
 
         private void CheckLives()
         {
-            if (lives == 0)
+            if (lives < 1)
             {
-                lblstart.Visible = true;
+                left = false;
+            
+            right = false; 
+            lblstart.Visible = true;
                 lblstart.Text = "Restart";
                 lblyourname.Visible = true;
                 lblyourname.Text = "Final Score";
