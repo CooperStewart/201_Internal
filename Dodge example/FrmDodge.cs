@@ -83,7 +83,7 @@ namespace Dodge_example
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
-                rock[i].x += 15;
+                rock[i].x += 12+((rock[i].x/100)*2);
                 beast[i].y += 7;
                 Acceleration = (score / 10)*2;
                 if (score > 9)
