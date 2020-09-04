@@ -247,16 +247,37 @@ namespace Dodge_example
                     beast[i].y = 0;
                 }
 
-                if (titan[i].y >= 1500)
+                if (titan[i].y >= 1700)
                 {
-                    score += 1;//update the score
-                    lblScore.Text = score.ToString();// display score
+                 
                     
                         titan[i].y = -100;
                     
                 }
 
-                if (rock[i].x >= 1500)
+                if (beast[i].y > 1000)
+                {
+                    if (beast[i].y < 1200)
+                    {
+                        score += 10;//update the score
+                        lblScore.Text = score.ToString();// display score
+                        beast[i].y = 1200;
+                    }
+
+                }
+
+                if (titan[i].y > 1000)
+                {
+                    if (titan[i].y < 1200)
+                    {
+                        score += 1;//update the score
+                        lblScore.Text = score.ToString();// display score
+                        titan[i].y = 1200;
+                    }
+
+                }
+
+                if (rock[i].x >= 1700)
                 {
                     lblScore.Text = score.ToString();// display score
 
@@ -265,12 +286,23 @@ namespace Dodge_example
 
                 }
 
-                if (titan2[i].y >= 1500)
+                if (titan2[i].y >= 1700)
                 {
-                    score += 1;//update the score
-                    lblScore.Text = score.ToString();// display score
+
 
                     titan2[i].y = -100;
+                }
+
+
+                if (titan2[i].y > 1000)
+                {
+                    if (titan2[i].y < 1200)
+                    {
+                        score += 1;//update the score
+                        lblScore.Text = score.ToString();// display score
+                        titan2[i].y = 1200;
+                    }
+
                 }
 
                 if (background[i].x > 1000)
@@ -672,7 +704,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 100;
+            score = 0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
