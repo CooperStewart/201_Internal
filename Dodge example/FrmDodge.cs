@@ -82,7 +82,7 @@ namespace Dodge_example
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 rock[i].x += 15;
                 beast[i].y += 7;
-                Acceleration = (score / 10);
+                Acceleration = (score / 10)*2;
                 if (score > 9)
                 {
                     if (flare1 < 10)
@@ -105,11 +105,11 @@ namespace Dodge_example
                     {
                         background[i].x += 0;
                         background2[i].x += 0;
-                        titan2[i].y += 8+(score/10);
-                        rock[i].y += 8 + (score / 10);
+                        titan2[i].y += 8+Acceleration;
+                        rock[i].y += 8 +Acceleration;
                         if (stop < 7)
                         {
-                            titan[i].y += 6 + (score / 10);
+                            titan[i].y += 6 +Acceleration;
 
 
                         }
@@ -134,21 +134,21 @@ namespace Dodge_example
                 else
                 {
 
-                    background[i].x += (7+ Acceleration);
-                    background2[i].x += (7+ Acceleration);
+                    background[i].x += 7;
+                    background2[i].x += 7;
                     background[i].y = 0;
                     background2[i].y = 0;
-                    titan2[i].y += 15 + (score / 10);
-                    rock[i].y += 15 + (score / 10);
+                    titan2[i].y += 15 + Acceleration;
+                    rock[i].y += 15 + Acceleration;
                     if (stop < 7)
                     {
-                        titan[i].y += 13 + (score / 10);
+                        titan[i].y += 13 +Acceleration;
 
 
                     }
                     else
                     {
-                        titan[i].y += 7 + (score / 10);
+                        titan[i].y += 7;
 
                         titan[i].ChangeSprite();
                     }
