@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background2 - Copy.cs" />
     <Compile Include="Background2.cs" />
     <Compile Include="FrmDodge.cs">
       <SubType>Form</SubType>

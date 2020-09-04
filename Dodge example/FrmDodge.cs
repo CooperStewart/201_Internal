@@ -26,6 +26,7 @@ namespace Dodge_example
         Beast[] beast = new Beast[7];
         Background[] background = new Background[7];
         Background2[] background2 = new Background2[7];
+        Background3[] background3 = new Background3[7];
         flare flare = new flare();
         Random yspeed = new Random();
         Random xloc = new Random();
@@ -55,6 +56,8 @@ namespace Dodge_example
                 titan2[i] = new Titan2(x2);
                 background[i] = new Background(x3);
                 background2[i] = new Background2(x3);
+                background3[i] = new Background3(x3);
+
                 beast[i] = new Beast(x);
 
 
@@ -105,6 +108,8 @@ namespace Dodge_example
                     {
                         background[i].x += 0;
                         background2[i].x += 0;
+                        background3[i].x += 0;
+
                         titan2[i].y += 8+Acceleration;
                         rock[i].y += 8 +Acceleration;
                         if (stop < 7)
@@ -134,10 +139,13 @@ namespace Dodge_example
                 else
                 {
 
-                    background[i].x += 7;
-                    background2[i].x += 7;
+                    background[i].x += 7+Acceleration;
+                    background2[i].x = background[i].x - 1000;
+                    background3[i].x = background[i].x + 1000;
+
                     background[i].y = 0;
                     background2[i].y = 0;
+                    background3[i].y = 0;
                     titan2[i].y += 15 + Acceleration;
                     rock[i].y += 15 + Acceleration;
                     if (stop < 7)
@@ -148,7 +156,7 @@ namespace Dodge_example
                     }
                     else
                     {
-                        titan[i].y += 7;
+                        titan[i].y += 7+Acceleration;
 
                         titan[i].ChangeSprite();
                     }
@@ -188,6 +196,7 @@ namespace Dodge_example
                 }
                 titan2[i].y += rndmspeed;
                 //call the Planet class's drawPlanet method to draw the images
+                background3[i].DrawBackground(g);
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
                
@@ -311,14 +320,15 @@ namespace Dodge_example
                 }
 
 
-                if (background2[i].x > 1000)
-                {
-                    background2[i].x = background[i].x -1000;
-                }
+              
+
+              
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
                 background[i].MoveBackground();
                 background2[i].MoveBackground();
+                background3[i].MoveBackground();
+
 
                 if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
@@ -704,7 +714,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 0;
+            score = 100;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
