@@ -134,8 +134,8 @@ namespace Dodge_example
                 else
                 {
 
-                    background[i].x += 7 + (score / 10);
-                    background2[i].x += 7 + (score / 10);
+                    background[i].x += (7+ Acceleration);
+                    background2[i].x += (7+ Acceleration);
                     background[i].y = 0;
                     background2[i].y = 0;
                     titan2[i].y += 15 + (score / 10);
@@ -672,7 +672,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 0;
+            score = 100;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
