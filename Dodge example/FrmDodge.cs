@@ -83,7 +83,7 @@ namespace Dodge_example
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
-                rock[i].x += 12+((rock[i].x/100)*2);
+                rock[i].x += 15+((rock[i].x/100)*2);
                 beast[i].y += 7;
                 Acceleration = (score / 10)*2;
                 if (score > 9)
@@ -97,7 +97,7 @@ namespace Dodge_example
                         flare.width -= 200;
                     }
                 }
-                if (score < 15)
+                if (score < 16)
                 {
                     beast[i].y = 1000;
                 }
@@ -111,7 +111,8 @@ namespace Dodge_example
                         background3[i].x += 0;
 
                         titan2[i].y += 8+Acceleration;
-                        rock[i].y += 8 +Acceleration;
+                        rock[i].y = 0;
+                        rock[i].x = 500;
                         if (stop < 7)
                         {
                             titan[i].y += 6 +Acceleration;
@@ -147,7 +148,15 @@ namespace Dodge_example
                     background2[i].y = 0;
                     background3[i].y = 0;
                     titan2[i].y += 15 + Acceleration;
-                    rock[i].y += 15 + Acceleration;
+                    if (rock[i].x < 345)
+                    {
+                        rock[i].y += 15 + Acceleration;
+                    }
+                    else
+                    {
+                        rock[i].y += 7+Acceleration;
+
+                    }
                     if (stop < 7)
                     {
                         titan[i].y += 13 +Acceleration;
@@ -203,8 +212,12 @@ namespace Dodge_example
 
                 if (score > 10)
                 {
-                    rock[i].DrawRock(g);
+                    if (score < 15)
+                    {
+                        rock[i].DrawRock(g);
+                    }
                 }
+
 
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
@@ -286,14 +299,20 @@ namespace Dodge_example
 
                 }
 
-                if (rock[i].x >= 1700)
+                if (rock[i].x >= 350)
                 {
-                    lblScore.Text = score.ToString();// display score
+
+                    rock[i].x = 350;
+
+                }
+                if (rock[i].y >= 1000)
+                {
 
                     rock[i].x = 0;
                     rock[i].y = 100;
 
                 }
+
 
                 if (titan2[i].y >= 1700)
                 {
@@ -421,7 +440,7 @@ namespace Dodge_example
                 flip += 1;
             }
 
-            if (cycle == 2)
+            if (stop2 < 2)
             {
                 spaceship.SpriteChange();
                 if(lives < 150)
@@ -446,7 +465,7 @@ namespace Dodge_example
 
                 }
             }
-            if (cycle == 4)
+            if (stop2 == 2)
             {
                 spaceship.SpriteChange2();
                 if (lives < 150)
@@ -472,7 +491,7 @@ namespace Dodge_example
                 }
             }
 
-            if (cycle == 8)
+            if (stop2 == 4)
             {
                 spaceship.SpriteChange3();
                 if (lives < 150)
@@ -496,7 +515,7 @@ namespace Dodge_example
                 }
             }
 
-            if (cycle == 10)
+            if (stop2 == 8)
             {
                 spaceship.SpriteChange2();
                 cycle = 0;
@@ -714,7 +733,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 100;
+            score = 0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
