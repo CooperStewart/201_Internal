@@ -212,7 +212,7 @@ namespace Dodge_example
 
                 if (score > 10)
                 {
-                    if (score < 15)
+                    if (score < 17)
                     {
                         rock[i].DrawRock(g);
                     }
@@ -241,6 +241,8 @@ namespace Dodge_example
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
+
+
             if (score > 9)
             {
                 flare1 += 1;
@@ -399,10 +401,12 @@ namespace Dodge_example
                     //reset planet[i] back to top of panel
                     if (score > 10)
                     {
-                        //reset planet[i] back to top of panel
-                        lives -= 1;// lose a life
-                        txtLives.Text = lives.ToString();// display number of lives
-                        CheckLives();
+                        if (score < 17){
+                            //reset planet[i] back to top of panel
+                            lives -= 1;// lose a life
+                            txtLives.Text = lives.ToString();// display number of lives
+                            CheckLives();
+                        }
                     }
                 }
 
