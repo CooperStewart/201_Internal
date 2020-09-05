@@ -9,12 +9,12 @@ using System.Drawing.Drawing2D;
 
 namespace Dodge_example
 {
-    class Spaceship
+    class Player
     {
         // declare fields to use in the class
 
         public int x, y, width, height;//variables for the rectangle
-        public Image spaceship;//variable for the planet's image
+        public Image Playerimg;//variable for the planet's image
         
         public Rectangle spaceRec;//variable for a rectangle to place our image in
         public  int rotationAngle;
@@ -22,7 +22,7 @@ namespace Dodge_example
         Point centre;
 
         //Create a constructor (initialises the values of the fields)
-        public Spaceship()
+        public Player()
         {
 
             x = 10;
@@ -31,7 +31,7 @@ namespace Dodge_example
             height = 210;
             rotationAngle = 0;
 
-            spaceship = Properties.Resources.player;
+            Playerimg = Properties.Resources.player;
             spaceRec = new Rectangle(x, y, width, height);
         }
         //methods
@@ -47,7 +47,7 @@ namespace Dodge_example
             g.Transform = matrix;
             //draw the spaceship
 
-            g.DrawImage(spaceship, spaceRec);
+            g.DrawImage(Playerimg, spaceRec);
         }
         public void Flip()
         {
@@ -57,150 +57,150 @@ namespace Dodge_example
 
         public void SpriteChange()
         {
-            spaceship = Properties.Resources.playeri1;
+            Playerimg = Properties.Resources.playeri1;
 
         }
 
         public void InjuredSpriteChange()
         {
-            spaceship = Properties.Resources.injured1;
+            Playerimg = Properties.Resources.injured1;
 
         }
 
         public void InjuredSpriteChange21()
         {
-            spaceship = Properties.Resources.injured21;
+            Playerimg = Properties.Resources.injured21;
 
         }
 
         public void InjuredSpriteChange31()
         {
-            spaceship = Properties.Resources.injured31;
+            Playerimg = Properties.Resources.injured31;
 
         }
         public void SpriteChange2()
         {
-            spaceship = Properties.Resources.playeri2;
+            Playerimg = Properties.Resources.playeri2;
 
         }
 
         public void injuredSpriteChange2()
         {
-            spaceship = Properties.Resources.injured2;
+            Playerimg = Properties.Resources.injured2;
 
         }
 
         public void injuredSpriteChange22()
         {
-            spaceship = Properties.Resources.injured22;
+            Playerimg = Properties.Resources.injured22;
 
         }
 
         public void injuredSpriteChange32()
         {
-            spaceship = Properties.Resources.injured32;
+            Playerimg = Properties.Resources.injured32;
 
         }
         public void SpriteChange3()
         {
-            spaceship = Properties.Resources.playeri3;
+            Playerimg = Properties.Resources.playeri3;
 
         }
 
         public void InjuredSpriteChange3()
         {
-            spaceship = Properties.Resources.injured3;
+            Playerimg = Properties.Resources.injured3;
 
         }
 
 
         public void InjuredSpriteChange23()
         {
-            spaceship = Properties.Resources.injured23;
+            Playerimg = Properties.Resources.injured23;
 
         }
         public void InjuredSpriteChange33()
         {
-            spaceship = Properties.Resources.injured33;
+            Playerimg = Properties.Resources.injured33;
 
         }
         public void SpriteChange4()
         {
-            spaceship = Properties.Resources.player4;
+            Playerimg = Properties.Resources.player4;
 
         }
 
         public void SpriteChange5()
         {
-            spaceship = Properties.Resources.player5;
+            Playerimg = Properties.Resources.player5;
 
         }
 
         public void SpriteChange6()
         {
-            spaceship = Properties.Resources.player6;
+            Playerimg = Properties.Resources.player6;
 
         }
 
         public void InjuredSpriteChange6()
         {
-            spaceship = Properties.Resources.injured6;
+            Playerimg = Properties.Resources.injured6;
 
         }
 
         public void InjuredSpriteChange26()
         {
-            spaceship = Properties.Resources.injured26;
+            Playerimg = Properties.Resources.injured26;
 
         }
 
         public void InjuredSpriteChange36()
         {
-            spaceship = Properties.Resources.injured36;
+            Playerimg = Properties.Resources.injured36;
 
         }
         public void SpriteChange7()
         {
-            spaceship = Properties.Resources.player7;
+            Playerimg = Properties.Resources.player7;
 
         }
 
         public void InjuredSpriteChange7()
         {
-            spaceship = Properties.Resources.injured7;
+            Playerimg = Properties.Resources.injured7;
 
         }
         public void InjuredSpriteChange27()
         {
-            spaceship = Properties.Resources.injured27;
+            Playerimg = Properties.Resources.injured27;
 
         }
 
         public void InjuredSpriteChange37()
         {
-            spaceship = Properties.Resources.injured27;
+            Playerimg = Properties.Resources.injured27;
 
         }
         public void SpriteChange8()
         {
-            spaceship = Properties.Resources.player8;
+            Playerimg = Properties.Resources.player8;
 
         }
 
         public void InjuredSpriteChange8()
         {
-            spaceship = Properties.Resources.injured8;
+            Playerimg = Properties.Resources.injured8;
 
         }
         public void InjuredSpriteChange28()
         {
-            spaceship = Properties.Resources.injured28;
+            Playerimg = Properties.Resources.injured28;
 
         }
 
         public void InjuredSpriteChange38()
         {
-            spaceship = Properties.Resources.injured38;
+            Playerimg = Properties.Resources.injured38;
 
         }
         public void Flip2()

@@ -48,23 +48,24 @@
   <ItemGroup>
     <Compile Include="Background2 - Copy.cs" />
     <Compile Include="Background2.cs" />
-    <Compile Include="FrmDodge.cs">
+    <Compile Include="FrmGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDodge.Designer.cs">
-      <DependentUpon>FrmDodge.cs</DependentUpon>
+    <Compile Include="FrmGame.Designer.cs">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Background.cs" />
-    <Compile Include="Titan - Copy %282%29.cs" />
-    <Compile Include="Titan - Copy %283%29.cs" />
-    <Compile Include="Titan - Copy.cs" />
+    <Compile Include="Rock.cs" />
+    <Compile Include="Beast.cs" />
+    <Compile Include="Flare.cs" />
+    <Compile Include="Titan3.cs" />
     <Compile Include="Titan2.cs" />
     <Compile Include="Titan.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Spaceship.cs" />
-    <EmbeddedResource Include="FrmDodge.resx">
-      <DependentUpon>FrmDodge.cs</DependentUpon>
+    <Compile Include="Player.cs" />
+    <EmbeddedResource Include="FrmGame.resx">
+      <DependentUpon>FrmGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -265,6 +266,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMG_1628.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1687.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1686.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_1683.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

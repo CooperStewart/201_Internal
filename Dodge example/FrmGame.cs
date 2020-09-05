@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace Dodge_example
 {
-    public partial class FrmDodge : Form
+    public partial class FrmGame : Form
     {
       
         
@@ -22,6 +22,8 @@ namespace Dodge_example
                     // declare space for an array of 7 objects called planet 
         Titan[] titan = new Titan[7];
         Titan2[] titan2 = new Titan2[7];
+        Titan3[] titan3 = new Titan3[7];
+
         rock[] rock = new rock[7];
         Beast[] beast = new Beast[7];
         Background[] background = new Background[7];
@@ -30,14 +32,14 @@ namespace Dodge_example
         flare flare = new flare();
         Random yspeed = new Random();
         Random xloc = new Random();
-        Spaceship spaceship = new Spaceship();
+        Player spaceship = new Player();
         bool left, right, up, down;
         bool turnLeft, turnLEFT;
         int Acceleration;
         string move;
         int cycle;
         int score, lives, stop, stop2, fall, thump, flare1, flip;
-        public FrmDodge()
+        public FrmGame()
         {
             InitializeComponent();
 
@@ -51,9 +53,13 @@ namespace Dodge_example
                 int x = 235 + (i * 75);
                 int x2 = 320 + (i * 75);
                 int x3 = 0 + (i * 75);
+                int x4 = 370 + (i * 75);
+
                 rock[i] = new rock(235);
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
+                titan3[i] = new Titan3(x4);
+
                 background[i] = new Background(x3);
                 background2[i] = new Background2(x3);
                 background3[i] = new Background3(x3);
@@ -111,6 +117,8 @@ namespace Dodge_example
                         background3[i].x += 0;
 
                         titan2[i].y += 8+Acceleration;
+                        titan3[i].y += 7 + Acceleration;
+
                         rock[i].y = 0;
                         rock[i].x = 500;
                         if (stop < 7)
@@ -148,6 +156,9 @@ namespace Dodge_example
                     background2[i].y = 0;
                     background3[i].y = 0;
                     titan2[i].y += 15 + Acceleration;
+
+                    titan3[i].y += 12 + Acceleration;
+
                     if (rock[i].x < 345)
                     {
                         rock[i].y += 15 + Acceleration;
@@ -184,16 +195,20 @@ namespace Dodge_example
                 if (stop2 <2)
                 {
                     titan2[i].ChangeSprite4();
+                    titan3[i].ChangeSprite();
+
 
                 }
                 if (stop2 ==2)
                 { titan2[i].ChangeSprite();
-                
+                    titan3[i].ChangeSprite2();
+
                 }
 
                 if (stop2 == 4)
                 {
                     titan2[i].ChangeSprite2();
+                    titan3[i].ChangeSprite3();
 
                 }
 
@@ -221,6 +236,8 @@ namespace Dodge_example
 
                 titan[i].DrawPlanet(g);
                 titan2[i].DrawTitan2(g);
+                titan3[i].DrawTitan3(g);
+
                 if (flare.width > 2)
                 {
                     if (score > 9)
@@ -262,6 +279,8 @@ namespace Dodge_example
             {
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
+                titan3[i].MoveTitan3();
+
                 rock[i].MoveRock();
                 beast[i].MoveBeast();
                 int rndmloc = (xloc.Next(1000, 1500))-score;
@@ -271,12 +290,20 @@ namespace Dodge_example
                     beast[i].y = 0;
                 }
 
-                if (titan[i].y >= 1700)
+                if (titan[i].y >= 2000)
                 {
                  
                     
                         titan[i].y = -100;
                     
+                }
+
+                if (titan3[i].y >= 2000)
+                {
+
+
+                    titan3[i].y = -100;
+
                 }
 
                 if (beast[i].y > 1000)
@@ -300,6 +327,16 @@ namespace Dodge_example
                     }
 
                 }
+                if (titan3[i].y > 1000)
+                {
+                    if (titan3[i].y < 1200)
+                    {
+                        score += 1;//update the score
+                        lblScore.Text = score.ToString();// display score
+                        titan3[i].y = 1200;
+                    }
+
+                }
 
                 if (rock[i].x >= 350)
                 {
@@ -316,7 +353,7 @@ namespace Dodge_example
                 }
 
 
-                if (titan2[i].y >= 1700)
+                if (titan2[i].y >= 2000)
                 {
 
 
@@ -346,6 +383,8 @@ namespace Dodge_example
               
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
+                titan3[i].MoveTitan3();
+
                 background[i].MoveBackground();
                 background2[i].MoveBackground();
                 background3[i].MoveBackground();
@@ -384,6 +423,20 @@ namespace Dodge_example
                 }
 
                 if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
+                {
+                    //reset planet[i] back to top of panel
+                    if (down == false)
+                    {
+                        if (up == false)
+                        {
+                            lives -= 1;// lose a life
+                            txtLives.Text = lives.ToString();// display number of lives
+                            CheckLives();
+                        }
+                    }
+                }
+
+                if (spaceship.spaceRec.IntersectsWith(titan3[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     if (down == false)
@@ -737,7 +790,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score = 0;
+            score =0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;

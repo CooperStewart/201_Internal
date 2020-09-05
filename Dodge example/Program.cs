@@ -16,7 +16,7 @@ namespace Dodge_example
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmDodge());
+            Application.Run(new FrmGame());
 
         }
     }

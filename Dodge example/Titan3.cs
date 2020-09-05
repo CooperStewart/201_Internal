@@ -6,50 +6,59 @@ using System.Threading.Tasks;
 
 namespace Dodge_example
 {
-    class Titan 
+    class Titan3
     {
         // declare fields to use in the class
         public int x, y, width, height;//variables for the rectangle
-        public Image titanImage;//variable for the planet's image
+        public Image planetImage;//variable for the planet's image
 
         public Rectangle titanrec;//variable for a rectangle to place our image in
         public int score;
         //Create a constructor (initialises the values of the fields)
-        public Titan(int spacing)
+        public Titan3(int spacing)
         {
-
             x = spacing;
-            y = 1500;
-            width = 100;
-            height = 220;
+            y = 1201;
+            width = 200;
+            height = 110;
             //planetImage contains the plane1.png image
-            titanImage = Properties.Resources.titan2;
+            planetImage = Properties.Resources.titan31;
             titanrec = new Rectangle(x, y, width, height);
         }
 
         // Methods for the Planet class
-        public void DrawPlanet(Graphics g)
+        public void DrawTitan3(Graphics g)
         {
 
-            g.DrawImage(titanImage, titanrec);
+            g.DrawImage(planetImage, titanrec);
             titanrec = new Rectangle(x, y, width, height);
         }
-        public void MovePlanet()
+        public void MoveTitan3()
         {
 
             titanrec.Location = new Point(y, x -10);
         }
         public void ChangeSprite()
         {
-            titanImage = Properties.Resources.titan;
+            planetImage = Properties.Resources.titan31;
 
         }
         public void ChangeSprite2()
         {
-            titanImage = Properties.Resources.titan2
-                ;
+            planetImage = Properties.Resources.titan32;
 
         }
 
+        public void ChangeSprite3()
+        {
+            planetImage = Properties.Resources.titan33;
+
+        }
+
+        public void ChangeSprite4()
+        {
+            planetImage = Properties.Resources.titan21;
+
+        }
     }
 }

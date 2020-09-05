@@ -1,6 +1,6 @@
 ﻿namespace Dodge_example
 {
-    partial class FrmDodge
+    partial class FrmGame
     {
         /// <summary>
         /// Required designer variable.
@@ -36,20 +36,20 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblthump1 = new System.Windows.Forms.Label();
             this.lblstart = new System.Windows.Forms.Label();
-            this.startscreen = new System.Windows.Forms.PictureBox();
             this.lbljump = new System.Windows.Forms.Label();
-            this.healthbar = new System.Windows.Forms.PictureBox();
             this.txtLives = new System.Windows.Forms.Label();
             this.lblScore = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TmrPlanet = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
+            this.startscreen = new System.Windows.Forms.PictureBox();
+            this.healthbar = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -153,16 +153,6 @@
             this.lblstart.Click += new System.EventHandler(this.label3_Click);
             this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
-            // startscreen
-            // 
-            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
-            this.startscreen.Location = new System.Drawing.Point(3, -5);
-            this.startscreen.Name = "startscreen";
-            this.startscreen.Size = new System.Drawing.Size(986, 462);
-            this.startscreen.TabIndex = 11;
-            this.startscreen.TabStop = false;
-            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
-            // 
             // lbljump
             // 
             this.lbljump.AutoSize = true;
@@ -173,16 +163,6 @@
             this.lbljump.TabIndex = 10;
             this.lbljump.Text = "Press the spacebar to jump";
             this.lbljump.Visible = false;
-            // 
-            // healthbar
-            // 
-            this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(3, 0);
-            this.healthbar.Name = "healthbar";
-            this.healthbar.Size = new System.Drawing.Size(986, 20);
-            this.healthbar.TabIndex = 8;
-            this.healthbar.TabStop = false;
-            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
             // 
             // txtLives
             // 
@@ -199,7 +179,7 @@
             this.lblScore.AutoSize = true;
             this.lblScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
-            this.lblScore.Location = new System.Drawing.Point(947, 23);
+            this.lblScore.Location = new System.Drawing.Point(857, 22);
             this.lblScore.Name = "lblScore";
             this.lblScore.Size = new System.Drawing.Size(28, 29);
             this.lblScore.TabIndex = 6;
@@ -209,7 +189,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.25F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(839, 23);
+            this.label2.Location = new System.Drawing.Point(749, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 29);
             this.label2.TabIndex = 5;
@@ -232,15 +212,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
-            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
-            this.pictureBox2.TabIndex = 9;
-            this.pictureBox2.TabStop = false;
-            // 
             // TmrPlanet
             // 
             this.TmrPlanet.Interval = 50;
@@ -253,7 +224,7 @@
             // 
             // TmrShip
             // 
-            this.TmrShip.Interval = 10;
+            this.TmrShip.Interval = 1;
             this.TmrShip.Tick += new System.EventHandler(this.TmrShip_Tick);
             // 
             // tmrJump
@@ -265,6 +236,35 @@
             // 
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
+            // 
+            // startscreen
+            // 
+            this.startscreen.BackgroundImage = global::Dodge_example.Properties.Resources.damien_hausson_promo_bg_low_copie;
+            this.startscreen.Location = new System.Drawing.Point(3, -5);
+            this.startscreen.Name = "startscreen";
+            this.startscreen.Size = new System.Drawing.Size(986, 462);
+            this.startscreen.TabIndex = 11;
+            this.startscreen.TabStop = false;
+            this.startscreen.Click += new System.EventHandler(this.startscreen_Click);
+            // 
+            // healthbar
+            // 
+            this.healthbar.BackColor = System.Drawing.Color.Lime;
+            this.healthbar.Location = new System.Drawing.Point(3, 0);
+            this.healthbar.Name = "healthbar";
+            this.healthbar.Size = new System.Drawing.Size(986, 20);
+            this.healthbar.TabIndex = 8;
+            this.healthbar.TabStop = false;
+            this.healthbar.Click += new System.EventHandler(this.healthbar_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Crimson;
+            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(986, 20);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
             // 
             // FrmDodge
             // 
@@ -291,7 +291,6 @@
         private System.Windows.Forms.Panel PnlGame;
         private System.Windows.Forms.Timer TmrPlanet;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Timer TmrShip;
         private System.Windows.Forms.Label txtLives;
         private System.Windows.Forms.Label lblstart;
         private System.Windows.Forms.Label lblScore;
@@ -309,6 +308,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblfinalscore;
         public System.Windows.Forms.Label lblyourname;
+        private System.Windows.Forms.Timer TmrShip;
     }
 }
 
