@@ -54,7 +54,7 @@ namespace Dodge_example
                 int x2 = 320 + (i * 75);
                 int x3 = 0 + (i * 75);
                 int x4 = 370 + (i * 75);
-                int x5 = 200 + (i * 75);
+                int x5 = 185 + (i * 75);
                 rock[i] = new rock(235);
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
@@ -90,9 +90,8 @@ namespace Dodge_example
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 rock[i].x += 15+((rock[i].x/100)*2);
-                beast[i].y += 7;
                 Acceleration = (score / 10)*2;
-                if (score > 9)
+                if (score > 19)
                 {
                     if (flare1 < 10)
                     {
@@ -103,14 +102,14 @@ namespace Dodge_example
                         flare.width -= 200;
                     }
                 }
-                if (score < 16)
+                if (score < 30)
                 {
                     beast[i].y = 1000;
                 }
 
                 if  (beast[i].y < PnlGame.Width)
                 {
-                    if (score > 14)
+                    if (score > 29)
                     {
                         background[i].x += 0;
                         background2[i].x += 0;
@@ -133,8 +132,21 @@ namespace Dodge_example
 
                             titan[i].ChangeSprite();
                         }
+                        if (stop < 12)
+                        {
+                            beast[i].ChangeSprite();
+                            beast[i].y += 10;
+
+                        }
+                        else
+                        {
+                            beast[i].ChangeSprite2();
+
+                        }
                         if (stop == 20)
                         {
+                            beast[i].ChangeSprite2();
+
                             stop = 0;
                             titan[i].ChangeSprite2();
 
@@ -172,7 +184,7 @@ namespace Dodge_example
                     {
                         titan[i].y += 13 +Acceleration;
 
-
+                     
                     }
                     else
                     {
@@ -187,6 +199,7 @@ namespace Dodge_example
 
 
 
+
                     }
 
                 }
@@ -196,13 +209,15 @@ namespace Dodge_example
                 {
                     titan2[i].ChangeSprite4();
                     titan3[i].ChangeSprite();
+            
 
 
                 }
                 if (stop2 ==2)
                 { titan2[i].ChangeSprite();
                     titan3[i].ChangeSprite2();
-                    beast[i].ChangeSprite();
+
+
 
 
                 }
@@ -211,7 +226,7 @@ namespace Dodge_example
                 {
                     titan2[i].ChangeSprite2();
                     titan3[i].ChangeSprite3();
-                    beast[i].ChangeSprite2();
+
 
 
                 }
@@ -230,9 +245,9 @@ namespace Dodge_example
                 background[i].DrawBackground(g);
                
 
-                if (score > 10)
+                if (score > 20)
                 {
-                    if (score < 17)
+                    if (score < 30)
                     {
                         rock[i].DrawRock(g);
                     }
@@ -252,7 +267,7 @@ namespace Dodge_example
                 }
 
               
-                if (score > 14)
+                if (score > 29)
                 {
                     beast[i].DrawBeast(g);
                 }
@@ -260,7 +275,7 @@ namespace Dodge_example
 
                 if (flare.width > 2)
                 {
-                    if (score > 9)
+                    if (score > 19)
                     {
                         flare.DrawFlare(g);
                     }
@@ -465,9 +480,9 @@ namespace Dodge_example
                 if (spaceship.spaceRec.IntersectsWith(rock[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
-                    if (score > 10)
+                    if (score > 20)
                     {
-                        if (score < 17){
+                        if (score < 30){
                             //reset planet[i] back to top of panel
                             lives -= 1;// lose a life
                             txtLives.Text = lives.ToString();// display number of lives
