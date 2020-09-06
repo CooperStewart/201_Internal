@@ -32,7 +32,7 @@ namespace Dodge_example
         flare flare = new flare();
         Random yspeed = new Random();
         Random xloc = new Random();
-        Player spaceship = new Player();
+        Player player = new Player();
         bool left, right, up, down;
         bool turnLeft, turnLEFT;
         int Acceleration;
@@ -271,7 +271,7 @@ namespace Dodge_example
                 {
                     beast[i].DrawBeast(g);
                 }
-                spaceship.DrawSpaceship(g);
+                player.Drawplayer(g);
 
                 if (flare.width > 2)
                 {
@@ -288,7 +288,7 @@ namespace Dodge_example
         {
 
 
-            if (score > 9)
+            if (score > 19)
             {
                 flare1 += 1;
             }
@@ -313,7 +313,7 @@ namespace Dodge_example
                 beast[i].MoveBeast();
                 int rndmloc = (xloc.Next(1000, 1500))-score;
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (score == 15)
+                if (score == 30)
                 {
                     beast[i].y = 0;
                 }
@@ -418,7 +418,7 @@ namespace Dodge_example
                 background3[i].MoveBackground();
 
 
-                if (spaceship.spaceRec.IntersectsWith(titan[i].titanrec))
+                if (player.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     if (down == false)
@@ -432,10 +432,10 @@ namespace Dodge_example
                     }
                 }
 
-                if (spaceship.spaceRec.IntersectsWith(beast[i].titanrec))
+                if (player.spaceRec.IntersectsWith(beast[i].titanrec))
                 {
 
-                    if (score > 15)
+                    if (score > 30)
                     {
                         //reset planet[i] back to top of panel
                         if (down == false)
@@ -450,7 +450,7 @@ namespace Dodge_example
                     }
                 }
 
-                if (spaceship.spaceRec.IntersectsWith(titan2[i].titanrec))
+                if (player.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     if (down == false)
@@ -464,7 +464,7 @@ namespace Dodge_example
                     }
                 }
 
-                if (spaceship.spaceRec.IntersectsWith(titan3[i].titanrec))
+                if (player.spaceRec.IntersectsWith(titan3[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     if (down == false)
@@ -477,7 +477,7 @@ namespace Dodge_example
                         }
                     }
                 }
-                if (spaceship.spaceRec.IntersectsWith(rock[i].titanrec))
+                if (player.spaceRec.IntersectsWith(rock[i].titanrec))
                 {
                     //reset planet[i] back to top of panel
                     if (score > 20)
@@ -506,33 +506,44 @@ namespace Dodge_example
 
         }
 
+
+
         private void TmrShip_Tick(object sender, EventArgs e)
         {
+            if (flare.width > 2)
+            {
+                if (score > 19)
+                {
+                    turnLEFT = false;
+                    turnLeft = false;
 
+
+                }
+            }
             cycle += 1;
        
 
             if (turnLeft) { 
-                spaceship.rotationAngle -= 20;
+                player.rotationAngle -= 20;
         }
             if(turnLEFT)
             {
-                spaceship.rotationAngle -= 35;
+                player.rotationAngle -= 35;
 
             }
-            if (spaceship.spaceRec.Location.Y < 260)
+            if (player.spaceRec.Location.Y < 260)
             {
                 flip += 1;
             }
 
             if (stop2 < 2)
             {
-                spaceship.SpriteChange();
+                player.SpriteChange();
                 if(lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.InjuredSpriteChange();
+                        player.InjuredSpriteChange();
                     }
 
                 }
@@ -540,24 +551,24 @@ namespace Dodge_example
                 {
                     if (lives > 25)
                     {
-                        spaceship.InjuredSpriteChange21();
+                        player.InjuredSpriteChange21();
 
                     }
                 }
                 if (lives < 25)
                 {
-                    spaceship.InjuredSpriteChange31();
+                    player.InjuredSpriteChange31();
 
                 }
             }
             if (stop2 == 2)
             {
-                spaceship.SpriteChange2();
+                player.SpriteChange2();
                 if (lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.injuredSpriteChange2();
+                        player.injuredSpriteChange2();
                     }
 
                 }
@@ -565,95 +576,95 @@ namespace Dodge_example
                 {
                     if (lives > 25)
                     {
-                        spaceship.injuredSpriteChange22();
+                        player.injuredSpriteChange22();
                     }
 
                 }
                 if (lives < 25)
                 {
-                    spaceship.injuredSpriteChange32();
+                    player.injuredSpriteChange32();
 
                 }
             }
 
             if (stop2 == 4)
             {
-                spaceship.SpriteChange3();
+                player.SpriteChange3();
                 if (lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.InjuredSpriteChange3();
+                        player.InjuredSpriteChange3();
                     }
                 }
                 if (lives < 50)
                 {
                     if (lives > 25)
                     {
-                        spaceship.InjuredSpriteChange23();
+                        player.InjuredSpriteChange23();
                     }
                 }
                 if (lives < 25)
                 {
-                    spaceship.InjuredSpriteChange33();
+                    player.InjuredSpriteChange33();
 
                 }
             }
 
             if (stop2 == 8)
             {
-                spaceship.SpriteChange2();
+                player.SpriteChange2();
                 cycle = 0;
                 if (lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.injuredSpriteChange2();
+                        player.injuredSpriteChange2();
                     }
                 }
                 if (lives < 50)
                 {
                     if (lives > 25)
                     {
-                        spaceship.injuredSpriteChange22();
+                        player.injuredSpriteChange22();
                     }
                 }
                 if (lives < 25)
                 {
-                    spaceship.injuredSpriteChange32();
+                    player.injuredSpriteChange32();
 
                 }
             }
             if (right) // if right arrow key pressed
             {
                 move = "right";
-                spaceship.MoveSpaceship(move);
+                player.Moveplayer(move);
             }
             if (left) // if left arrow key pressed
             {
                 move = "left";
-                spaceship.MoveSpaceship(move);
+                player.Moveplayer(move);
             }
             if (flip == 1)
             {
-                spaceship.SpriteChange6();
+                player.SpriteChange6();
                 if (lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.InjuredSpriteChange6();
+                        player.InjuredSpriteChange6();
                     }
                 }
                 if (lives < 50)
                 {
                     if (lives > 25)
                     {
-                        spaceship.InjuredSpriteChange26();
+                        player.InjuredSpriteChange26();
                     }
                 }
                 if (lives < 25)
                 {
-                    spaceship.InjuredSpriteChange36();
+                    player.InjuredSpriteChange36();
 
                 }
 
@@ -662,28 +673,28 @@ namespace Dodge_example
             {
 
 
-                if (spaceship.spaceRec.Location.Y < 260)
+                if (player.spaceRec.Location.Y < 260)
                 {
                     
-                        spaceship.SpriteChange7();
+                        player.SpriteChange7();
                     turnLeft = true;
                     if (lives < 75)
                     {
                         if (lives > 50)
                         {
-                            spaceship.InjuredSpriteChange7();
+                            player.InjuredSpriteChange7();
                         }
                     }
                     if (lives < 50)
                     {
                         if (lives > 25)
                         {
-                            spaceship.InjuredSpriteChange27();
+                            player.InjuredSpriteChange27();
                         }
                     }
                     if (lives < 25)
                     {
-                        spaceship.InjuredSpriteChange37();
+                        player.InjuredSpriteChange37();
 
                     }
 
@@ -695,66 +706,66 @@ namespace Dodge_example
                 if (fall > 0)
                 {
                     move = "up";
-                    spaceship.MoveSpaceship(move);
+                    player.Moveplayer(move);
                     fall -= 1;
                 }
             }
             if (down)
             {
-                spaceship.SpriteChange8();
+                player.SpriteChange8();
                 if (lives < 75)
                 {
                     if (lives > 50)
                     {
-                        spaceship.InjuredSpriteChange8();
+                        player.InjuredSpriteChange8();
                     }
                 }
                 if (lives < 50)
                 {
                     if (lives > 25)
                     {
-                        spaceship.InjuredSpriteChange28();
+                        player.InjuredSpriteChange28();
                     }
                 }
                 if (lives < 25)
                 {
-                    spaceship.InjuredSpriteChange38();
+                    player.InjuredSpriteChange38();
 
                 }
                 turnLEFT = true;
                 move = "down";
-                spaceship.MoveSpaceship(move);
+                player.Moveplayer(move);
                 up = false;
             }
-            if (spaceship.spaceRec.Location.Y > 259)
+            if (player.spaceRec.Location.Y > 259)
             {
                 down = false;
                 fall = 10;
                 turnLeft = false;
-                spaceship.rotationAngle =0;
+                player.rotationAngle =0;
 
                 turnLEFT = false;
 
             }
-            if (spaceship.spaceRec.Location.Y < 85)
+            if (player.spaceRec.Location.Y < 85)
             {
          
             }
             else
             {
-                spaceship.Flip2();
+                player.Flip2();
             }
-            if (spaceship.spaceRec.Location.Y < 10)
+            if (player.spaceRec.Location.Y < 10)
             {
                 up = false;
                 down = true;
      
                 fall = 0;
             }
-            if (spaceship.spaceRec.Location.Y > 260)
+            if (player.spaceRec.Location.Y > 260)
             {
                 down = false;
-                spaceship.spaceRec.Y = 260;
+                player.spaceRec.Y = 260;
             }
         }
 
@@ -795,6 +806,14 @@ namespace Dodge_example
 
         }
 
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void healthbar_Click(object sender, EventArgs e)
         {
 
@@ -825,7 +844,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =0;
+            score =19;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;

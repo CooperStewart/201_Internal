@@ -35,7 +35,7 @@ namespace Dodge_example
             spaceRec = new Rectangle(x, y, width, height);
         }
         //methods
-        public void DrawSpaceship(Graphics g)
+        public void Drawplayer(Graphics g)
         {
             // find the centre point of spaceRec
              centre = new Point(spaceRec.X + width / 2, spaceRec.Y + width / 2);
@@ -45,7 +45,7 @@ namespace Dodge_example
             matrix.RotateAt(rotationAngle, centre);
             //Set the current draw location to the rotated matrix point
             g.Transform = matrix;
-            //draw the spaceship
+            //draw the player
 
             g.DrawImage(Playerimg, spaceRec);
         }
@@ -210,13 +210,13 @@ namespace Dodge_example
         }
 
 
-        public void MoveSpaceship(string move)
+        public void Moveplayer(string move)
         {
             spaceRec.Location = new Point(x, y);
 
             if (move == "right")
             {
-                if (spaceRec.Location.X > 999) // is spaceship within 50 of right side
+                if (spaceRec.Location.X > 999) // is player within 50 of right side
                 {
 
                     x = 998;
@@ -240,7 +240,7 @@ namespace Dodge_example
 
             if (move == "left")
             {
-                if (spaceRec.Location.X < 10) // is spaceship within 10 of left side
+                if (spaceRec.Location.X < 10) // is player within 10 of left side
                 {
 
                     x = 10;
