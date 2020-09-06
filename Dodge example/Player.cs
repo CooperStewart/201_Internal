@@ -203,6 +203,12 @@ namespace Dodge_example
             Playerimg = Properties.Resources.injured38;
 
         }
+
+        public void InjuredSpriteChange9()
+        {
+            Playerimg = Properties.Resources.titanstill;
+
+        }
         public void Flip2()
         {
             spaceRec.Width = 160;

@@ -33,7 +33,7 @@ namespace Dodge_example
         Random yspeed = new Random();
         Random xloc = new Random();
         Player player = new Player();
-        bool left, right, up, down;
+        bool left, right, up, down, still;
         bool turnLeft, turnLEFT, mssg;
         int Acceleration;
         string move;
@@ -114,8 +114,8 @@ namespace Dodge_example
                 {
                     if (score > 29)
                     {
-                        
-                        background[i].x += 0;
+
+                        still = true;                        background[i].x += 0;
                         background2[i].x += 0;
                         background3[i].x += 0;
 
@@ -124,41 +124,50 @@ namespace Dodge_example
 
                         rock[i].x = 0;
                         rock[i].y = 500;
-
                         if (thump > 1)
                         {
                             if (thump < 10)
                             {
                                 beast[i].x += 10;
-                                beast[i].ChangeSprite2();
+                                
                             }
                         }
-
-                        if (thump > 10)
+                        if (beast[i].x > 2)
                         {
-                            if (thump < 15)
+                            if (thump > 1)
                             {
-                                beast[i].ChangeSprite();
+                                if (thump < 10)
+                                {
+                                    beast[i].x += 10;
+                                    beast[i].ChangeSprite2();
+                                }
+                            }
+
+                            if (thump > 10)
+                            {
+                                if (thump < 15)
+                                {
+                                    beast[i].ChangeSprite();
+                                }
+                            }
+
+                            if (thump > 15)
+                            {
+                                if (thump < 25)
+                                {
+                                    beast[i].x += 7;
+                                    beast[i].ChangeSprite2();
+                                }
+                            }
+
+                            if (thump > 25)
+                            {
+                                if (thump < 30)
+                                {
+                                    beast[i].ChangeSprite3();
+                                }
                             }
                         }
-
-                        if (thump > 15)
-                        {
-                            if (thump < 25)
-                            {
-                                beast[i].x += 7;
-                                beast[i].ChangeSprite2();
-                            }
-                        }
-
-                        if (thump > 25)
-                        {
-                            if (thump < 30)
-                            {
-                                beast[i].ChangeSprite3();
-                            }
-                        }
-
 
                         if (stop < 7)
                         {
@@ -201,6 +210,7 @@ namespace Dodge_example
                 //normal speed when boss is absent//
                 else
                 {
+                    still = false;
 
                     background[i].x += (7+Acceleration);
                     background2[i].x = background[i].x - 1000;
@@ -559,12 +569,12 @@ namespace Dodge_example
             }
             cycle += 1;
             thump += 1;
-            label3.Text = thump.ToString();
             //flips player when in air//
-            if (turnLeft) { 
+            if (turnLeft)
+            {
                 player.rotationAngle -= 20;
-        }
-            if(turnLEFT)
+            }
+            if (turnLEFT)
             {
                 player.rotationAngle -= 35;
 
@@ -577,7 +587,7 @@ namespace Dodge_example
             if (stop2 < 2)
             {
                 player.SpriteChange();
-                if(lives < 75)
+                if (lives < 75)
                 {
                     if (lives > 50)
                     {
@@ -707,14 +717,20 @@ namespace Dodge_example
                 }
 
             }
+            //stand still in boss fight//
+            if (still)
+            {
+                player.InjuredSpriteChange9();
+
+            }
             if (up)
             {
 
 
                 if (player.spaceRec.Location.Y < 260)
                 {//jump animation//
-                    
-                        player.SpriteChange7();
+
+                    player.SpriteChange7();
                     turnLeft = true;
                     if (lives < 75)
                     {
@@ -738,7 +754,7 @@ namespace Dodge_example
 
                 }
 
-                
+
 
 
                 if (fall > 0)
@@ -770,6 +786,7 @@ namespace Dodge_example
                     player.InjuredSpriteChange38();
 
                 }
+
                 turnLEFT = true;
                 move = "down";
                 player.Moveplayer(move);
@@ -780,14 +797,14 @@ namespace Dodge_example
                 down = false;
                 fall = 10;
                 turnLeft = false;
-                player.rotationAngle =0;
+                player.rotationAngle = 0;
 
                 turnLEFT = false;
 
             }
             if (player.spaceRec.Location.Y < 85)
             {
-         
+
             }
             else
             {
@@ -797,7 +814,7 @@ namespace Dodge_example
             {
                 up = false;
                 down = true;
-     
+
                 fall = 0;
             }
             if (player.spaceRec.Location.Y > 260)
@@ -805,8 +822,9 @@ namespace Dodge_example
                 down = false;
                 player.spaceRec.Y = 260;
             }
-        }
+           
 
+        }
         private void txtLives_Click(object sender, EventArgs e)
         {
 
@@ -828,7 +846,7 @@ namespace Dodge_example
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {//submit textbox for name//
-            if (e.KeyData == Keys.Enter) { mssg = true; label3.Text = thump.ToString(); label3.Visible = true; textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
+            if (e.KeyData == Keys.Enter) { mssg = true;  textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
         }
 
    
@@ -901,7 +919,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =0;
+            score =29;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
