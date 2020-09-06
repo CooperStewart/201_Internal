@@ -18,8 +18,8 @@ namespace Dodge_example
         public rock(int spacing)
         {
 
-            x = spacing;
-            y = 100;
+            x = 100;
+            y = spacing;
             width = 100;
             height = 100;
             //planetImage contains the plane1.png image
@@ -37,7 +37,7 @@ namespace Dodge_example
         public void MoveRock()
         {
 
-            titanrec.Location = new Point(y, x -10);
+            titanrec.Location = new Point(x,y);
         }
         public void SpriteChange()
         {

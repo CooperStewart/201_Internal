@@ -18,8 +18,8 @@ namespace Dodge_example
         public Beast(int spacing)
         {
 
-            x = spacing;
-            y = 0;
+            x = 0;
+            y = spacing;
             width = 150;
             height = 280;
             //planetImage contains the plane1.png image
@@ -37,7 +37,7 @@ namespace Dodge_example
         public void MoveBeast()
         {
 
-            titanrec.Location = new Point(y, x -10);
+            titanrec.Location = new Point(x,y);
         }
         public void ChangeSprite()
         {

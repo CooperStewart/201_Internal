@@ -50,21 +50,21 @@ namespace Dodge_example
 
             for (int i = 0; i < 7; i++)
             {
-                int x = 235 + (i * 75);
-                int x2 = 320 + (i * 75);
-                int x3 = 0 + (i * 75);
-                int x4 = 370 + (i * 75);
-                int x5 = 185 + (i * 75);
+                int y = 235 + (i * 75);
+                int y2 = 320 + (i * 75);
+                int y3 = 0 + (i * 75);
+                int y4 = 360 + (i * 75);
+                int y5 = 185 + (i * 75);
                 rock[i] = new rock(235);
-                titan[i] = new Titan(x);
-                titan2[i] = new Titan2(x2);
-                titan3[i] = new Titan3(x4);
+                titan[i] = new Titan(y);
+                titan2[i] = new Titan2(y2);
+                titan3[i] = new Titan3(y4);
 
-                background[i] = new Background(x3);
-                background2[i] = new Background2(x3);
-                background3[i] = new Background3(x3);
+                background[i] = new Background(y3);
+                background2[i] = new Background2(y3);
+                background3[i] = new Background3(y3);
 
-                beast[i] = new Beast(x5);
+                beast[i] = new Beast(y5);
 
 
             }
@@ -89,7 +89,7 @@ namespace Dodge_example
             {
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
-                rock[i].x += 15+((rock[i].x/100)*2);
+                rock[i].y += 15+((rock[i].x/100)*2);
                 Acceleration = (score / 10)*2;
                 if (score > 19)
                 {
@@ -104,10 +104,10 @@ namespace Dodge_example
                 }
                 if (score < 31)
                 {
-                    beast[i].y = 1000;
+                    beast[i].x = 1000;
                 }
 
-                if  (beast[i].y < PnlGame.Width)
+                if  (beast[i].x < PnlGame.Width)
                 {
                     if (score > 29)
                     {
@@ -116,17 +116,17 @@ namespace Dodge_example
                         background2[i].x += 0;
                         background3[i].x += 0;
 
-                        titan2[i].y += 8+Acceleration;
-                        titan3[i].y += 7 + Acceleration;
+                        titan2[i].x += 8+Acceleration;
+                        titan3[i].x += 7 + Acceleration;
 
-                        rock[i].y = 0;
-                        rock[i].x = 500;
+                        rock[i].x = 0;
+                        rock[i].y = 500;
 
                         if (thump > 1)
                         {
                             if (thump < 10)
                             {
-                                beast[i].y += 7;
+                                beast[i].x += 10;
                                 beast[i].ChangeSprite2();
                             }
                         }
@@ -143,7 +143,7 @@ namespace Dodge_example
                         {
                             if (thump < 25)
                             {
-                                beast[i].y += 7;
+                                beast[i].x += 7;
                                 beast[i].ChangeSprite2();
                             }
                         }
@@ -159,7 +159,7 @@ namespace Dodge_example
 
                         if (stop < 7)
                         {
-                            titan[i].y += 7;
+                            titan[i].x += 7;
 
 
 
@@ -171,7 +171,7 @@ namespace Dodge_example
 
                         else
                         {
-                            titan[i].y += 0;
+                            titan[i].x += 0;
 
                             titan[i].ChangeSprite();
                         }
@@ -199,35 +199,35 @@ namespace Dodge_example
                 else
                 {
 
-                    background[i].x += 7+Acceleration;
+                    background[i].x += (7+Acceleration);
                     background2[i].x = background[i].x - 1000;
                     background3[i].x = background[i].x + 1000;
 
                     background[i].y = 0;
                     background2[i].y = 0;
                     background3[i].y = 0;
-                    titan2[i].y += 15 + Acceleration;
+                    titan2[i].x += 15 + Acceleration;
 
-                    titan3[i].y += 12 + Acceleration;
+                    titan3[i].x += 12 + Acceleration;
 
-                    if (rock[i].x < 345)
+                    if (rock[i].y < 345)
                     {
-                        rock[i].y += 15 + Acceleration;
+                        rock[i].x += 15 + Acceleration;
                     }
                     else
                     {
-                        rock[i].y += 7+Acceleration;
+                        rock[i].x += 7+Acceleration;
 
                     }
                     if (stop < 7)
                     {
-                        titan[i].y += 13 +Acceleration;
+                        titan[i].x += 13 +Acceleration;
 
                      
                     }
                     else
                     {
-                        titan[i].y += 7+Acceleration;
+                        titan[i].x += 7+Acceleration;
 
                         titan[i].ChangeSprite();
                     }
@@ -274,7 +274,7 @@ namespace Dodge_example
                     stop2 = 0;
 
                 }
-                titan2[i].y += rndmspeed;
+                titan2[i].x += rndmspeed;
                 //call the Planet class's drawPlanet method to draw the images
 
                 background3[i].DrawBackground(g);
@@ -290,15 +290,15 @@ namespace Dodge_example
                     }
                 }
 
-                if (titan[i].y < 1000)
+                if (titan[i].x < 1000)
                 {
                     titan[i].DrawPlanet(g);
                 }
-                if (titan2[i].y <1000)
+                if (titan2[i].x <1000)
                 {
                     titan2[i].DrawTitan2(g);
                 }
-                if (titan3[i].y < 1000)
+                if (titan3[i].x < 1000)
                 {
                     titan3[i].DrawTitan3(g);
                 }
@@ -351,88 +351,88 @@ namespace Dodge_example
                 //if a planet reaches the bottom of the Game Area reposition it at the top
                 if (score == 31)
                 {
-                    beast[i].y = 0;
+                    beast[i].x = 0;
                 }
 
-                if (titan[i].y >= 2500)
+                if (titan[i].x >= 2500)
                 {
                  
                     
-                        titan[i].y = -100;
+                        titan[i].x = -100;
                     
                 }
 
-                if (titan3[i].y >= 2500)
+                if (titan3[i].x >= 2500)
                 {
 
 
-                    titan3[i].y = -100;
+                    titan3[i].x = -100;
 
                 }
 
-                if (beast[i].y > 1000)
+                if (beast[i].x > 1000)
                 {
-                    if (beast[i].y < 1200)
+                    if (beast[i].x < 1200)
                     {
                         score += 10;//update the score
                         lblScore.Text = score.ToString();// display score
-                        beast[i].y = 1200;
+                        beast[i].x = 1200;
                     }
 
                 }
 
-                if (titan[i].y > 1000)
+                if (titan[i].x > 1000)
                 {
-                    if (titan[i].y < 1200)
+                    if (titan[i].x < 1200)
                     {
                         score += 1;//update the score
                         lblScore.Text = score.ToString();// display score
-                        titan[i].y = 1200;
+                        titan[i].x = 1200;
                     }
 
                 }
-                if (titan3[i].y > 1000)
+                if (titan3[i].x > 1000)
                 {
-                    if (titan3[i].y < 1200)
+                    if (titan3[i].x < 1200)
                     {
                         score += 1;//update the score
                         lblScore.Text = score.ToString();// display score
-                        titan3[i].y = 1200;
+                        titan3[i].x = 1200;
                     }
 
                 }
 
-                if (rock[i].x == 350)
+                if (rock[i].y == 270)
                 {
                     rock[i].SpriteChange();
-                    rock[i].x = 350;
+                    rock[i].y = 270;
 
                 }
                 if (rock[i].y >= 1000)
                 {
                     rock[i].SpriteChange2();
 
-                    rock[i].x = 0;
-                    rock[i].y = 100;
+                    rock[i].y = 0;
+                    rock[i].x = 100;
 
                 }
 
 
-                if (titan2[i].y >= 2500)
+                if (titan2[i].x >= 2500)
                 {
 
 
-                    titan2[i].y = -100;
+                    titan2[i].x = 0;
                 }
 
 
-                if (titan2[i].y > 1000)
+                if (titan2[i].x > 1000)
                 {
-                    if (titan2[i].y < 1200)
+                    if (titan2[i].x < 1200)
                     {
                         score += 1;//update the score
                         lblScore.Text = score.ToString();// display score
-                        titan2[i].y = 1200;
+                        titan2[i].x = 1200;
                     }
 
                 }
@@ -907,7 +907,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =29;
+            score =0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;

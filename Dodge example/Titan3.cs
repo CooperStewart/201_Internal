@@ -17,8 +17,8 @@ namespace Dodge_example
         //Create a constructor (initialises the values of the fields)
         public Titan3(int spacing)
         {
-            x = spacing;
-            y = 1200;
+            x = 0;
+            y = spacing;
             width = 200;
             height = 110;
             //planetImage contains the plane1.png image
@@ -36,7 +36,7 @@ namespace Dodge_example
         public void MoveTitan3()
         {
 
-            titanrec.Location = new Point(y, x -10);
+            titanrec.Location = new Point(x,y);
         }
         public void ChangeSprite()
         {
