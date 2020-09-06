@@ -318,7 +318,7 @@ namespace Dodge_example
                     beast[i].y = 0;
                 }
 
-                if (titan[i].y >= 2000)
+                if (titan[i].y >= 2500)
                 {
                  
                     
@@ -326,7 +326,7 @@ namespace Dodge_example
                     
                 }
 
-                if (titan3[i].y >= 2000)
+                if (titan3[i].y >= 2500)
                 {
 
 
@@ -381,7 +381,7 @@ namespace Dodge_example
                 }
 
 
-                if (titan2[i].y >= 2000)
+                if (titan2[i].y >= 2500)
                 {
 
 
@@ -825,7 +825,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =15;
+            score =0;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
