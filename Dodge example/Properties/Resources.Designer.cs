@@ -153,6 +153,36 @@ namespace Dodge_example.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap beasti1 {
+            get {
+                object obj = ResourceManager.GetObject("beasti1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap beasti2 {
+            get {
+                object obj = ResourceManager.GetObject("beasti2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap beasti3 {
+            get {
+                object obj = ResourceManager.GetObject("beasti3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap beastq2 {
             get {
                 object obj = ResourceManager.GetObject("beastq2", resourceCulture);
@@ -535,6 +565,26 @@ namespace Dodge_example.Properties {
         public static System.Drawing.Bitmap rock {
             get {
                 object obj = ResourceManager.GetObject("rock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rocki {
+            get {
+                object obj = ResourceManager.GetObject("rocki", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rocki2 {
+            get {
+                object obj = ResourceManager.GetObject("rocki2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

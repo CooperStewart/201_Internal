@@ -18,7 +18,7 @@ namespace Dodge_example
         public Titan3(int spacing)
         {
             x = spacing;
-            y = 1201;
+            y = 1200;
             width = 200;
             height = 110;
             //planetImage contains the plane1.png image

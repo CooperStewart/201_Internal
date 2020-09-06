@@ -301,8 +301,23 @@
   <data name="beast2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_1695.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="beasti1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1703.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beasti2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1702.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beasti3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1701.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="beastq2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG_1694.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rocki" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1704.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rocki2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG_1705.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="titan31" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

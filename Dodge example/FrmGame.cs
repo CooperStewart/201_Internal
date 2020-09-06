@@ -34,7 +34,7 @@ namespace Dodge_example
         Random xloc = new Random();
         Player player = new Player();
         bool left, right, up, down;
-        bool turnLeft, turnLEFT;
+        bool turnLeft, turnLEFT, mssg;
         int Acceleration;
         string move;
         int cycle;
@@ -102,7 +102,7 @@ namespace Dodge_example
                         flare.width -= 200;
                     }
                 }
-                if (score < 30)
+                if (score < 31)
                 {
                     beast[i].y = 1000;
                 }
@@ -111,6 +111,7 @@ namespace Dodge_example
                 {
                     if (score > 29)
                     {
+                        
                         background[i].x += 0;
                         background2[i].x += 0;
                         background3[i].x += 0;
@@ -120,12 +121,54 @@ namespace Dodge_example
 
                         rock[i].y = 0;
                         rock[i].x = 500;
+
+                        if (thump > 1)
+                        {
+                            if (thump < 10)
+                            {
+                                beast[i].y += 7;
+                                beast[i].ChangeSprite2();
+                            }
+                        }
+
+                        if (thump > 10)
+                        {
+                            if (thump < 15)
+                            {
+                                beast[i].ChangeSprite();
+                            }
+                        }
+
+                        if (thump > 15)
+                        {
+                            if (thump < 25)
+                            {
+                                beast[i].y += 7;
+                                beast[i].ChangeSprite2();
+                            }
+                        }
+
+                        if (thump > 25)
+                        {
+                            if (thump < 30)
+                            {
+                                beast[i].ChangeSprite3();
+                            }
+                        }
+
+
                         if (stop < 7)
                         {
-                            titan[i].y += 6 +Acceleration;
+                            titan[i].y += 7;
+
 
 
                         }
+
+
+
+
+
                         else
                         {
                             titan[i].y += 0;
@@ -134,18 +177,14 @@ namespace Dodge_example
                         }
                         if (stop < 12)
                         {
-                            beast[i].ChangeSprite();
-                            beast[i].y += 10;
 
                         }
                         else
                         {
-                            beast[i].ChangeSprite2();
 
                         }
                         if (stop == 20)
                         {
-                            beast[i].ChangeSprite2();
 
                             stop = 0;
                             titan[i].ChangeSprite2();
@@ -203,13 +242,11 @@ namespace Dodge_example
                     }
 
                 }
-
               
                 if (stop2 <2)
                 {
                     titan2[i].ChangeSprite4();
                     titan3[i].ChangeSprite();
-            
 
 
                 }
@@ -225,7 +262,6 @@ namespace Dodge_example
                 if (stop2 == 4)
                 {
                     titan2[i].ChangeSprite2();
-                    titan3[i].ChangeSprite3();
 
 
 
@@ -233,6 +269,7 @@ namespace Dodge_example
 
                 if (stop2 == 6)
                 {
+
                     titan2[i].ChangeSprite3();
                     stop2 = 0;
 
@@ -286,7 +323,10 @@ namespace Dodge_example
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
         {
-
+            if (thump> 30)
+            {
+                thump = 0;
+            }
 
             if (score > 19)
             {
@@ -295,14 +335,10 @@ namespace Dodge_example
             stop += 1;
             stop2 += 1;
             healthbar.Width = lives*10;
-          
-       
 
-            if (thump > 55)
-            {
-                lblthump1.Visible = false;
-                lblname.Visible = false;
-            }
+            thump += 1;
+
+           
             for (int i = 0; i < 1; i++)
             {
                 titan[i].MovePlanet();
@@ -313,7 +349,7 @@ namespace Dodge_example
                 beast[i].MoveBeast();
                 int rndmloc = (xloc.Next(1000, 1500))-score;
                 //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (score == 30)
+                if (score == 31)
                 {
                     beast[i].y = 0;
                 }
@@ -366,14 +402,15 @@ namespace Dodge_example
 
                 }
 
-                if (rock[i].x >= 350)
+                if (rock[i].x == 350)
                 {
-
+                    rock[i].SpriteChange();
                     rock[i].x = 350;
 
                 }
                 if (rock[i].y >= 1000)
                 {
+                    rock[i].SpriteChange2();
 
                     rock[i].x = 0;
                     rock[i].y = 100;
@@ -412,7 +449,7 @@ namespace Dodge_example
                 titan[i].MovePlanet();
                 titan2[i].MoveTitan2();
                 titan3[i].MoveTitan3();
-
+                beast[i].MoveBeast();
                 background[i].MoveBackground();
                 background2[i].MoveBackground();
                 background3[i].MoveBackground();
@@ -521,7 +558,8 @@ namespace Dodge_example
                 }
             }
             cycle += 1;
-       
+            thump += 1;
+            label3.Text = thump.ToString();
 
             if (turnLeft) { 
                 player.rotationAngle -= 20;
@@ -790,7 +828,7 @@ namespace Dodge_example
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyData == Keys.Enter) { textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
+            if (e.KeyData == Keys.Enter) { mssg = true; label3.Text = thump.ToString(); label3.Visible = true; textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
         }
 
         private void textBox1_KeyDown(object sender, KeyPressEventArgs e)
@@ -806,12 +844,37 @@ namespace Dodge_example
 
         }
 
+        private void lblstart_MouseLeave(object sender, EventArgs e)
+        {
+            lblstart.BackColor = System.Drawing.Color.White;
+        }
+
+        private void lblstart_MouseEnter(object sender, EventArgs e)
+        {
+            lblstart.BackColor = System.Drawing.Color.Gray;
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsLetter(e.KeyChar))
             {
-                e.Handled = true;
+                if (mssg)
+                {
+                   
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Please enter only Upper or lowercase letters");
+                }
             }
+
+
         }
 
         private void healthbar_Click(object sender, EventArgs e)
@@ -844,7 +907,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =19;
+            score =29;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;
@@ -861,6 +924,7 @@ namespace Dodge_example
 
         private void lblstart_MouseHover(object sender, EventArgs e)
         {
+            lblstart.BackColor = System.Drawing.Color.Gray;
         }
 
         private void startscreen_Click(object sender, EventArgs e)

@@ -23,7 +23,7 @@ namespace Dodge_example
             width = 100;
             height = 100;
             //planetImage contains the plane1.png image
-            titanImage = Properties.Resources.rock;
+            titanImage = Properties.Resources.rocki;
             titanrec = new Rectangle(x, y, width, height);
         }
 
@@ -39,7 +39,15 @@ namespace Dodge_example
 
             titanrec.Location = new Point(y, x -10);
         }
-       
+        public void SpriteChange()
+        {
 
+            titanImage = Properties.Resources.rocki2;
+        }
+        public void SpriteChange2()
+        {
+
+            titanImage = Properties.Resources.rocki;
+        }
     }
 }

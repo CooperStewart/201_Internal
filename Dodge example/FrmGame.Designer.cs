@@ -50,6 +50,7 @@
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -59,6 +60,7 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.White;
+            this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.lblyourname);
             this.PnlGame.Controls.Add(this.lblfinalscore);
             this.PnlGame.Controls.Add(this.lblname);
@@ -152,6 +154,8 @@
             this.lblstart.Text = "Start";
             this.lblstart.Visible = false;
             this.lblstart.Click += new System.EventHandler(this.label3_Click);
+            this.lblstart.MouseEnter += new System.EventHandler(this.lblstart_MouseEnter);
+            this.lblstart.MouseLeave += new System.EventHandler(this.lblstart_MouseLeave);
             this.lblstart.MouseHover += new System.EventHandler(this.lblstart_MouseHover);
             // 
             // startscreen
@@ -267,6 +271,19 @@
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(458, 190);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 76);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "1";
+            this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
             // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +327,7 @@
         private System.Windows.Forms.Label lblfinalscore;
         public System.Windows.Forms.Label lblyourname;
         private System.Windows.Forms.Timer TmrShip;
+        private System.Windows.Forms.Label label3;
     }
 }
 
