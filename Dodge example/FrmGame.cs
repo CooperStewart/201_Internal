@@ -54,7 +54,7 @@ namespace Dodge_example
                 int x2 = 320 + (i * 75);
                 int x3 = 0 + (i * 75);
                 int x4 = 370 + (i * 75);
-
+                int x5 = 200 + (i * 75);
                 rock[i] = new rock(235);
                 titan[i] = new Titan(x);
                 titan2[i] = new Titan2(x2);
@@ -64,7 +64,7 @@ namespace Dodge_example
                 background2[i] = new Background2(x3);
                 background3[i] = new Background3(x3);
 
-                beast[i] = new Beast(x);
+                beast[i] = new Beast(x5);
 
 
             }
@@ -202,6 +202,8 @@ namespace Dodge_example
                 if (stop2 ==2)
                 { titan2[i].ChangeSprite();
                     titan3[i].ChangeSprite2();
+                    beast[i].ChangeSprite();
+
 
                 }
 
@@ -209,6 +211,8 @@ namespace Dodge_example
                 {
                     titan2[i].ChangeSprite2();
                     titan3[i].ChangeSprite3();
+                    beast[i].ChangeSprite2();
+
 
                 }
 
@@ -220,6 +224,7 @@ namespace Dodge_example
                 }
                 titan2[i].y += rndmspeed;
                 //call the Planet class's drawPlanet method to draw the images
+
                 background3[i].DrawBackground(g);
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
@@ -233,10 +238,25 @@ namespace Dodge_example
                     }
                 }
 
+                if (titan[i].y < 1000)
+                {
+                    titan[i].DrawPlanet(g);
+                }
+                if (titan2[i].y <1000)
+                {
+                    titan2[i].DrawTitan2(g);
+                }
+                if (titan3[i].y < 1000)
+                {
+                    titan3[i].DrawTitan3(g);
+                }
 
-                titan[i].DrawPlanet(g);
-                titan2[i].DrawTitan2(g);
-                titan3[i].DrawTitan3(g);
+              
+                if (score > 14)
+                {
+                    beast[i].DrawBeast(g);
+                }
+                spaceship.DrawSpaceship(g);
 
                 if (flare.width > 2)
                 {
@@ -245,13 +265,6 @@ namespace Dodge_example
                         flare.DrawFlare(g);
                     }
                 }
-                if (score > 14)
-                {
-                    beast[i].DrawBeast(g);
-                }
-                spaceship.DrawSpaceship(g);
-
-
             }
 
         }
@@ -752,7 +765,14 @@ namespace Dodge_example
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Enter) { textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
+        }
 
+        private void textBox1_KeyDown(object sender, KeyPressEventArgs e)
+        {
+
+          
+                e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+            
         }
 
         private void lbl1_Click(object sender, EventArgs e)
@@ -790,7 +810,7 @@ namespace Dodge_example
             lblfinalscore.Visible = false;
             startscreen.Visible = false;
             lblstart.Visible = false;
-            score =0;
+            score =15;
             lblScore.Text = score.ToString();
             lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
             lbljump.Visible = false;

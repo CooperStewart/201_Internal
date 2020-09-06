@@ -21,9 +21,9 @@ namespace Dodge_example
             x = spacing;
             y = 0;
             width = 100;
-            height = 250;
+            height = 320;
             //planetImage contains the plane1.png image
-            titanImage = Properties.Resources.unnamed;
+            titanImage = Properties.Resources.beast1;
             titanrec = new Rectangle(x, y, width, height);
         }
 
@@ -41,13 +41,18 @@ namespace Dodge_example
         }
         public void ChangeSprite()
         {
-            titanImage = Properties.Resources.titan;
+            titanImage = Properties.Resources.beast1;
+            width = 100;
+
 
         }
         public void ChangeSprite2()
         {
-            titanImage = Properties.Resources.titan2
-                ;
+            titanImage = Properties.Resources.beastq2;
+            width = 100;
+
+
+            ;
 
         }
 
