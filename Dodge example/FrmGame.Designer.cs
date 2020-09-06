@@ -50,7 +50,6 @@
             this.TmrShip = new System.Windows.Forms.Timer(this.components);
             this.tmrJump = new System.Windows.Forms.Timer(this.components);
             this.tmrhelp = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.PnlGame.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.startscreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.healthbar)).BeginInit();
@@ -60,7 +59,6 @@
             // PnlGame
             // 
             this.PnlGame.BackColor = System.Drawing.Color.White;
-            this.PnlGame.Controls.Add(this.label3);
             this.PnlGame.Controls.Add(this.lblyourname);
             this.PnlGame.Controls.Add(this.lblfinalscore);
             this.PnlGame.Controls.Add(this.lblname);
@@ -182,7 +180,7 @@
             // healthbar
             // 
             this.healthbar.BackColor = System.Drawing.Color.Lime;
-            this.healthbar.Location = new System.Drawing.Point(3, 0);
+            this.healthbar.Location = new System.Drawing.Point(3, -1);
             this.healthbar.Name = "healthbar";
             this.healthbar.Size = new System.Drawing.Size(986, 20);
             this.healthbar.TabIndex = 8;
@@ -197,6 +195,7 @@
             this.txtLives.Size = new System.Drawing.Size(25, 13);
             this.txtLives.TabIndex = 2;
             this.txtLives.Text = "200";
+            this.txtLives.Visible = false;
             this.txtLives.Click += new System.EventHandler(this.txtLives_Click);
             // 
             // lblScore
@@ -236,6 +235,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
+            this.label1.Visible = false;
             // 
             // pictureBox2
             // 
@@ -270,19 +270,6 @@
             // 
             this.tmrhelp.Enabled = true;
             this.tmrhelp.Tick += new System.EventHandler(this.tmrhelp_Tick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 50.25F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(458, 190);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 76);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "1";
-            this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // FrmGame
             // 
@@ -327,7 +314,6 @@
         private System.Windows.Forms.Label lblfinalscore;
         public System.Windows.Forms.Label lblyourname;
         private System.Windows.Forms.Timer TmrShip;
-        private System.Windows.Forms.Label label3;
     }
 }
 

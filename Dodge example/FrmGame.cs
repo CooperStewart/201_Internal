@@ -90,7 +90,9 @@ namespace Dodge_example
                 // generate a random number from 5 to 20 and put it in rndmspeed
                 int rndmspeed = yspeed.Next(5, 10)+ (score/10);
                 rock[i].y += 15+((rock[i].x/100)*2);
+                //variable that increases with score//
                 Acceleration = (score / 10)*2;
+                //if score above 19 make flare tjat grows then shrinks to signal boss incoming//
                 if (score > 19)
                 {
                     if (flare1 < 10)
@@ -102,11 +104,12 @@ namespace Dodge_example
                         flare.width -= 200;
                     }
                 }
-                if (score < 31)
+
+                if (score < 30)
                 {
                     beast[i].x = 1000;
                 }
-
+                //slow speed when boss comes//
                 if  (beast[i].x < PnlGame.Width)
                 {
                     if (score > 29)
@@ -168,7 +171,7 @@ namespace Dodge_example
 
 
 
-
+                        //stop titan1 periodically//
                         else
                         {
                             titan[i].x += 0;
@@ -195,7 +198,7 @@ namespace Dodge_example
                     }
                 }
                
-                
+                //normal speed when boss is absent//
                 else
                 {
 
@@ -242,7 +245,7 @@ namespace Dodge_example
                     }
 
                 }
-              
+              //sprite running animation on timer//
                 if (stop2 <2)
                 {
                     titan2[i].ChangeSprite4();
@@ -275,8 +278,7 @@ namespace Dodge_example
 
                 }
                 titan2[i].x += rndmspeed;
-                //call the Planet class's drawPlanet method to draw the images
-
+//draw classes//
                 background3[i].DrawBackground(g);
                 background2[i].DrawBackground(g);
                 background[i].DrawBackground(g);
@@ -289,7 +291,7 @@ namespace Dodge_example
                         rock[i].DrawRock(g);
                     }
                 }
-
+                //only draw enemy titans if in game pannel//
                 if (titan[i].x < 1000)
                 {
                     titan[i].DrawPlanet(g);
@@ -322,18 +324,20 @@ namespace Dodge_example
         }
 
         private void TmrPlanet_Tick(object sender, EventArgs e)
-        {
+        {//resets animation cycle to keep it on a loop//
             if (thump> 30)
             {
                 thump = 0;
             }
-
+            //grow flare when scre is 20//
             if (score > 19)
             {
                 flare1 += 1;
             }
+            //more animation cycles//
             stop += 1;
             stop2 += 1;
+            //health bar shrinks as lives are lost//
             healthbar.Width = lives*10;
 
             thump += 1;
@@ -348,12 +352,12 @@ namespace Dodge_example
                 rock[i].MoveRock();
                 beast[i].MoveBeast();
                 int rndmloc = (xloc.Next(1000, 1500))-score;
-                //if a planet reaches the bottom of the Game Area reposition it at the top
-                if (score == 31)
+                //bring in boss when score equals 31//
+                if (score == 30)
                 {
                     beast[i].x = 0;
                 }
-
+                //add to score when titans pass game pannel width and bring them back after awhile//
                 if (titan[i].x >= 2500)
                 {
                  
@@ -454,10 +458,9 @@ namespace Dodge_example
                 background2[i].MoveBackground();
                 background3[i].MoveBackground();
 
-
+                //lower health when collide with titans//
                 if (player.spaceRec.IntersectsWith(titan[i].titanrec))
                 {
-                    //reset planet[i] back to top of panel
                     if (down == false)
                     {
                         if (up == false)
@@ -474,7 +477,6 @@ namespace Dodge_example
 
                     if (score > 30)
                     {
-                        //reset planet[i] back to top of panel
                         if (down == false)
                         {
                             if (up == false)
@@ -489,7 +491,6 @@ namespace Dodge_example
 
                 if (player.spaceRec.IntersectsWith(titan2[i].titanrec))
                 {
-                    //reset planet[i] back to top of panel
                     if (down == false)
                     {
                         if (up == false)
@@ -503,7 +504,6 @@ namespace Dodge_example
 
                 if (player.spaceRec.IntersectsWith(titan3[i].titanrec))
                 {
-                    //reset planet[i] back to top of panel
                     if (down == false)
                     {
                         if (up == false)
@@ -516,7 +516,6 @@ namespace Dodge_example
                 }
                 if (player.spaceRec.IntersectsWith(rock[i].titanrec))
                 {
-                    //reset planet[i] back to top of panel
                     if (score > 20)
                     {
                         if (score < 30){
@@ -549,6 +548,7 @@ namespace Dodge_example
         {
             if (flare.width > 2)
             {
+                //stops boss flare from spinning when player jumps//
                 if (score > 19)
                 {
                     turnLEFT = false;
@@ -560,7 +560,7 @@ namespace Dodge_example
             cycle += 1;
             thump += 1;
             label3.Text = thump.ToString();
-
+            //flips player when in air//
             if (turnLeft) { 
                 player.rotationAngle -= 20;
         }
@@ -573,7 +573,7 @@ namespace Dodge_example
             {
                 flip += 1;
             }
-
+            //player running cycle with different variations withh missing limbs dependant on health//
             if (stop2 < 2)
             {
                 player.SpriteChange();
@@ -712,7 +712,7 @@ namespace Dodge_example
 
 
                 if (player.spaceRec.Location.Y < 260)
-                {
+                {//jump animation//
                     
                         player.SpriteChange7();
                     turnLeft = true;
@@ -749,7 +749,7 @@ namespace Dodge_example
                 }
             }
             if (down)
-            {
+            {//gravity//
                 player.SpriteChange8();
                 if (lives < 75)
                 {
@@ -827,17 +827,11 @@ namespace Dodge_example
         }
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
-        {
+        {//submit textbox for name//
             if (e.KeyData == Keys.Enter) { mssg = true; label3.Text = thump.ToString(); label3.Visible = true; textBox1.Visible = false; lblname.Text = textBox1.Text; lblstart.Visible = true; lblyourname.Visible = false; }
         }
 
-        private void textBox1_KeyDown(object sender, KeyPressEventArgs e)
-        {
-
-          
-                e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
-            
-        }
+   
 
         private void lbl1_Click(object sender, EventArgs e)
         {
@@ -845,7 +839,7 @@ namespace Dodge_example
         }
 
         private void lblstart_MouseLeave(object sender, EventArgs e)
-        {
+        {//change start button color on hover//
             lblstart.BackColor = System.Drawing.Color.White;
         }
 
@@ -860,9 +854,9 @@ namespace Dodge_example
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        {//check that only letters are used in name field
             if (!char.IsLetter(e.KeyChar))
-            {
+            { //excludes enter key from firing warning off//
                 if (mssg)
                 {
                    
@@ -898,7 +892,7 @@ namespace Dodge_example
         }
 
         private void label3_Click(object sender, EventArgs e)
-        {
+        {//start game and restart//
             lives = 100;
             txtLives.Text = lives.ToString();
             lblyourname.Visible = false;
@@ -934,23 +928,9 @@ namespace Dodge_example
 
   
 
-        private void startToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            score = 0;
-            lblScore.Text = score.ToString();
-            lives = int.Parse(txtLives.Text);// pass lives entered from textbox to lives variable
-            
         
-        }
 
-        private void MnuStop_Click(object sender, EventArgs e)
-        {
-            TmrShip.Enabled = false;
-            TmrPlanet.Enabled = false;
-            tmrJump.Enabled = false;
-
-        }
-
+        
         private void FrmDodge_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { left = false; }
@@ -960,7 +940,7 @@ namespace Dodge_example
 
 
         private void CheckLives()
-        {
+        {//game end//
             if (lives < 1)
             {
                 left = false;
